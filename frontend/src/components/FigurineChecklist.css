@@ -2,7 +2,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Reggae One', sans-serif;
+  color: #f0f0f0;
 }
 
 .figurine-header {
@@ -11,22 +12,22 @@
 }
 
 .figurine-header h1 {
-  color: #1a5276;
+  color: #ffcc00;
   margin-bottom: 15px;
 }
 
 .progress-bar {
   height: 25px;
-  background-color: #ecf0f1;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   overflow: hidden;
   position: relative;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .progress-fill {
   height: 100%;
-  background-color: #2ecc71;
+  background-color: #2e7d32;
   transition: width 0.5s ease;
 }
 
@@ -39,7 +40,7 @@
   text-align: center;
   color: #fff;
   font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .figurine-controls {
@@ -49,50 +50,38 @@
   margin-bottom: 25px;
 }
 
-.search-box {
-  flex: 1;
-}
-
 .search-box input {
   width: 100%;
   padding: 10px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #555;
   border-radius: 4px;
   font-size: 16px;
-}
-
-.filter-controls {
-  display: flex;
-  gap: 10px;
+  background-color: #333;
+  color: #fff;
 }
 
 .filter-controls select {
   padding: 10px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #555;
   border-radius: 4px;
-  background: white;
+  background: #333;
+  color: #fff;
   font-size: 16px;
-}
-
-.category-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 20px;
 }
 
 .category-tabs button {
   padding: 8px 16px;
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
+  background: #444;
+  border: 1px solid #555;
   border-radius: 4px;
+  color: #fff;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .category-tabs button.active {
   background: #3498db;
-  color: white;
+  color: #fff;
   border-color: #2980b9;
 }
 
@@ -105,21 +94,22 @@
 .figurine-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #555;
   border-radius: 6px;
-  background: white;
-  transition: transform 0.2s;
+  background: #222;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .figurine-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .figurine-item.obtained {
-  background-color: #f1fff0;
-  border-color: #c3e6cb;
+  background-color: #2e7d32;
+  border-color: #1b5e20;
 }
 
 .figurine-item.missable {
@@ -130,7 +120,7 @@
   width: 40px;
   height: 40px;
   background: #3498db;
-  color: white;
+  color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -141,44 +131,42 @@
 }
 
 .figurine-details {
-  flex: 1;
+  flex-grow: 1;
 }
 
 .figurine-details h3 {
   margin: 0 0 5px 0;
-  color: #2c3e50;
+  color: #ffcc00;
+  font-size: 1rem;
 }
 
 .figurine-details p {
   margin: 0;
-  color: #7f8c8d;
-  font-size: 14px;
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+.figurine-checkbox {
+  margin-left: auto;
+}
+
+.figurine-checkbox input {
+  transform: scale(1.2);
 }
 
 .missable-tag {
   display: inline-block;
   background: #e74c3c;
-  color: white;
+  color: #fff;
   font-size: 12px;
   padding: 2px 6px;
   border-radius: 3px;
   margin-top: 5px;
 }
 
-.figurine-checkbox {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.figurine-checkbox input {
-  margin-right: 5px;
-  transform: scale(1.2);
-}
-
 .figurine-tips {
   margin-top: 40px;
-  background: #f8f9fa;
+  background: #333;
   padding: 20px;
   border-radius: 8px;
   border-left: 4px solid #3498db;
@@ -186,7 +174,7 @@
 
 .figurine-tips h3 {
   margin-top: 0;
-  color: #2c3e50;
+  color: #ffcc00;
 }
 
 .figurine-tips ul {
@@ -196,13 +184,14 @@
 
 .figurine-tips li {
   margin-bottom: 8px;
+  color: #ccc;
 }
 
 .no-results {
   grid-column: 1 / -1;
   text-align: center;
   padding: 40px;
-  color: #7f8c8d;
+  color: #ccc;
   font-size: 18px;
 }
 
@@ -210,13 +199,12 @@
   .figurine-controls {
     flex-direction: column;
   }
-  
+
   .filter-controls {
     flex-direction: column;
   }
-  
+
   .figurine-list {
     grid-template-columns: 1fr;
   }
 }
-

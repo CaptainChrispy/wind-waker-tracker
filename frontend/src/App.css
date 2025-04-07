@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&family=ROCKNROLL+One&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Reggae One', sans-serif;
+  background-color: #206693;
+}
+
+.ww-header {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ww-title {
+  font-family: 'ROCKNROLL One', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.ww-nav {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.ww-nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.ww-nav-link:hover {
+  color: #ff0;
+}
+
+.ww-nav-link::before,
+.ww-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.ww-nav-link::before {
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ww-nav-link::after {
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ww-nav-link:hover::before,
+.ww-nav-link:hover::after {
+  height: 20px;
+  opacity: 1;
+}
+
+.ww-content {
+  padding: 20px;
+}
