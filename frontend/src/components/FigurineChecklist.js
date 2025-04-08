@@ -84,7 +84,7 @@ const FigurineChecklist = () => {
   return (
     <div className="figurine-checklist">
       <header className="figurine-header">
-        <h1>Wind Waker Figurine Collection</h1>
+        <h1>Figurine Collection</h1>
         <div className="progress-bar">
           <div 
             className="progress-fill" 

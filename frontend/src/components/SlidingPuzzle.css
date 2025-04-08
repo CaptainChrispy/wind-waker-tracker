@@ -1,9 +1,31 @@
+/* ===================================
+   LAYOUT & CONTAINER STYLES
+=================================== */
+.sliding-puzzle-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .sliding-puzzle {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.puzzle-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 120px; 
+  flex-shrink: 0;
+}
+
+.puzzle-main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
 }
 
 .puzzle-container {
@@ -14,9 +36,136 @@
   border-radius: 8px;
 }
 
+.sliding-puzzle-wrapper h1 {
+  color: #ffcc00;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* ===================================
+   MODE TOGGLE SWITCH STYLES
+=================================== */
+.mode-toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 15px;
+}
+
+.toggle-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #27ae60;
+  border-radius: 34px;
+  transition: .4s;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .toggle-slider {
+  background-color: #e74c3c;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+.mode-caption {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+/* ===================================
+   PUZZLE SIDEBAR & BUTTONS
+=================================== */
+.puzzle-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.puzzle-button {
+  padding: 10px;
+  font-size: 14px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.puzzle-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.puzzle-button.active {
+  background: #27ae60;
+}
+
+.puzzle-button.solved {
+  background: #f1c40f;
+  color: black;
+  box-shadow: 0 0 10px 2px #f1c40f;
+  transition: box-shadow 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+
+.puzzle-button.solved:hover {
+  background: #f39c12;
+  box-shadow: 0 0 15px 4px #f1c40f;
+  transform: scale(1.05);
+}
+
+/* ===================================
+   PUZZLE GRID & TILES
+=================================== */
 .puzzle-grid {
   display: grid;
-  gap: 2px;
+  gap: 4px;
   background: #1d0e05;
   padding: 2px;
   border-radius: 4px;
@@ -30,14 +179,16 @@
 }
 
 .puzzle-tile:not(.empty):hover {
-  transform: scale(0.98);
-  border: 2px dashed yellow;
+  border: 4px solid yellow;
 }
 
 .puzzle-tile.empty {
   background: #421d0a;
 }
 
+/* ===================================
+   CONTROL BUTTONS & ACTIONS
+=================================== */
 button {
   padding: 10px;
   font-size: 16px;
@@ -52,8 +203,187 @@ button:hover {
   background: #34495e;
 }
 
-.win-message {
-  color: #27ae60;
+.puzzle-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.puzzle-controls button {
+  flex: 1;
+  min-width: 110px;
+  padding: 12px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(to bottom, #34495e, #2c3e50);
+  color: white;
   font-weight: bold;
-  font-size: 18px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Reggae One', sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+.puzzle-controls button:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(to bottom, #3498db, #2980b9);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.puzzle-controls button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.puzzle-controls button:disabled {
+  background: linear-gradient(to bottom, #95a5a6, #7f8c8d);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.puzzle-controls button:nth-child(3) {
+  background: linear-gradient(to bottom, #e74c3c, #c0392b);
+}
+
+.puzzle-controls button:nth-child(3):hover {
+  background: linear-gradient(to bottom, #f56354, #d14233);
+}
+
+.puzzle-controls button:nth-child(4) {
+  background: linear-gradient(to bottom, #27ae60, #2ecc71);
+}
+
+.puzzle-controls button:nth-child(4):hover {
+  background: linear-gradient(to bottom, #2ecc71, #27ae60);
+}
+
+.puzzle-controls label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 14px;
+  min-width: 110px;
+  box-sizing: border-box;
+}
+
+/* ===================================
+   CHECKBOX STYLING
+=================================== */
+.puzzle-controls label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 14px;
+}
+
+.puzzle-controls label:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.puzzle-controls input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #bdc3c7;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  background: #34495e;
+  position: relative;
+}
+
+.puzzle-controls input[type="checkbox"]:checked {
+  background: #27ae60;
+  border-color: #27ae60;
+}
+
+.puzzle-controls input[type="checkbox"]:checked::before {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ===================================
+   PROGRESS INDICATOR
+=================================== */
+.progress-bar {
+  width: 100%;
+  height: 25px;
+  background: #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #27ae60;
+  transition: width 0.3s ease;
+}
+
+/* ===================================
+   RESPONSIVE STYLES
+=================================== */
+@media (max-width: 768px) {
+  .sliding-puzzle {
+    gap: 40px;
+    padding: 10px;
+  }
+
+  .puzzle-sidebar {
+    width: 80px;
+    gap: 5px;
+  }
+  
+  .puzzle-button {
+    padding: 6px;
+    font-size: 12px;
+  }
+  
+  .puzzle-controls {
+    flex-direction: column;
+  }
+  
+  .puzzle-controls .nav-buttons,
+  .puzzle-controls .action-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .sliding-puzzle-wrapper h1 {
+    font-size: 1.5rem;
+  }
+  
+  .mode-toggle-container {
+    gap: 8px;
+  }
+  
+  .toggle-label {
+    font-size: 14px;
+  }
 }

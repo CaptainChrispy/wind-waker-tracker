@@ -18,7 +18,7 @@ function App() {
             <span className="nav-icon figurine-icon"></span>
             Figurines
           </NavLink>
-          <NavLink to="/SlidingPuzzles" className={({ isActive }) => isActive ? "ww-nav-link active" : "ww-nav-link"}>
+          <NavLink to="/slidingpuzzles" className={({ isActive }) => isActive ? "ww-nav-link active" : "ww-nav-link"}>
             <span className="nav-icon puzzle-icon"></span>
             Puzzles
           </NavLink>
