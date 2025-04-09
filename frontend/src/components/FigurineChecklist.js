@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './FigurineChecklist.css';
+import figurineData from '../assets/data/figurines.json';
 
 const FigurineChecklist = () => {
   const categories = [
@@ -11,34 +12,15 @@ const FigurineChecklist = () => {
     "Great Sea",
     "Dungeons",
     "Bosses",
-    "Special"
-  ];
-
-  // WIP figurine collection data
-  const figurineCollection = [
-    { id: 1, name: "Link", location: "Outset Island", category: "Hyrule", obtained: false, missable: false },
-    { id: 2, name: "Tetra", location: "Pirate Ship", category: "Great Sea", obtained: false, missable: false },
-    { id: 3, name: "Ganondorf", location: "Forsaken Fortress", category: "Bosses", obtained: false, missable: false },
-    { id: 4, name: "King of Red Lions", location: "Great Sea", category: "Hyrule", obtained: false, missable: false },
-    { id: 5, name: "Aryll", location: "Outset Island", category: "Outset Island", obtained: false, missable: false },
-    { id: 6, name: "Grandma", location: "Outset Island", category: "Outset Island", obtained: false, missable: false },
-    { id: 7, name: "Orca", location: "Outset Island", category: "Outset Island", obtained: false, missable: false },
-    { id: 8, name: "Sturgeon", location: "Outset Island", category: "Outset Island", obtained: false, missable: false },
-    { id: 9, name: "Sue-Belle", location: "Outset Island", category: "Outset Island", obtained: false, missable: false },
-    { id: 10, name: "Mesa", location: "Outset Island", category: "Outset Island", obtained: false, missable: false },
-    { id: 11, name: "Abe", location: "Outset Island", category: "Outset Island", obtained: false, missable: false },
-    { id: 12, name: "Rose", location: "Outset Island", category: "Outset Island", obtained: false, missable: false },
-    { id: 13, name: "Zill", location: "Outset Island", category: "Outset Island", obtained: false, missable: false },
-    { id: 14, name: "Joel", location: "Outset Island", category: "Outset Island", obtained: false, missable: false },
-    { id: 15, name: "Tingle", location: "Windfall Island", category: "Windfall Island", obtained: false, missable: false },
-    { id: 98, name: "Knuckle", location: "Forsaken Fortress", category: "Special", obtained: false, missable: true },
-    { id: 99, name: "Puppet Ganon", location: "Ganon's Tower", category: "Bosses", obtained: false, missable: true },
+    "Special",
+    "Enemies"
   ];
 
   const [figurines, setFigurines] = useState(() => {
     const saved = localStorage.getItem('ww-figurines');
-    return saved ? JSON.parse(saved) : figurineCollection;
+    return saved ? JSON.parse(saved) : figurineData;
   });
+
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState('id');
