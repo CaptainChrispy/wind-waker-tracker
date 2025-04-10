@@ -1,3 +1,6 @@
+/* ===================================
+   IMPORTS AND VARIABLES
+=================================== */
 @import url('https://fonts.googleapis.com/css2?family=Reggae+One&family=RocknRoll+One&display=swap');
 
 :root {
@@ -7,6 +10,9 @@
   --light: #7bbbde;
 }
 
+/* ===================================
+   BASE STYLES
+=================================== */
 body {
   margin: 0;
   font-family: 'ROCKNROLL One', sans-serif;
@@ -14,6 +20,9 @@ body {
   overflow-x: hidden;
 }
 
+/* ===================================
+   HEADER STYLES
+=================================== */
 .site-header {
   background-color: var(--dark);
   padding: 15px 0;
@@ -39,6 +48,9 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* ===================================
+   DESKTOP NAVIGATION
+=================================== */
 .main-nav {
   display: flex;
   gap: 20px;
@@ -74,6 +86,9 @@ body {
   width: 80%;
 }
 
+/* ===================================
+   HAMBURGER MENU BUTTON
+=================================== */
 .hamburger-button {
   background: none;
   border: none;
@@ -98,9 +113,11 @@ body {
   height: 3px;
   width: 100%;
   background-color: white;
-  transition: all 0.3s ease;
 }
 
+/* ===================================
+   MOBILE MENU STYLES
+=================================== */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -134,6 +151,9 @@ body {
   padding: 0;
 }
 
+/* ===================================
+   MOBILE NAVIGATION
+=================================== */
 .mobile-nav {
   display: flex;
   flex-direction: column;
@@ -160,11 +180,6 @@ body {
   width: 80%;
 }
 
-.main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .mobile-menu.open::before {
   content: '';
   position: fixed;
@@ -178,6 +193,17 @@ body {
   z-index: -1;
 }
 
+/* ===================================
+   MAIN CONTENT AREA
+=================================== */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===================================
+   RESPONSIVE STYLES
+=================================== */
 @media (min-width: 768px) {
   .site-title {
     font-size: 2rem;
