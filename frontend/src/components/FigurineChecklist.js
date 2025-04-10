@@ -10,7 +10,6 @@ const FigurineChecklist = () => {
     "Forest Haven", 
     "Dragon Roost Island",
     "Great Sea",
-    "Dungeons",
     "Bosses",
     "Special",
     "Enemies"
