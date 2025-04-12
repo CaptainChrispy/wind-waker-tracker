@@ -9,6 +9,10 @@ The Map Screen is the central navigation feature of the Wind Waker Tracker. It d
 - Clickable chest locations that can be marked as collected
 - Sector grid overlay matching the in-game sea chart
 
+## Custom Map Assets
+
+Some base map pieces and assets are extracted using a specialized tool developed specifically for this project ([wind-waker-map-extractor](https://github.com/CaptainChrispy/wind-waker-map-extractor)). It takes screenshots from The Legend of Zelda: Wind Waker HD to provide cropped data that we then upscale and fit onto the interactive map. For more information on how this works, please refer to its repository.
+
 ## Implementation Details
 
 ### Map Component
