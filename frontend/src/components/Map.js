@@ -1,19 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { MapContainer, ImageOverlay } from 'react-leaflet';
+import React, { useState, useEffect, useCallback } from 'react';
+import { MapContainer, ImageOverlay, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+
+const ZoomListener = ({ onZoomChange }) => {
+  useMapEvents({
+    zoomend: (e) => {
+      onZoomChange(e.target.getZoom());
+    },
+  });
+  return null;
+};
 
 const Map = () => {
   const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
   const columns = [1, 2, 3, 4, 5, 6, 7];
   const tileSize = 309;
   const [tileImages, setTileImages] = useState({});
+  const [detailImages, setDetailImages] = useState({});
+  const [currentZoom, setCurrentZoom] = useState(1);
   const [loading, setLoading] = useState(true);
+  
+  const ZOOM_LEVELS = {
+    BASE: 0,     
+    MEDIUM: 2,   
+    DETAILED: 3, 
+  };
+  
+  // Define detail areas - example with A1 square
+  const detailAreas = [
+    {
+      id: 'A1',
+      baseSquare: 'A1',
+      position: { x: 114, y: 113 },
+      size: { width: 69, height: 69 },
+      imagePrefix: 'A1',
+      // Add resolution information for different zoom levels
+      resolutions: {
+        medium: { width: 69, height: 69 },
+        detailed: { width: 680, height: 680 }
+      }
+    }
+  ];
 
   useEffect(() => {
-    const loadTileImages = async () => {
+    const loadAllImages = async () => {
+      // Load base map tiles
       const images = {};
+      const details = {};
       
+      // Load base tiles
       for (const row of rows) {
         for (const col of columns) {
           const key = `${row}${col}`;
@@ -21,17 +57,52 @@ const Map = () => {
             const image = await import(`../assets/images/map/base-zoom/${key}.png`);
             images[key] = image.default;
           } catch (err) {
-            console.error(`Failed to load tile ${key}:`, err);
+            console.error(`Failed to load base tile ${key}:`, err);
           }
         }
       }
       
+      // Load detail images for zoom levels
+      for (const area of detailAreas) {
+        try {
+          // Load medium zoom image
+          const mediumImage = await import(`../assets/images/map/medium-zoom/${area.imagePrefix}.png`);
+          details[`${area.id}-medium`] = mediumImage.default;
+          
+          // Load detailed zoom image
+          const detailedImage = await import(`../assets/images/map/detailed-zoom/${area.imagePrefix}.png`);
+          details[`${area.id}-detailed`] = detailedImage.default;
+        } catch (err) {
+          console.error(`Failed to load detail images for ${area.id}:`, err);
+        }
+      }
+      
       setTileImages(images);
+      setDetailImages(details);
       setLoading(false);
     };
 
-    loadTileImages();
+    loadAllImages();
   }, []);
+
+  const getDetailBounds = useCallback((area) => {
+    // Find the grid square position
+    const rowIndex = rows.indexOf(area.baseSquare[0]);
+    const colIndex = parseInt(area.baseSquare[1]) - 1;
+    
+    // Calculate the absolute position on the map
+    const top = (rows.length - rowIndex) * tileSize - area.position.y;
+    const left = colIndex * tileSize + area.position.x;
+    const bottom = top - area.size.height;
+    const right = left + area.size.width;
+    
+    // Return bounds as [[top-left], [bottom-right]]
+    return [[top, left], [bottom, right]];
+  }, [rows, tileSize]);
+
+  const handleZoomChange = (zoom) => {
+    setCurrentZoom(zoom);
+  };
 
   if (loading) {
     return <div>Loading map tiles...</div>;
@@ -46,7 +117,10 @@ const Map = () => {
       maxZoom={4}
       crs={L.CRS.Simple}
     >
-      {rows.map((row, rowIndex) => (
+      <ZoomListener onZoomChange={handleZoomChange} />
+      
+      {/* Render base map tiles when zoom is below medium threshold */}
+      {currentZoom < ZOOM_LEVELS.MEDIUM && rows.map((row, rowIndex) => (
         columns.map((col, colIndex) => {
           const key = `${row}${col}`;
           return tileImages[key] ? (
@@ -61,6 +135,34 @@ const Map = () => {
           ) : null;
         })
       ))}
+      
+      {/* Render medium detail when zoom level is between medium and detailed */}
+      {currentZoom >= ZOOM_LEVELS.MEDIUM && currentZoom < ZOOM_LEVELS.DETAILED && 
+        detailAreas.map(area => {
+          const imageKey = `${area.id}-medium`;
+          return detailImages[imageKey] ? (
+            <ImageOverlay
+              key={imageKey}
+              bounds={getDetailBounds(area, 'medium')}
+              url={detailImages[imageKey]}
+            />
+          ) : null;
+        })
+      }
+      
+      {/* Render highest detail when zoom is at or above detailed threshold */}
+      {currentZoom >= ZOOM_LEVELS.DETAILED && 
+        detailAreas.map(area => {
+          const imageKey = `${area.id}-detailed`;
+          return detailImages[imageKey] ? (
+            <ImageOverlay
+              key={imageKey}
+              bounds={getDetailBounds(area, 'detailed')}
+              url={detailImages[imageKey]}
+            />
+          ) : null;
+        })
+      }
     </MapContainer>
   );
 };
