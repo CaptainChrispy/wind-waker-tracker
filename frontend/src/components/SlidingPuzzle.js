@@ -172,6 +172,9 @@ const SlidingPuzzle = () => {
 
       <div className="progress-bar">
         <div className="progress-fill" style={{ width: `${progress}%` }}></div>
+        <span className="progress-text">
+          {puzzles.filter(puzzle => puzzle.completed).length} / {puzzles.length} ({progress}%)
+        </span>
       </div>
 
       <div className="mode-toggle-container">
