@@ -33,7 +33,7 @@ const Map = () => {
     {
       id: 'A1',
       baseSquare: 'A1',
-      position: { x: 114, y: 113 },
+      position: { x: 116, y: 113 },
       size: { width: 69, height: 69 },
       imagePrefix: 'A1',
       // Add resolution information for different zoom levels
