@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { MapContainer, ImageOverlay, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import defaultTile from '../assets/images/map/default.png';
 
 const ZoomListener = ({ onZoomChange }) => {
   useMapEvents({
@@ -119,7 +120,7 @@ const Map = () => {
     >
       <ZoomListener onZoomChange={handleZoomChange} />
       
-      {/* Render base map tiles when zoom is below medium threshold */}
+      {/* Base map tiles - only show at lowest zoom */}
       {currentZoom < ZOOM_LEVELS.MEDIUM && rows.map((row, rowIndex) => (
         columns.map((col, colIndex) => {
           const key = `${row}${col}`;
@@ -136,7 +137,24 @@ const Map = () => {
         })
       ))}
       
-      {/* Render medium detail when zoom level is between medium and detailed */}
+      {/* Default background tiles for medium and detailed zoom */}
+      {currentZoom >= ZOOM_LEVELS.MEDIUM && rows.map((row, rowIndex) => (
+        columns.map((col, colIndex) => {
+          const key = `${row}${col}`;
+          return (
+            <ImageOverlay
+              key={`default-${key}`}
+              bounds={[
+                [(rows.length - rowIndex) * tileSize, colIndex * tileSize],
+                [(rows.length - rowIndex - 1) * tileSize, (colIndex + 1) * tileSize]
+              ]}
+              url={defaultTile}
+            />
+          );
+        })
+      ))}
+      
+      {/* Medium detail overlays */}
       {currentZoom >= ZOOM_LEVELS.MEDIUM && currentZoom < ZOOM_LEVELS.DETAILED && 
         detailAreas.map(area => {
           const imageKey = `${area.id}-medium`;
@@ -150,7 +168,7 @@ const Map = () => {
         })
       }
       
-      {/* Render highest detail when zoom is at or above detailed threshold */}
+      {/* Detailed overlays */}
       {currentZoom >= ZOOM_LEVELS.DETAILED && 
         detailAreas.map(area => {
           const imageKey = `${area.id}-detailed`;
