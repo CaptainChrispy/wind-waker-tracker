@@ -111,8 +111,11 @@ const Map = () => {
 
   return (
     <MapContainer 
-      center={[0, 0]} 
-      zoom={0} 
+      center={[
+        (rows.length * tileSize) / 2,
+        (columns.length * tileSize) / 2
+      ]} 
+      zoom={-1} 
       style={{ height: "100vh", width: "100%" }}
       minZoom={-1}
       maxZoom={4}
