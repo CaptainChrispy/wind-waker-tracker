@@ -23,7 +23,7 @@ const Map = () => {
   const [loading, setLoading] = useState(true);
   
   const ZOOM_LEVELS = {
-    BASE: 0,     
+    BASE: -1,     
     MEDIUM: 2,   
     DETAILED: 3, 
   };
@@ -112,9 +112,9 @@ const Map = () => {
   return (
     <MapContainer 
       center={[0, 0]} 
-      zoom={1} 
+      zoom={0} 
       style={{ height: "100vh", width: "100%" }}
-      minZoom={0}
+      minZoom={-1}
       maxZoom={4}
       crs={L.CRS.Simple}
     >
