@@ -36,10 +36,14 @@
   border-radius: 8px;
 }
 
-.sliding-puzzle-wrapper h1 {
+.puzzle-header h1 {
   color: #ffcc00;
   margin-bottom: 15px;
+}
+
+.puzzle-header {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 /* ===================================

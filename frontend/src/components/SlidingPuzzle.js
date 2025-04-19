@@ -168,14 +168,16 @@ const SlidingPuzzle = () => {
 
   return (
     <div className="sliding-puzzle-wrapper">
-      <h1>Sliding Puzzle</h1>
+      <header className="puzzle-header">
+        <h1>Sliding Puzzle</h1>
 
-      <div className="progress-bar">
-        <div className="progress-fill" style={{ width: `${progress}%` }}></div>
-        <span className="progress-text">
-          {puzzles.filter(puzzle => puzzle.completed).length} / {puzzles.length} ({progress}%)
-        </span>
-      </div>
+        <div className="progress-bar">
+          <div className="progress-fill" style={{ width: `${progress}%` }}></div>
+          <span className="progress-text">
+            {puzzles.filter(puzzle => puzzle.completed).length} / {puzzles.length} ({progress}%)
+          </span>
+        </div>
+      </header>
 
       <div className="mode-toggle-container">
         <div className="toggle-label">Play Mode</div>
