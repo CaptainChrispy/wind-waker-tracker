@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import DesktopNav from './components/navigation/DesktopNav';
+import MobileNav from './components/navigation/MobileNav';
 import FigurineChecklist from './components/FigurineChecklist';
 import SlidingPuzzle from './components/SlidingPuzzle';
 import Map from './components/Map';
@@ -12,22 +14,12 @@ function App() {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
-      if (window.innerWidth >= 768) {
-        setMenuOpen(false);
-      }
+      if (window.innerWidth >= 768) setMenuOpen(false);
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
 
   return (
     <BrowserRouter>
@@ -36,73 +28,25 @@ function App() {
           <h1 className="site-title">Wind Waker Tracker</h1>
           
           {isMobile ? (
-            <button className="hamburger-button" onClick={toggleMenu}>
+            <button className="hamburger-button" onClick={() => setMenuOpen(!menuOpen)}>
               <div className="hamburger-icon">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
               </div>
             </button>
           ) : (
-            <nav className="main-nav">
-              <NavLink to="/seachart" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <span className="nav-icon map-icon"></span>
-                Sea Chart
-              </NavLink>
-              <NavLink to="/figurines" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <span className="nav-icon figurine-icon"></span>
-                Figurines
-              </NavLink>
-              <NavLink to="/slidingpuzzles" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                <span className="nav-icon puzzle-icon"></span>
-                Sliding Puzzles
-              </NavLink>
-            </nav>
+            <DesktopNav />
           )}
         </div>
       </header>
 
-      {isMobile && (
-        <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-          <div className="mobile-menu-header">
-            <button className="close-menu-button" onClick={closeMenu}>
-              <span className="close-icon">×</span>
-            </button>
-          </div>
-          <nav className="mobile-nav">
-            <NavLink 
-              to="/seachart" 
-              className={({ isActive }) => isActive ? "mobile-nav-link active" : "mobile-nav-link"}
-              onClick={closeMenu}
-            >
-              <span className="nav-icon map-icon"></span>
-              Sea Chart
-            </NavLink>
-            <NavLink 
-              to="/figurines" 
-              className={({ isActive }) => isActive ? "mobile-nav-link active" : "mobile-nav-link"}
-              onClick={closeMenu}
-            >
-              <span className="nav-icon figurine-icon"></span>
-              Figurines
-            </NavLink>
-            <NavLink 
-              to="/slidingpuzzles" 
-              className={({ isActive }) => isActive ? "mobile-nav-link active" : "mobile-nav-link"}
-              onClick={closeMenu}
-            >
-              <span className="nav-icon puzzle-icon"></span>
-              Sliding Puzzles
-            </NavLink>
-          </nav>
-        </div>
-      )}
+      {isMobile && <MobileNav isOpen={menuOpen} onClose={() => setMenuOpen(false)} />}
 
       <main className="main-content">
         <Routes>
           <Route path="/seachart" element={<Map />} />
           <Route path="/figurines" element={<FigurineChecklist />} />
           <Route path="/slidingpuzzles" element={<SlidingPuzzle />} />
+          <Route path="/" element={<Map />} />
         </Routes>
       </main>
     </BrowserRouter>
