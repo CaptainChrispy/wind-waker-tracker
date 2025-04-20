@@ -392,10 +392,6 @@ button:hover {
     width: 100%;
   }
   
-  .sliding-puzzle-wrapper h1 {
-    font-size: 1.5rem;
-  }
-  
   .mode-toggle-container {
     gap: 8px;
   }
