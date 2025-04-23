@@ -3,6 +3,7 @@ import { MapContainer, ImageOverlay, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import defaultTile from '../assets/images/map/default.png';
+import { detailAreas } from '../assets/data/mapAreas';
 
 const ZoomListener = ({ onZoomChange }) => {
   useMapEvents({
@@ -27,22 +28,6 @@ const Map = () => {
     MEDIUM: 2,   
     DETAILED: 3, 
   };
-  
-  // Define detail areas - example with A1 square
-  const detailAreas = [
-    {
-      id: 'A1',
-      baseSquare: 'A1',
-      position: { x: 116, y: 113 },
-      size: { width: 69, height: 69 },
-      imagePrefix: 'A1',
-      // Add resolution information for different zoom levels
-      resolutions: {
-        medium: { width: 69, height: 69 },
-        detailed: { width: 680, height: 680 }
-      }
-    }
-  ];
 
   useEffect(() => {
     const loadAllImages = async () => {
