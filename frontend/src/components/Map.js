@@ -37,19 +37,26 @@ const Map = () => {
   const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
   const columns = [1, 2, 3, 4, 5, 6, 7];
   const tileSize = 309;
-  const [tileImages, setTileImages] = useState({});
-  const [detailImages, setDetailImages] = useState({});
-  const [currentZoom, setCurrentZoom] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const [showOverlay, setShowOverlay] = useState(true);
-  const [markers, setMarkers] = useState([]);
-  const [isPlacingMarker, setIsPlacingMarker] = useState(false);
-
   const ZOOM_LEVELS = {
     BASE: -1,     
     MEDIUM: 2,   
     DETAILED: 3, 
   };
+
+  const [tileImages, setTileImages] = useState({});
+  const [detailImages, setDetailImages] = useState({});
+  const [currentZoom, setCurrentZoom] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [showOverlay, setShowOverlay] = useState(true);
+  const [isPlacingMarker, setIsPlacingMarker] = useState(false);
+  const [markers, setMarkers] = useState(() => {
+    const saved = localStorage.getItem('mapMarkers');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('mapMarkers', JSON.stringify(markers));
+  }, [markers]);
 
   useEffect(() => {
     const loadAllImages = async () => {
@@ -112,11 +119,6 @@ const Map = () => {
     setCurrentZoom(zoom);
   };
 
-  if (loading) {
-    return <div>Loading map tiles...</div>;
-  }
-
-  // Add click handler
   const handleMapClick = (coords) => {
     if (!isPlacingMarker) return;
 
@@ -144,6 +146,29 @@ const Map = () => {
     setMarkers(markers.filter(marker => marker.id !== markerId));
   };
 
+  const exportMarkers = () => {
+    const dataStr = JSON.stringify(markers, null, 2);
+    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', 'markers.json');
+    linkElement.click();
+  };
+
+  const importMarkers = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const importedMarkers = JSON.parse(e.target.result);
+      setMarkers(importedMarkers);
+    };
+    reader.readAsText(file);
+  };
+
+  if (loading) {
+    return <div>Loading map tiles...</div>;
+  }
+
   return (
     <div className="map-container">
       {/* Add marker placement controls */}
@@ -154,6 +179,17 @@ const Map = () => {
         <button onClick={() => setMarkers([])}>Clear All Markers</button>
         <button onClick={() => setShowOverlay(!showOverlay)}>
           {showOverlay ? 'Hide' : 'Show'} Chest Map
+        </button>
+        <button onClick={exportMarkers}>Export Markers</button>
+        <input
+          type="file"
+          accept=".json"
+          onChange={importMarkers}
+          style={{ display: 'none' }}
+          id="import-markers"
+        />
+        <button onClick={() => document.getElementById('import-markers').click()}>
+          Import Markers
         </button>
       </div>
 
