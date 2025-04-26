@@ -1287,13 +1287,13 @@ export const lightChests = [
         {
           "id": 1745600400549,
           "position": {
-            "y": 157,
-            "x": 853
+            "y": 156,
+            "x": 824
           },
           "gridSquare": "G3",
           "relativePosition": {
-            "x": 235,
-            "y": 152
+            "x": 206,
+            "y": 153
           }
         },
         {
@@ -1431,60 +1431,60 @@ export const lightChests = [
         {
           "id": 1745600505406,
           "position": {
-            "y": 1773,
-            "x": 202
+            "y": 1767,
+            "x": 215
           },
           "gridSquare": "B1",
           "relativePosition": {
-            "x": 202,
-            "y": 81
+            "x": 215,
+            "y": 87
           }
         },
         {
           "id": 1745600508466,
           "position": {
-            "y": 1774,
-            "x": 229
+            "y": 1759,
+            "x": 222
           },
           "gridSquare": "B1",
           "relativePosition": {
-            "x": 229,
-            "y": 80
+            "x": 222,
+            "y": 95
           }
         },
         {
           "id": 1745600510994,
           "position": {
-            "y": 1746,
-            "x": 202
+            "y": 1759,
+            "x": 207
           },
           "gridSquare": "B1",
           "relativePosition": {
-            "x": 202,
-            "y": 108
+            "x": 207,
+            "y": 95
           }
         },
         {
           "id": 1745600512817,
           "position": {
-            "y": 1745,
-            "x": 230
+            "y": 1751,
+            "x": 215
           },
           "gridSquare": "B1",
           "relativePosition": {
-            "x": 230,
-            "y": 109
+            "x": 215,
+            "y": 103
           }
         },
         {
           "id": 1745600515359,
           "position": {
             "y": 1759,
-            "x": 216
+            "x": 215
           },
           "gridSquare": "B1",
           "relativePosition": {
-            "x": 216,
+            "x": 215,
             "y": 95
           }
         },
@@ -1587,265 +1587,265 @@ export const lightChests = [
         {
           "id": 1745600564292,
           "position": {
-            "y": 1127,
-            "x": 1156
+            "y": 1146,
+            "x": 1155
           },
           "gridSquare": "D4",
           "relativePosition": {
-            "x": 229,
-            "y": 109
+            "x": 228,
+            "y": 90
           }
         },
         {
           "id": 1745600567188,
           "position": {
-            "y": 1141,
-            "x": 1143
+            "y": 1155,
+            "x": 1142
           },
           "gridSquare": "D4",
           "relativePosition": {
-            "x": 216,
-            "y": 95
+            "x": 215,
+            "y": 81
           }
         },
         {
           "id": 1745600574230,
           "position": {
-            "y": 1029,
-            "x": 820
+            "y": 1039,
+            "x": 808
           },
           "gridSquare": "D3",
           "relativePosition": {
-            "x": 202,
-            "y": 207
+            "x": 190,
+            "y": 197
           }
         },
         {
           "id": 1745600576458,
           "position": {
-            "y": 1030,
-            "x": 844
+            "y": 1040,
+            "x": 815
           },
           "gridSquare": "D3",
           "relativePosition": {
-            "x": 226,
-            "y": 206
+            "x": 197,
+            "y": 196
           }
         },
         {
           "id": 1745600578716,
           "position": {
-            "y": 1005,
-            "x": 819
+            "y": 1033,
+            "x": 808
           },
           "gridSquare": "D3",
           "relativePosition": {
-            "x": 201,
-            "y": 231
+            "x": 190,
+            "y": 203
           }
         },
         {
           "id": 1745600581092,
           "position": {
-            "y": 1005,
-            "x": 844
+            "y": 1040,
+            "x": 825
           },
           "gridSquare": "D3",
           "relativePosition": {
-            "x": 226,
-            "y": 231
+            "x": 207,
+            "y": 196
           }
         },
         {
           "id": 1745600583747,
           "position": {
-            "y": 1010,
-            "x": 832
+            "y": 1029,
+            "x": 808
           },
           "gridSquare": "D3",
           "relativePosition": {
-            "x": 214,
-            "y": 226
+            "x": 190,
+            "y": 207
           }
         },
         {
           "id": 1745600590236,
           "position": {
-            "y": 1031,
-            "x": 79
+            "y": 988,
+            "x": 110
           },
           "gridSquare": "D1",
           "relativePosition": {
-            "x": 79,
-            "y": 205
+            "x": 110,
+            "y": 248
           }
         },
         {
           "id": 1745600592590,
           "position": {
-            "y": 1031,
-            "x": 106
+            "y": 992,
+            "x": 113
           },
           "gridSquare": "D1",
           "relativePosition": {
-            "x": 106,
-            "y": 205
+            "x": 113,
+            "y": 244
           }
         },
         {
           "id": 1745600595170,
           "position": {
-            "y": 1004,
-            "x": 78
+            "y": 993,
+            "x": 108
           },
           "gridSquare": "D1",
           "relativePosition": {
-            "x": 78,
-            "y": 232
+            "x": 108,
+            "y": 243
           }
         },
         {
           "id": 1745600597535,
           "position": {
-            "y": 1004,
-            "x": 104
+            "y": 991,
+            "x": 119
           },
           "gridSquare": "D1",
           "relativePosition": {
-            "x": 104,
-            "y": 232
+            "x": 119,
+            "y": 245
           }
         },
         {
           "id": 1745600600145,
           "position": {
-            "y": 1013,
-            "x": 91
+            "y": 996,
+            "x": 115
           },
           "gridSquare": "D1",
           "relativePosition": {
-            "x": 91,
-            "y": 223
+            "x": 115,
+            "y": 240
           }
         },
         {
           "id": 1745600614605,
           "position": {
-            "y": 354,
-            "x": 790
+            "y": 377,
+            "x": 786
           },
           "gridSquare": "F3",
           "relativePosition": {
-            "x": 172,
-            "y": 264
+            "x": 168,
+            "y": 241
           }
         },
         {
           "id": 1745600616736,
           "position": {
-            "y": 354,
-            "x": 811
+            "y": 378,
+            "x": 791
           },
           "gridSquare": "F3",
           "relativePosition": {
-            "x": 193,
-            "y": 264
+            "x": 173,
+            "y": 240
           }
         },
         {
           "id": 1745600619142,
           "position": {
-            "y": 332,
-            "x": 789
+            "y": 375,
+            "x": 793
           },
           "gridSquare": "F3",
           "relativePosition": {
-            "x": 171,
-            "y": 286
+            "x": 175,
+            "y": 243
           }
         },
         {
           "id": 1745600621437,
           "position": {
-            "y": 332,
-            "x": 811
+            "y": 372,
+            "x": 790
           },
           "gridSquare": "F3",
           "relativePosition": {
-            "x": 193,
-            "y": 286
+            "x": 172,
+            "y": 246
           }
         },
         {
           "id": 1745600623350,
           "position": {
-            "y": 343,
-            "x": 800
+            "y": 373,
+            "x": 786
           },
           "gridSquare": "F3",
           "relativePosition": {
-            "x": 182,
-            "y": 275
+            "x": 168,
+            "y": 245
           }
         },
         {
           "id": 1745600630452,
           "position": {
-            "y": 537,
-            "x": 386
+            "y": 546,
+            "x": 378
           },
           "gridSquare": "F2",
           "relativePosition": {
-            "x": 77,
-            "y": 81
+            "x": 69,
+            "y": 72
           }
         },
         {
           "id": 1745600632560,
           "position": {
-            "y": 509,
+            "y": 550,
             "x": 387
           },
           "gridSquare": "F2",
           "relativePosition": {
             "x": 78,
-            "y": 109
+            "y": 68
           }
         },
         {
           "id": 1745600635051,
           "position": {
-            "y": 509,
-            "x": 414
+            "y": 549,
+            "x": 417
           },
           "gridSquare": "F2",
           "relativePosition": {
-            "x": 105,
-            "y": 109
+            "x": 108,
+            "y": 69
           }
         },
         {
           "id": 1745600636977,
           "position": {
-            "y": 537,
-            "x": 415
+            "y": 550,
+            "x": 407
           },
           "gridSquare": "F2",
           "relativePosition": {
-            "x": 106,
-            "y": 81
+            "x": 98,
+            "y": 68
           }
         },
         {
           "id": 1745600638785,
           "position": {
-            "y": 518,
-            "x": 401
+            "y": 547,
+            "x": 396
           },
           "gridSquare": "F2",
           "relativePosition": {
-            "x": 92,
-            "y": 100
+            "x": 87,
+            "y": 71
           }
         },
         {
@@ -1930,6 +1930,66 @@ export const lightChests = [
           "relativePosition": {
             "x": 166,
             "y": 133
+          }
+        },
+        {
+          "id": 1745686290489,
+          "position": {
+            "y": 226,
+            "x": 1067
+          },
+          "gridSquare": "G4",
+          "relativePosition": {
+            "x": 140,
+            "y": 83
+          }
+        },
+        {
+          "id": 1745686298815,
+          "position": {
+            "y": 224,
+            "x": 1082
+          },
+          "gridSquare": "G4",
+          "relativePosition": {
+            "x": 155,
+            "y": 85
+          }
+        },
+        {
+          "id": 1745686311572,
+          "position": {
+            "y": 210,
+            "x": 1072
+          },
+          "gridSquare": "G4",
+          "relativePosition": {
+            "x": 145,
+            "y": 99
+          }
+        },
+        {
+          "id": 1745686318517,
+          "position": {
+            "y": 216,
+            "x": 1090
+          },
+          "gridSquare": "G4",
+          "relativePosition": {
+            "x": 163,
+            "y": 93
+          }
+        },
+        {
+          "id": 1745686341386,
+          "position": {
+            "y": 202,
+            "x": 1093
+          },
+          "gridSquare": "G4",
+          "relativePosition": {
+            "x": 166,
+            "y": 107
           }
         }
       ]
