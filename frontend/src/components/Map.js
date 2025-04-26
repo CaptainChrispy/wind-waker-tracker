@@ -165,6 +165,29 @@ const Map = () => {
     reader.readAsText(file);
   };
 
+  const updateMarkerPosition = (markerId, newPos) => {
+    setMarkers(markers.map(marker => {
+      if (marker.id === markerId) {
+        // Calculate new grid square and relative position
+        const col = Math.floor(newPos.x / tileSize) + 1;
+        const rowIndex = Math.floor((rows.length * tileSize - newPos.y) / tileSize);
+        const gridSquare = `${rows[rowIndex]}${col}`;
+        
+        // Calculate new relative position within the grid square
+        const relativeX = Math.round(newPos.x % tileSize);
+        const relativeY = Math.round(tileSize - (newPos.y % tileSize));
+
+        return {
+          ...marker,
+          position: newPos,
+          gridSquare,
+          relativePosition: { x: relativeX, y: relativeY }
+        };
+      }
+      return marker;
+    }));
+  };
+
   if (loading) {
     return <div>Loading map tiles...</div>;
   }
@@ -285,6 +308,13 @@ const Map = () => {
             key={marker.id} 
             position={[marker.position.y, marker.position.x]}
             icon={customIcon}
+            draggable={true}
+            eventHandlers={{
+              dragend: (e) => {
+                const newPos = e.target.getLatLng();
+                updateMarkerPosition(marker.id, { y: Math.round(newPos.lat), x: Math.round(newPos.lng) });
+              }
+            }}
           >
             <Popup>
               <div>
