@@ -1,5 +1,4 @@
 export const lightChests = [
-  [
     {
       "id": 1745599449707,
       "position": {
@@ -1993,4 +1992,3 @@ export const lightChests = [
       }
     }
   ]
-]
