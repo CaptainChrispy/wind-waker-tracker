@@ -4,31 +4,9 @@ import './SplooshKaboom.css';
 const GRID_SIZE = 8;
 const SHIP_CONFIG = [2, 3, 4];
 
-/**
- * Generates seeds for Wichmann-Hill PRNG
- * The game uses values between 1-30000 for each component
- * These bounds come from the modulo values used in the PRNG:
- * s1: mod 30269
- * s2: mod 30307
- * s3: mod 30323
- */
-const generateSeeds = () => {
-  return {
-    s1: Math.floor(Math.random() * 30000) + 1,
-    s2: Math.floor(Math.random() * 30000) + 1,
-    s3: Math.floor(Math.random() * 30000) + 1
-  };
-};
-
-// State variables for Wichmann-Hill PRNG
+// Wichmann-Hill PRNG implementation from Wind Waker
 let s1, s2, s3;
 
-/**
- * Implementation of Wichmann-Hill PRNG (1982)
- * Used by Wind Waker for ship/squid placement
-
- * @returns {number} Random value between 0 and 1
- */
 const rng = () => {
   s1 = (171 * s1) % 30269;
   s2 = (172 * s2) % 30307;
@@ -36,52 +14,44 @@ const rng = () => {
   return (s1/30269.0 + s2/30307.0 + s3/30323.0) % 1.0;
 };
 
-/**
- * Generates the game board using the same algorithm as Wind Waker
- * The board is initialized in column-major -- column first -- order (like the game)
- * Ships/Squids are placed sequentially: length 2, then 3, then 4
- * @returns {string[][]} Grid with placed ships/squids
- */
 const generateBoard = () => {
-  const seeds = generateSeeds();
-  s1 = seeds.s1;
-  s2 = seeds.s2;
-  s3 = seeds.s3;
+  // Initialize RNG with random seeds
+  s1 = Math.floor(Math.random() * 30000) + 1;
+  s2 = Math.floor(Math.random() * 30000) + 1;
+  s3 = Math.floor(Math.random() * 30000) + 1;
 
-  // Initialize empty board (column-major order like the game)
-  const board = Array(GRID_SIZE).fill().map(() => Array(GRID_SIZE).fill(0));
+  const board = Array(GRID_SIZE).fill().map(() => Array(GRID_SIZE).fill(''));
 
-  const fits = (x, y, length, orientation) => {
-    if (orientation === 0) { // vertical
-      for (let j = 0; j < length; j++) {
-        if (x > 7 || y + j > 7) return false;
-        if (board[x][y + j] !== 0) return false;
-      }
-      return true;
-    } else { // horizontal
+  const fits = (row, col, length, isVertical) => {
+    if (isVertical) {
+      if (row + length > GRID_SIZE) return false;
       for (let i = 0; i < length; i++) {
-        if (x + i > 7 || y > 7) return false;
-        if (board[x + i][y] !== 0) return false;
+        if (board[row + i][col] === 'ship') return false;
       }
-      return true;
+    } else {
+      if (col + length > GRID_SIZE) return false;
+      for (let i = 0; i < length; i++) {
+        if (board[row][col + i] === 'ship') return false;
+      }
     }
+    return true;
   };
 
   const place = (length) => {
     let placed = false;
     while (!placed) {
       const orientation = Math.floor(rng() * 1000) % 2;
-      const x = Math.floor(rng() * 8); // column (x-coordinate)
-      const y = Math.floor(rng() * 8); // row (y-coordinate)
+      const isVertical = orientation === 0;
 
-      if (fits(x, y, length, orientation)) {
-        if (orientation === 0) { // vertical
-          for (let j = 0; j < length; j++) {
-            board[x][y + j] = length;
-          }
-        } else { // horizontal
-          for (let i = 0; i < length; i++) {
-            board[x + i][y] = length;
+      const row = Math.floor(rng() * GRID_SIZE);
+      const col = Math.floor(rng() * GRID_SIZE);
+
+      if (fits(row, col, length, isVertical)) {
+        for (let i = 0; i < length; i++) {
+          if (isVertical) {
+            board[row + i][col] = 'ship';
+          } else {
+            board[row][col + i] = 'ship';
           }
         }
         placed = true;
@@ -89,16 +59,8 @@ const generateBoard = () => {
     }
   };
 
-  place(2);
-  place(3);
-  place(4);
-
-  // Convert to string grid (column-major to row-major)
-  return Array(GRID_SIZE).fill().map((_, row) => 
-    Array(GRID_SIZE).fill().map((_, col) => 
-      board[col][row] > 0 ? 'ship' : ''
-    )
-  );
+  SHIP_CONFIG.forEach(place);
+  return board;
 };
 
 const SplooshKaboom = () => {
