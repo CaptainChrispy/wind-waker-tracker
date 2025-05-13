@@ -4,6 +4,7 @@ import DesktopNav from './components/navigation/DesktopNav';
 import MobileNav from './components/navigation/MobileNav';
 import FigurineChecklist from './components/FigurineChecklist';
 import SlidingPuzzle from './components/SlidingPuzzle';
+import SplooshKaboom from './components/SplooshKaboom';
 import Map from './components/Map';
 import './App.css';
 
@@ -46,6 +47,7 @@ function App() {
           <Route path="/seachart" element={<Map />} />
           <Route path="/figurines" element={<FigurineChecklist />} />
           <Route path="/slidingpuzzles" element={<SlidingPuzzle />} />
+          <Route path="/splooshkaboom" element={<SplooshKaboom />} />
           <Route path="/" element={<Map />} />
         </Routes>
       </main>
