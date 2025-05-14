@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SplooshKaboom.css';
+import kaboomSound from '../assets/sounds/kerboom.wav';
+import splooshSound from '../assets/sounds/sploosh.wav';
 
 const GRID_SIZE = 8;
 const SHIP_CONFIG = [2, 3, 4];
@@ -69,6 +71,10 @@ const SplooshKaboom = () => {
   const [isShipsMode, setIsShipsMode] = useState(true);
   const [mode, setMode] = useState('play');
 
+  // Create audio elements
+  const kaboomAudio = new Audio(kaboomSound);
+  const splooshAudio = new Audio(splooshSound);
+
   useEffect(() => {
     setGrid(generateBoard());
   }, []);
@@ -81,8 +87,12 @@ const SplooshKaboom = () => {
       if (newGrid[row][col] === 'ship') {
         newGrid[row][col] = 'hit';
         setHits(hits + 1);
+        kaboomAudio.currentTime = 0;
+        kaboomAudio.play();
       } else if (newGrid[row][col] === '') {
         newGrid[row][col] = 'miss';
+        splooshAudio.currentTime = 0;
+        splooshAudio.play();
       }
       return newGrid;
     });
