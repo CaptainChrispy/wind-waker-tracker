@@ -5,6 +5,10 @@ import splooshSound from '../assets/sounds/sploosh.wav';
 
 const GRID_SIZE = 8;
 const SHIP_CONFIG = [2, 3, 4];
+const TOTAL_BOMBS = 24;
+const SHIP_EMOJI = '🚢';
+const SQUID_EMOJI = '🦑';
+const EXPLOSION = '💥';
 
 // Wichmann-Hill PRNG implementation from Wind Waker
 let s1, s2, s3;
@@ -23,6 +27,8 @@ const generateBoard = () => {
   s3 = Math.floor(Math.random() * 30000) + 1;
 
   const board = Array(GRID_SIZE).fill().map(() => Array(GRID_SIZE).fill(''));
+  // Track which ship each cell belongs to
+  const shipMap = Array(GRID_SIZE).fill().map(() => Array(GRID_SIZE).fill(-1));
 
   const fits = (row, col, length, isVertical) => {
     if (isVertical) {
@@ -39,7 +45,7 @@ const generateBoard = () => {
     return true;
   };
 
-  const place = (length) => {
+  const place = (length, shipIndex) => {
     let placed = false;
     while (!placed) {
       const orientation = Math.floor(rng() * 1000) % 2;
@@ -52,8 +58,10 @@ const generateBoard = () => {
         for (let i = 0; i < length; i++) {
           if (isVertical) {
             board[row + i][col] = 'ship';
+            shipMap[row + i][col] = shipIndex;
           } else {
             board[row][col + i] = 'ship';
+            shipMap[row][col + i] = shipIndex;
           }
         }
         placed = true;
@@ -61,16 +69,64 @@ const generateBoard = () => {
     }
   };
 
-  SHIP_CONFIG.forEach(place);
-  return board;
+  SHIP_CONFIG.forEach((length, index) => place(length, index));
+  return { board, shipMap };
 };
 
+const BombDisplay = ({ bombsRemaining }) => (
+  <div className="bomb-display">
+    <div className="bombs-remaining">{bombsRemaining}</div>
+    <div className="bomb-grid">
+      {Array(TOTAL_BOMBS).fill().map((_, i) => (
+        <div 
+          key={i} 
+          className={`bomb ${i >= bombsRemaining ? 'used' : ''}`}
+        >
+          💣
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const ShipDisplay = ({ isSquidMode, destroyedShips }) => (
+  <div className="ship-display">
+    {SHIP_CONFIG.map((_, index) => (
+      <div key={index} className="ship-indicator">
+        {destroyedShips.has(index) ? EXPLOSION : isSquidMode ? SQUID_EMOJI : SHIP_EMOJI}
+      </div>
+    ))}
+  </div>
+);
+
+const Grid = ({ grid, onCellClick }) => (
+  <div className="grid">
+    {grid.map((row, rowIndex) => (
+      <div key={rowIndex} className="row">
+        {row.map((cell, colIndex) => (
+          <div
+            key={`${rowIndex}-${colIndex}`}
+            className={`cell ${cell}`}
+            onClick={() => onCellClick(rowIndex, colIndex)}
+          >
+            {cell === 'hit' ? '💥' : cell === 'miss' ? '❌' : ''}
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+);
+
 const SplooshKaboom = () => {
-  const [grid, setGrid] = useState(createEmptyGrid());
+  const [grid, setGrid] = useState([]);
+  const [shipMap, setShipMap] = useState([]);
+  const [hitCounts, setHitCounts] = useState(Array(SHIP_CONFIG.length).fill(0));
   const [hits, setHits] = useState(0);
   const [isShipsMode, setIsShipsMode] = useState(true);
   const [mode, setMode] = useState('play');
   const [isMuted, setIsMuted] = useState(false);
+  const [bombsRemaining, setBombsRemaining] = useState(TOTAL_BOMBS);
+  const [destroyedShips, setDestroyedShips] = useState(new Set());
 
   const kaboomAudio = new Audio(kaboomSound);
   const splooshAudio = new Audio(splooshSound);
@@ -81,26 +137,52 @@ const SplooshKaboom = () => {
   }, [isMuted, kaboomAudio, splooshAudio]);
 
   useEffect(() => {
-    setGrid(generateBoard());
+    const { board, shipMap } = generateBoard();
+    setGrid(board);
+    setShipMap(shipMap);
   }, []);
 
   const handleCellClick = (row, col) => {
-    if (mode === 'solve') return;
+    if (mode === 'solve' || bombsRemaining <= 0 || grid[row][col] === 'hit' || grid[row][col] === 'miss') return;
 
-    setGrid(prevGrid => {
-      const newGrid = [...prevGrid];
-      if (newGrid[row][col] === 'ship') {
-        newGrid[row][col] = 'hit';
-        setHits(hits + 1);
+    // Create an update object to batch our state changes
+    const updates = {
+        grid: [...grid],
+        hits: hits,
+        bombsLeft: bombsRemaining - 1,
+        destroyed: new Set(destroyedShips),
+        hitCounts: [...hitCounts]
+    };
+
+    if (updates.grid[row][col] === 'ship') {
+        updates.grid[row][col] = 'hit';
+        updates.hits = hits + 1;
+        
+        // Get ship index from the map
+        const shipIndex = shipMap[row][col];
+        
+        if (shipIndex >= 0) {
+            updates.hitCounts[shipIndex]++;
+            
+            // Check if all parts of this ship are hit
+            if (updates.hitCounts[shipIndex] === SHIP_CONFIG[shipIndex]) {
+                updates.destroyed.add(shipIndex);
+            }
+        }
+        
         kaboomAudio.currentTime = 0;
         kaboomAudio.play();
-      } else if (newGrid[row][col] === '') {
-        newGrid[row][col] = 'miss';
+    } else {
+        updates.grid[row][col] = 'miss';
         splooshAudio.currentTime = 0;
         splooshAudio.play();
-      }
-      return newGrid;
-    });
+    }
+
+    setGrid(updates.grid);
+    setHits(updates.hits);
+    setBombsRemaining(updates.bombsLeft);
+    setDestroyedShips(updates.destroyed);
+    setHitCounts(updates.hitCounts);
   };
 
   const allShipsSunk = hits === SHIP_CONFIG.reduce((sum, length) => sum + length, 0);
@@ -111,7 +193,15 @@ const SplooshKaboom = () => {
 
   return (
     <div className="sploosh-kaboom">
-        <h1>Sploosh Kaboom</h1>
+      <h1>Sploosh Kaboom</h1>
+      <div className="game-layout">
+        <BombDisplay bombsRemaining={bombsRemaining} />
+        <Grid grid={grid} onCellClick={handleCellClick} />
+        <ShipDisplay 
+          isSquidMode={!isShipsMode} 
+          destroyedShips={destroyedShips}
+        />
+      </div>
 
       {/* Play/Solve Mode Toggle */}
       <div className="mode-toggle-container">
@@ -134,9 +224,8 @@ const SplooshKaboom = () => {
       </p>
 
       {allShipsSunk && <h2>All {isShipsMode ? 'Ships' : 'Squids'} sunk! You win!</h2>}
-      <Grid grid={grid} onCellClick={handleCellClick} />
 
-    {/* Ships/Squids Toggle */}
+      {/* Ships/Squids Toggle */}
       <div className="mode-toggle-container">
         <div className="toggle-label">Ships</div>
         <label className="toggle-switch">
@@ -150,35 +239,15 @@ const SplooshKaboom = () => {
         <div className="toggle-label">Squids</div>
       </div>
 
-        <button 
-          className="mute-button"
-          onClick={() => setIsMuted(!isMuted)}
-          aria-label={isMuted ? "Unmute sounds" : "Mute sounds"}
-        >
-          {isMuted ? '🔇' : '🔊'}
-        </button>
+      <button 
+        className="mute-button"
+        onClick={() => setIsMuted(!isMuted)}
+        aria-label={isMuted ? "Unmute sounds" : "Mute sounds"}
+      >
+        {isMuted ? '🔇' : '🔊'}
+      </button>
     </div>
   );
 };
-
-const createEmptyGrid = () => Array(GRID_SIZE).fill().map(() => Array(GRID_SIZE).fill(''));
-
-const Grid = ({ grid, onCellClick }) => (
-  <div className="grid">
-    {grid.map((row, rowIndex) => (
-      <div key={rowIndex} className="row">
-        {row.map((cell, colIndex) => (
-          <div
-            key={`${rowIndex}-${colIndex}`}
-            className={`cell ${cell}`}
-            onClick={() => onCellClick(rowIndex, colIndex)}
-          >
-            {cell === 'hit' ? '💥' : cell === 'miss' ? '❌' : ''}
-          </div>
-        ))}
-      </div>
-    ))}
-  </div>
-);
 
 export default SplooshKaboom;
