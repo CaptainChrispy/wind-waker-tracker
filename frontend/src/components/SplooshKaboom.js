@@ -70,10 +70,15 @@ const SplooshKaboom = () => {
   const [hits, setHits] = useState(0);
   const [isShipsMode, setIsShipsMode] = useState(true);
   const [mode, setMode] = useState('play');
+  const [isMuted, setIsMuted] = useState(false);
 
-  // Create audio elements
   const kaboomAudio = new Audio(kaboomSound);
   const splooshAudio = new Audio(splooshSound);
+
+  useEffect(() => {
+    kaboomAudio.muted = isMuted;
+    splooshAudio.muted = isMuted;
+  }, [isMuted, kaboomAudio, splooshAudio]);
 
   useEffect(() => {
     setGrid(generateBoard());
@@ -106,7 +111,7 @@ const SplooshKaboom = () => {
 
   return (
     <div className="sploosh-kaboom">
-      <h1>Sploosh Kaboom</h1>
+        <h1>Sploosh Kaboom</h1>
 
       {/* Play/Solve Mode Toggle */}
       <div className="mode-toggle-container">
@@ -144,6 +149,14 @@ const SplooshKaboom = () => {
         </label>
         <div className="toggle-label">Squids</div>
       </div>
+
+        <button 
+          className="mute-button"
+          onClick={() => setIsMuted(!isMuted)}
+          aria-label={isMuted ? "Unmute sounds" : "Mute sounds"}
+        >
+          {isMuted ? '🔇' : '🔊'}
+        </button>
     </div>
   );
 };
