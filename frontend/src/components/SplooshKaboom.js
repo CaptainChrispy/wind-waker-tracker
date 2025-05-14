@@ -136,10 +136,18 @@ const SplooshKaboom = () => {
     splooshAudio.muted = isMuted;
   }, [isMuted, kaboomAudio, splooshAudio]);
 
-  useEffect(() => {
+  const resetGame = () => {
     const { board, shipMap } = generateBoard();
     setGrid(board);
     setShipMap(shipMap);
+    setHitCounts(Array(SHIP_CONFIG.length).fill(0));
+    setHits(0);
+    setBombsRemaining(TOTAL_BOMBS);
+    setDestroyedShips(new Set());
+  };
+
+  useEffect(() => {
+    resetGame();
   }, []);
 
   const handleCellClick = (row, col) => {
@@ -239,13 +247,23 @@ const SplooshKaboom = () => {
         <div className="toggle-label">Squids</div>
       </div>
 
-      <button 
-        className="mute-button"
-        onClick={() => setIsMuted(!isMuted)}
-        aria-label={isMuted ? "Unmute sounds" : "Mute sounds"}
-      >
-        {isMuted ? '🔇' : '🔊'}
-      </button>
+      <div className="button-container">
+        <button 
+          className="reset-button"
+          onClick={resetGame}
+          aria-label="Reset game"
+        >
+          Reset
+        </button>
+
+        <button 
+          className="mute-button"
+          onClick={() => setIsMuted(!isMuted)}
+          aria-label={isMuted ? "Unmute sounds" : "Mute sounds"}
+        >
+          {isMuted ? '🔇' : '🔊'}
+        </button>
+      </div>
     </div>
   );
 };
