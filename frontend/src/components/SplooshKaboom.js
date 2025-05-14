@@ -127,6 +127,7 @@ const SplooshKaboom = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [bombsRemaining, setBombsRemaining] = useState(TOTAL_BOMBS);
   const [destroyedShips, setDestroyedShips] = useState(new Set());
+  const [isShaking, setIsShaking] = useState(false);
 
   const kaboomAudio = new Audio(kaboomSound);
   const splooshAudio = new Audio(splooshSound);
@@ -160,8 +161,8 @@ const SplooshKaboom = () => {
         bombsLeft: bombsRemaining - 1,
         destroyed: new Set(destroyedShips),
         hitCounts: [...hitCounts]
-    };
-
+    };    
+    
     if (updates.grid[row][col] === 'ship') {
         updates.grid[row][col] = 'hit';
         updates.hits = hits + 1;
@@ -177,9 +178,11 @@ const SplooshKaboom = () => {
                 updates.destroyed.add(shipIndex);
             }
         }
-        
+
         kaboomAudio.currentTime = 0;
         kaboomAudio.play();
+        setIsShaking(true);
+        setTimeout(() => setIsShaking(false), 500);
     } else {
         updates.grid[row][col] = 'miss';
         splooshAudio.currentTime = 0;
@@ -198,9 +201,9 @@ const SplooshKaboom = () => {
   const toggleMode = () => {
     setMode(prevMode => (prevMode === 'play' ? 'solve' : 'play'));
   };
-
+  
   return (
-    <div className="sploosh-kaboom">
+    <div className={`sploosh-kaboom ${isShaking ? 'game-shake' : ''}`}>
       <h1>Sploosh Kaboom</h1>
       <div className="game-layout">
         <BombDisplay bombsRemaining={bombsRemaining} />
