@@ -45,6 +45,11 @@
   text-align: center;
 }
 
+.solution-navigation {
+  display: flex;
+  gap: 8px;
+}
+
 /* ===================================
    MODE TOGGLE SWITCH STYLES
 =================================== */

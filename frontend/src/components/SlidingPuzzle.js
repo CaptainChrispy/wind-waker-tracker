@@ -47,6 +47,8 @@ const SlidingPuzzle = () => {
   const [puzzles, setPuzzles] = useState(initialPuzzles);
   const [progress, setProgress] = useState(0);
   const [mode, setMode] = useState('play');
+  const [solutionSteps, setSolutionSteps] = useState([]);
+  const [currentSolutionStep, setCurrentSolutionStep] = useState(0);
 
   useEffect(() => {
     initializePuzzle();
@@ -166,6 +168,66 @@ const SlidingPuzzle = () => {
     setMode((prevMode) => (prevMode === 'play' ? 'solve' : 'play'));
   };
 
+  const resetPuzzle = () => {
+    const solvedTiles = [...Array(TILE_COUNT).keys()];
+    setTiles(solvedTiles);
+    setEmptyPosition(EMPTY_TILE);
+    setSolutionSteps([]);
+    setCurrentSolutionStep(0);
+  };
+
+  const isSolvable = () => {
+    if (isPuzzleSolved(tiles)) {
+      return true;
+    }
+
+    let inversions = 0;
+    const tilesWithoutEmpty = [];
+    for (let i = 0; i < tiles.length; i++) {
+      if (tiles[i] !== EMPTY_TILE) {
+        tilesWithoutEmpty.push(tiles[i]);
+      }
+    }
+
+    for (let i = 0; i < tilesWithoutEmpty.length; i++) {
+      for (let j = i + 1; j < tilesWithoutEmpty.length; j++) {
+        if (tilesWithoutEmpty[i] > tilesWithoutEmpty[j]) {
+          inversions++;
+        }
+      }
+    }
+
+    const emptyRow = Math.floor(emptyPosition / GRID_SIZE);
+    const emptyRowFromBottom = GRID_SIZE - emptyRow;
+
+    // Even row from bottom => inversions must be odd
+    // Odd row from bottom => inversions must be even
+    const result = (emptyRowFromBottom % 2 === 0)
+      ? (inversions % 2 === 1)
+      : (inversions % 2 === 0);
+
+    return result;
+  };
+
+  const generateSolution = () => {
+    alert("Solver algorithm will be implemented here");
+    
+    setSolutionSteps([]);
+    setCurrentSolutionStep(0);
+  };
+
+  const applyNextMove = () => {
+    if (solutionSteps.length > 0 && currentSolutionStep < solutionSteps.length) {
+      setCurrentSolutionStep(currentSolutionStep + 1);
+    }
+  };
+
+  const applyPreviousMove = () => {
+    if (solutionSteps.length > 0 && currentSolutionStep > 0) {
+      setCurrentSolutionStep(currentSolutionStep - 1);
+    }
+  };
+
   return (
     <div className="sliding-puzzle-wrapper">
       <header className="puzzle-header">
@@ -266,16 +328,39 @@ const SlidingPuzzle = () => {
               </button>
             </div>
             <div className="action-buttons">
-              <button onClick={instaSolve}>Insta-Solve</button>
-              <button onClick={initializePuzzle}>Shuffle</button>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={puzzles[currentPuzzleIndex].completed}
-                  onChange={markAsComplete}
-                />
-                Mark as Complete
-              </label>
+              {mode === 'play' ? (
+                <>
+                  <button onClick={instaSolve}>Insta-Solve</button>
+                  <button onClick={initializePuzzle}>Shuffle</button>
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={puzzles[currentPuzzleIndex].completed}
+                      onChange={markAsComplete}
+                    />
+                    Mark as Complete
+                  </label>
+                </>
+              ) : (
+                <>
+                  <button onClick={generateSolution} disabled={!isSolvable()}>Generate Solution</button>
+                  <button onClick={resetPuzzle}>Reset</button>
+                  <div className="solution-navigation">
+                    <button 
+                      onClick={applyPreviousMove} 
+                      disabled={!solutionSteps.length || currentSolutionStep === 0}
+                    >
+                      Previous Move
+                    </button>
+                    <button 
+                      onClick={applyNextMove} 
+                      disabled={!solutionSteps.length || currentSolutionStep === solutionSteps.length}
+                    >
+                      Next Move
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
