@@ -26,7 +26,6 @@ const InventoryTracker = () => {
     }
   }, []);
 
-
   useEffect(() => {
     localStorage.setItem('windWakerInventory', JSON.stringify(inventory));
   }, [inventory]);
