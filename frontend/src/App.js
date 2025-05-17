@@ -5,6 +5,7 @@ import MobileNav from './components/navigation/MobileNav';
 import FigurineChecklist from './components/FigurineChecklist';
 import SlidingPuzzle from './components/SlidingPuzzle';
 import SplooshKaboom from './components/SplooshKaboom';
+import InventoryTracker from './components/InventoryTracker';
 import Map from './components/Map';
 import './App.css';
 
@@ -48,6 +49,7 @@ function App() {
           <Route path="/figurines" element={<FigurineChecklist />} />
           <Route path="/slidingpuzzles" element={<SlidingPuzzle />} />
           <Route path="/splooshkaboom" element={<SplooshKaboom />} />
+          <Route path="/inventory" element={<InventoryTracker />} />
           <Route path="/" element={<Map />} />
         </Routes>
       </main>

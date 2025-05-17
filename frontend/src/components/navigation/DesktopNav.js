@@ -18,6 +18,10 @@ const DesktopNav = () => (
       <span className="nav-icon kaboom-icon"></span>
       Sploosh Kaboom
     </NavLink>
+    <NavLink to="/inventory" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+      <span className="nav-icon inventory-icon"></span>
+      Inventory
+    </NavLink>
   </nav>
 );
 
