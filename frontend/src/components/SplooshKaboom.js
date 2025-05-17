@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './SplooshKaboom.css';
 import kaboomSound from '../assets/sounds/kerboom.wav';
 import splooshSound from '../assets/sounds/sploosh.wav';
@@ -129,8 +129,9 @@ const SplooshKaboom = () => {
   const [destroyedShips, setDestroyedShips] = useState(new Set());
   const [isShaking, setIsShaking] = useState(false);
 
-  const kaboomAudio = new Audio(kaboomSound);
-  const splooshAudio = new Audio(splooshSound);
+  // Use useMemo to create the audio objects only once
+  const kaboomAudio = useMemo(() => new Audio(kaboomSound), []);
+  const splooshAudio = useMemo(() => new Audio(splooshSound), []);
 
   useEffect(() => {
     kaboomAudio.muted = isMuted;
