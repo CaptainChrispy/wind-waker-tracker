@@ -139,7 +139,7 @@ const EQUIPMENT = {
   },
   SHIELD: { 
     name: "Shield", 
-    category: ITEM_CATEGORIES.UPGRADES, 
+    category: ITEM_CATEGORIES.EQUIPMENT, 
     description: "Protects Link from enemy attacks", 
     imageUrl: '/assets/items/heros_shield.png',
     locationHint: "Start with Hero's Shield from Outset Island",
