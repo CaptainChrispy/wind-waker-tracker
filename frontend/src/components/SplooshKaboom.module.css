@@ -1,7 +1,7 @@
 /* ===================================
    LAYOUT & CONTAINER STYLES
 =================================== */
-.sploosh-kaboom {
+.splooshKaboom {
   max-width: 1200px;
   text-align: center;
 }
@@ -32,12 +32,12 @@
   border-radius: 4px;
 }
 
-.cell.hit {
+.hit {
   background: #e74c3c;
   color: white;
 }
 
-.cell.miss {
+.miss {
   background: #3498db;
   color: white;
 }
@@ -45,7 +45,7 @@
 /* ===================================
    MODE TOGGLE SWITCH STYLES
 =================================== */
-.mode-toggle-container {
+.modeToggleContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,26 +53,26 @@
   gap: 15px;
 }
 
-.toggle-label {
+.toggleLabel {
   font-size: 16px;
   font-weight: bold;
   color: white;
 }
 
-.toggle-switch {
+.toggleSwitch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
 }
 
-.toggle-switch input {
+.toggleSwitch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.toggle-slider {
+.toggleSlider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -84,7 +84,7 @@
   transition: .4s;
 }
 
-.toggle-slider:before {
+.toggleSlider:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -96,15 +96,15 @@
   transition: .4s;
 }
 
-input:checked + .toggle-slider {
+input:checked + .toggleSlider {
   background-color: #e74c3c;
 }
 
-input:checked + .toggle-slider:before {
+input:checked + .toggleSlider:before {
   transform: translateX(26px);
 }
 
-.mode-caption {
+.modeCaption {
   text-align: center;
   color: white;
   font-size: 14px;
@@ -134,11 +134,11 @@ h1 {
     height: 30px;
   }
 
-  .mode-toggle-container {
+  .modeToggleContainer {
     gap: 10px;
   }
 
-  .toggle-label {
+  .toggleLabel {
     font-size: 14px;
   }
 }
@@ -146,7 +146,7 @@ h1 {
 /* ===================================
    GAME LAYOUT STYLES
 =================================== */
-.game-layout {
+.gameLayout {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -154,19 +154,19 @@ h1 {
   max-width: fit-content;
 }
 
-.bomb-display {
+.bombDisplay {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.bombs-remaining {
+.bombsRemaining {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.bomb-grid {
+.bombGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
@@ -178,32 +178,32 @@ h1 {
   transition: opacity 0.2s;
 }
 
-.bomb.used {
+.used {
   opacity: 0.3;
 }
 
-.ship-display {
+.shipDisplay {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   font-size: 2rem;
 }
 
-.ship-indicator {
+.shipIndicator {
   transition: transform 0.3s;
 }
 
 /* ===================================
    BUTTON STYLES
 =================================== */
-.button-container {
+.buttonContainer {
   display: flex;
   justify-content: center;
   gap: 1.25rem;
   margin-top: 1.25rem;
 }
 
-.reset-button, .mute-button {
+.resetButton, .muteButton {
   background-color: #27ae60;
   color: white;
   border: none;
@@ -215,26 +215,26 @@ h1 {
   font-weight: 500;
 }
 
-.reset-button:hover {
+.resetButton:hover {
   background-color: #2ecc71;
   transform: translateY(-2px);
 }
 
-.reset-button:active {
+.resetButton:active {
   transform: translateY(0);
 }
 
-.mute-button {
+.muteButton {
   background-color: #3498db;
   padding: 10px 14px;
 }
 
-.mute-button:hover {
+.muteButton:hover {
   background-color: #2980b9;
   transform: translateY(-2px);
 }
 
-.mute-button:active {
+.muteButton:active {
   transform: translateY(0);
 }
 
@@ -255,6 +255,6 @@ h1 {
   100% { transform: translate(0, 0); }
 }
 
-.game-shake {
+.gameShake {
   animation: shake 0.5s;
 }

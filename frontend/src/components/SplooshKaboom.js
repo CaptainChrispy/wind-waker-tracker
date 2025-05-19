@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import './SplooshKaboom.css';
+import styles from './SplooshKaboom.module.css';
 import kaboomSound from '../assets/sounds/kerboom.wav';
 import splooshSound from '../assets/sounds/sploosh.wav';
 
@@ -74,13 +74,13 @@ const generateBoard = () => {
 };
 
 const BombDisplay = ({ bombsRemaining }) => (
-  <div className="bomb-display">
-    <div className="bombs-remaining">{bombsRemaining}</div>
-    <div className="bomb-grid">
+  <div className={styles.bombDisplay}>
+    <div className={styles.bombsRemaining}>{bombsRemaining}</div>
+    <div className={styles.bombGrid}>
       {Array(TOTAL_BOMBS).fill().map((_, i) => (
         <div 
           key={i} 
-          className={`bomb ${i >= bombsRemaining ? 'used' : ''}`}
+          className={`${styles.bomb} ${i >= bombsRemaining ? styles.used : ''}`}
         >
           💣
         </div>
@@ -90,9 +90,9 @@ const BombDisplay = ({ bombsRemaining }) => (
 );
 
 const ShipDisplay = ({ isSquidMode, destroyedShips }) => (
-  <div className="ship-display">
+  <div className={styles.shipDisplay}>
     {SHIP_CONFIG.map((_, index) => (
-      <div key={index} className="ship-indicator">
+      <div key={index} className={styles.shipIndicator}>
         {destroyedShips.has(index) ? EXPLOSION : isSquidMode ? SQUID_EMOJI : SHIP_EMOJI}
       </div>
     ))}
@@ -100,13 +100,13 @@ const ShipDisplay = ({ isSquidMode, destroyedShips }) => (
 );
 
 const Grid = ({ grid, onCellClick }) => (
-  <div className="grid">
+  <div className={styles.grid}>
     {grid.map((row, rowIndex) => (
-      <div key={rowIndex} className="row">
+      <div key={rowIndex} className={styles.row}>
         {row.map((cell, colIndex) => (
           <div
             key={`${rowIndex}-${colIndex}`}
-            className={`cell ${cell}`}
+            className={`${styles.cell} ${cell === 'hit' ? styles.hit : ''} ${cell === 'miss' ? styles.miss : ''}`}
             onClick={() => onCellClick(rowIndex, colIndex)}
           >
             {cell === 'hit' ? '💥' : cell === 'miss' ? '❌' : ''}
@@ -202,11 +202,10 @@ const SplooshKaboom = () => {
   const toggleMode = () => {
     setMode(prevMode => (prevMode === 'play' ? 'solve' : 'play'));
   };
-  
-  return (
-    <div className={`sploosh-kaboom ${isShaking ? 'game-shake' : ''}`}>
+    return (
+    <div className={`${styles.splooshKaboom} ${isShaking ? styles.gameShake : ''}`}>
       <h1>Sploosh Kaboom</h1>
-      <div className="game-layout">
+      <div className={styles.gameLayout}>
         <BombDisplay bombsRemaining={bombsRemaining} />
         <Grid grid={grid} onCellClick={handleCellClick} />
         <ShipDisplay 
@@ -216,20 +215,20 @@ const SplooshKaboom = () => {
       </div>
 
       {/* Play/Solve Mode Toggle */}
-      <div className="mode-toggle-container">
-        <div className="toggle-label">Play Mode</div>
-        <label className="toggle-switch">
+      <div className={styles.modeToggleContainer}>
+        <div className={styles.toggleLabel}>Play Mode</div>
+        <label className={styles.toggleSwitch}>
           <input
             type="checkbox"
             checked={mode === 'solve'}
             onChange={toggleMode}
           />
-          <span className="toggle-slider"></span>
+          <span className={styles.toggleSlider}></span>
         </label>
-        <div className="toggle-label">Solve Mode</div>
+        <div className={styles.toggleLabel}>Solve Mode</div>
       </div>
 
-      <p className="mode-caption">
+      <p className={styles.modeCaption}>
         {mode === 'play'
           ? 'Play Mode: Try to sink all ships or squids!'
           : 'Solve Mode: View and adjust ship/squid placements.'}
@@ -238,22 +237,22 @@ const SplooshKaboom = () => {
       {allShipsSunk && <h2>All {isShipsMode ? 'Ships' : 'Squids'} sunk! You win!</h2>}
 
       {/* Ships/Squids Toggle */}
-      <div className="mode-toggle-container">
-        <div className="toggle-label">Ships</div>
-        <label className="toggle-switch">
+      <div className={styles.modeToggleContainer}>
+        <div className={styles.toggleLabel}>Ships</div>
+        <label className={styles.toggleSwitch}>
           <input
             type="checkbox"
             checked={!isShipsMode}
             onChange={() => setIsShipsMode(!isShipsMode)}
           />
-          <span className="toggle-slider"></span>
+          <span className={styles.toggleSlider}></span>
         </label>
-        <div className="toggle-label">Squids</div>
+        <div className={styles.toggleLabel}>Squids</div>
       </div>
 
-      <div className="button-container">
+      <div className={styles.buttonContainer}>
         <button 
-          className="reset-button"
+          className={styles.resetButton}
           onClick={resetGame}
           aria-label="Reset game"
         >
@@ -261,7 +260,7 @@ const SplooshKaboom = () => {
         </button>
 
         <button 
-          className="mute-button"
+          className={styles.muteButton}
           onClick={() => setIsMuted(!isMuted)}
           aria-label={isMuted ? "Unmute sounds" : "Mute sounds"}
         >
