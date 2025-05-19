@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './SlidingPuzzle.css';
+import styles from './SlidingPuzzle.module.css';
 import puzzle1 from '../assets/images/sliding-puzzle/puzzle1.png';
 import puzzle2 from '../assets/images/sliding-puzzle/puzzle2.png';
 import puzzle3 from '../assets/images/sliding-puzzle/puzzle3.png';
@@ -511,43 +511,43 @@ const SlidingPuzzle = () => {
   };
 
   return (
-    <div className="sliding-puzzle-wrapper">
-      <header className="puzzle-header">
+    <div className={styles.slidingPuzzleWrapper}>
+      <header className={styles.puzzleHeader}>
         <h1>Sliding Puzzle</h1>
 
-        <div className="progress-bar">
-          <div className="progress-fill" style={{ width: `${progress}%` }}></div>
-          <span className="progress-text">
+        <div className={styles.progressBar}>
+          <div className={styles.progressFill} style={{ width: `${progress}%` }}></div>
+          <span className={styles.progressText}>
             {puzzles.filter(puzzle => puzzle.completed).length} / {puzzles.length} ({progress}%)
           </span>
         </div>
       </header>
 
-      <div className="mode-toggle-container">
-        <div className="toggle-label">Play Mode</div>
-        <label className="toggle-switch">
+      <div className={styles.modeToggleContainer}>
+        <div className={styles.toggleLabel}>Play Mode</div>
+        <label className={styles.toggleSwitch}>
           <input 
             type="checkbox" 
             checked={mode === 'solve'} 
             onChange={toggleMode}
           />
-          <span className="toggle-slider"></span>
+          <span className={styles.toggleSlider}></span>
         </label>
-        <div className="toggle-label">Solve Mode</div>
+        <div className={styles.toggleLabel}>Solve Mode</div>
       </div>
-      <p className="mode-caption">
+      <p className={styles.modeCaption}>
         {mode === 'play'
           ? 'Play Mode: Solve the puzzle for fun!'
           : 'Solve Mode: Drag and drop tiles to set up the puzzle, then generate a step-by-step solution.'}
       </p>
       
-      <div className="sliding-puzzle">
-        <div className="puzzle-sidebar">
+      <div className={styles.slidingPuzzle}>
+        <div className={styles.puzzleSidebar}>
           {puzzles.map((puzzle, index) => (
             <button
               key={puzzle.id}
-              className={`puzzle-button ${index === currentPuzzleIndex ? 'active' : ''} ${
-                puzzle.completed ? 'solved' : ''
+              className={`${styles.puzzleButton} ${index === currentPuzzleIndex ? styles.active : ''} ${
+                puzzle.completed ? styles.solved : ''
               }`}
               onClick={() => setCurrentPuzzleIndex(index)}
             >
@@ -556,10 +556,10 @@ const SlidingPuzzle = () => {
           ))}
         </div>
         
-        <div className="puzzle-main">
-          <div className="puzzle-container">
+        <div className={styles.puzzleMain}>
+          <div className={styles.puzzleContainer}>
             <div
-              className="puzzle-grid"
+              className={styles.puzzleGrid}
               style={{
                 gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)`,
                 aspectRatio: '1'
@@ -568,12 +568,14 @@ const SlidingPuzzle = () => {
               {tiles.map((tile, index) => (
                 <div
                   key={tile}
-                  className={`puzzle-tile ${tile === EMPTY_TILE ? 'empty' : ''}`}
+                  className={`${styles.puzzleTile} ${tile === EMPTY_TILE ? styles.empty : ''}`}
                   onClick={() => moveTile(index)}
                   style={getTileStyle(tile)}
                   draggable={mode === 'solve'} 
                   onDragStart={(e) => {
-                    if (mode === 'solve') e.dataTransfer.setData('tileIndex', index);
+                    if (mode === 'solve') {
+                      e.dataTransfer.setData('tileIndex', index);
+                    }
                   }}
                   onDrop={(e) => {
                     if (mode === 'solve') {
@@ -600,8 +602,8 @@ const SlidingPuzzle = () => {
             </div>
           </div>
 
-          <div className="puzzle-controls">
-            <div className="nav-buttons">
+          <div className={styles.puzzleControls}>
+            <div className={styles.navButtons}>
               <button onClick={handlePreviousPuzzle} disabled={currentPuzzleIndex === 0}>
                 Previous
               </button>
@@ -609,7 +611,7 @@ const SlidingPuzzle = () => {
                 Next
               </button>
             </div>
-            <div className="action-buttons">
+            <div className={styles.actionButtons}>
               {mode === 'play' ? (
                 <>
                   <button onClick={instaSolve}>Insta-Solve</button>
@@ -627,7 +629,7 @@ const SlidingPuzzle = () => {
                 <>
                   <button onClick={generateSolution} disabled={!isSolvable()}>Generate Solution</button>
                   <button onClick={resetPuzzle}>Reset</button>
-                  <div className="solution-navigation">
+                  <div className={styles.solutionNavigation}>
                     <button 
                       onClick={applyPreviousMove} 
                       disabled={!solutionSteps.length || currentSolutionStep === 0}
@@ -647,9 +649,9 @@ const SlidingPuzzle = () => {
           </div>
 
           {mode === 'solve' && isSolving && (
-            <div className="solver-overlay">
-              <div className="spinner-container">
-                <svg className="spinner-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">
+            <div className={styles.solverOverlay}>
+              <div className={styles.spinnerContainer}>
+                <svg className={styles.spinnerSvg} xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">
                   <g>
                     <circle cx="12" cy="3" r="1" fill="currentColor">
                       <animate id="svgSpinners12DotsScaleRotate0" attributeName="r" begin="0;svgSpinners12DotsScaleRotate2.end-0.5s" calcMode="spline" dur="0.6s" keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1"/>
@@ -691,8 +693,8 @@ const SlidingPuzzle = () => {
                   </g>
                 </svg>
               </div>
-              <div className="solver-message">Hang Tight!</div>
-              <div className="solver-submessage">We're looking for an optimal solution...</div>
+              <div className={styles.solverMessage}>Hang Tight!</div>
+              <div className={styles.solverSubmessage}>We're looking for an optimal solution...</div>
             </div>
           )}
 
