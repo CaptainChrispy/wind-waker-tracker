@@ -8,6 +8,7 @@ import SplooshKaboom from './components/SplooshKaboom';
 import InventoryTracker from './components/InventoryTracker';
 import Map from './components/Map';
 import './App.css';
+import CompletionFooter from './components/CompletionFooter';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,6 +54,7 @@ function App() {
           <Route path="/" element={<Map />} />
         </Routes>
       </main>
+      <CompletionFooter />
     </BrowserRouter>
   );
 }

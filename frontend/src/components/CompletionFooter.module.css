@@ -1,0 +1,157 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 24px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1000;
+  padding: 0 8px;
+}
+
+.pill {
+  background: #222;
+  color: #fff;
+  border-radius: 2em;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  padding: 0.5em 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.1em;
+  pointer-events: auto;
+  flex-wrap: wrap;
+  max-width: 100vw;
+}
+
+.completionText {
+  margin-right: 1em;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.dropdown {
+  border-radius: 1em;
+  border: 1px solid #444;
+  background: #333;
+  color: #fff;
+  padding: 0.3em 1em;
+  margin: 0 0.2em;
+  font-size: 1em;
+}
+
+.addSave {
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 0 0.2em;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addSave:hover {
+  background: #666;
+}
+
+.saveGroup {
+  display: flex;
+  align-items: center;
+  margin-right: 0.8em;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .footer {
+    bottom: 8px;
+    padding: 0 2px;
+  }
+  .pill {
+    padding: 0.5em 0.7em;
+    font-size: 0.95em;
+    gap: 0.4em;
+    max-width: 95vw;
+    justify-content: center;
+  }
+  .completionText {
+    margin-right: 0.4em;
+    font-size: 0.9em;
+    text-align: center;
+    flex-basis: 100%;
+    margin-bottom: 0.3em;
+  }
+  .dropdown {
+    padding: 0.2em 0.5em;
+    font-size: 0.9em;
+    max-width: 120px;
+  }
+  .addSave {
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 0.9em;
+    margin: 0 0.1em;
+    min-width: 24px;
+  }
+  .saveGroup {
+    margin-right: 0.4em;
+    flex-shrink: 0;
+  }
+  .controls {
+    justify-content: center;
+    width: 100%;
+    gap: 0.3em;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .footer {
+    bottom: 5px;
+  }
+  .pill {
+    padding: 0.4em 0.6em;
+    font-size: 0.85em;
+    width: calc(100% - 16px);
+    max-width: 100%;
+  }
+  .dropdown {
+    padding: 0.15em 0.3em;
+    font-size: 0.85em;
+    margin: 0 0.1em;
+    max-width: 110px;
+  }
+  .controls {
+    flex-wrap: wrap;
+    gap: 0.2em;
+    justify-content: center;
+  }
+  .saveGroup {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-right: 0;
+    margin-bottom: 0.3em;
+    display: flex;
+    align-items: center;
+  }
+  .saveGroup .dropdown {
+    flex: 1;
+    min-width: 0;
+    max-width: calc(100% - 40px);
+  }
+  .saveGroup .addSave {
+    flex-shrink: 0;
+  }
+}
