@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './InventoryTracker.css';
+import styles from './InventoryTracker.module.css';
 import { ITEM_CATEGORIES, ITEMS } from '../assets/data/itemsData';
 
 const InventoryTracker = () => {
@@ -221,9 +221,9 @@ const InventoryTracker = () => {
           'BOMB_BAG_UPGRADE_2', 'WALLET_UPGRADE_1', 'WALLET_UPGRADE_2'].includes(itemId));
     
     return (
-      <div key={category} className="inventory-category">
+      <div key={category} className={styles.inventoryCategory}>
         <h3>{category}</h3>
-        <div className="items-grid">
+        <div className={styles.itemsGrid}>
           {categoryItems.map(([itemId, item]) => {
             const hasItem = inventory[itemId] !== undefined;
             const itemLevel = item.upgrades ? (inventory[itemId] || 0) : 0;
@@ -242,34 +242,34 @@ const InventoryTracker = () => {
             return (
               <div 
                 key={itemId}
-                className={`inventory-item ${hasItem ? 'obtained' : ''} ${selectedItem === itemId ? 'selected' : ''}`}
+                className={`${styles.inventoryItem} ${hasItem ? styles.obtained : ''} ${selectedItem === itemId ? styles.selected : ''}`}
                 onClick={() => showItemDetails(itemId)}
               >
-                <div className="item-header">
+                <div className={styles.itemHeader}>
                   <input 
                     type="checkbox" 
-                    className="item-checkbox"
+                    className={styles.itemCheckbox}
                     checked={hasItem}
                     onChange={(e) => toggleItemCollected(itemId, e)}
                     onClick={(e) => e.stopPropagation()}
                   />
                 </div>
-                <div className="item-image">
+                <div className={styles.itemImage}>
                   <img 
                     src={displayImageUrl} 
                     alt={item.name} 
-                    className={`${!hasItem ? 'grayscale' : ''}`}
+                    className={!hasItem ? styles.grayscale : ''}
                     onError={() => handleImageError(itemId)}
                   />
                   {item.upgrades && (
-                    <div className="item-level">
+                    <div className={styles.itemLevel}>
                       {Array.from({ length: item.maxLevel }).map((_, idx) => (
-                        <span key={idx} className={hasItem && idx <= itemLevel ? 'filled' : ''}></span>
+                        <span key={idx} className={hasItem && idx <= itemLevel ? styles.filled : ''}></span>
                       ))}
                     </div>
                   )}
                 </div>
-                <span className="item-name">
+                <span className={styles.itemName}>
                   {item.upgrades && hasItem ? item.upgrades[itemLevel].name : item.name}
                 </span>
               </div>
@@ -287,14 +287,14 @@ const InventoryTracker = () => {
     });
     
     return (
-      <div className="triforce-container">
+      <div className={styles.triforceContainer}>
         <h3>Triforce of Courage</h3>
-        <div className="triforce-chart">
-          <div className="triforce-top">{pieces[0] && '▲'}</div>
-          <div className="triforce-middle">
+        <div className={styles.triforceChart}>
+          <div className={styles.triforceTop}>{pieces[0] && '▲'}</div>
+          <div className={styles.triforceMiddle}>
             {pieces[1] && '▲'}{pieces[2] && '▲'}{pieces[3] && '▲'}
           </div>
-          <div className="triforce-bottom">
+          <div className={styles.triforceBottom}>
             {pieces[4] && '▲'}{pieces[5] && '▲'}{pieces[6] && '▲'}{pieces[7] && '▲'}
           </div>
         </div>
@@ -305,7 +305,7 @@ const InventoryTracker = () => {
   const categoryTabs = Object.values(ITEM_CATEGORIES).map(category => (
     <button 
       key={category}
-      className={`category-tab ${activeCategory === category ? 'active' : ''}`}
+      className={`${styles.categoryTab} ${activeCategory === category ? styles.active : ''}`}
       onClick={() => setActiveCategory(category)}
     >
       {category}
@@ -313,41 +313,41 @@ const InventoryTracker = () => {
   ));
 
   return (
-    <div className="inventory-tracker">
-      <header className="tracker-header">
+    <div className={styles.inventoryTracker}>
+      <header className={styles.trackerHeader}>
         <h1>Wind Waker Inventory Tracker</h1>
-        <div className="progress-bar">
-          <div className="progress-fill" style={{ width: `${getCompletionPercentage()}%` }}></div>
-          <span className="progress-text">{getCompletionPercentage()}% Complete</span>
+        <div className={styles.progressBar}>
+          <div className={styles.progressFill} style={{ width: `${getCompletionPercentage()}%` }}></div>
+          <span className={styles.progressText}>{getCompletionPercentage()}% Complete</span>
         </div>
       </header>
 
-      <div className="main-content">
-        <div className="category-tabs">
+      <div className={styles.mainContent}>
+        <div className={styles.categoryTabs}>
           {categoryTabs}
         </div>
 
-        <div className="inventory-display">
+        <div className={styles.inventoryDisplay}>
           {activeCategory === ITEM_CATEGORIES.TRIFORCE && renderTriforceChart()}
           {renderCategory(activeCategory)}
         </div>
 
-        <div className="item-details">
+        <div className={styles.itemDetails}>
           {itemDetails ? (
-            <div className="detail-box">
+            <div className={styles.detailBox}>
               <h3>{itemDetails.name}</h3>
-              <p className="detail-description">{itemDetails.description}</p>
+              <p className={styles.detailDescription}>{itemDetails.description}</p>
               
               {itemDetails.additionalInfo && (
-                <p className="detail-additional">{itemDetails.additionalInfo}</p>
+                <p className={styles.detailAdditional}>{itemDetails.additionalInfo}</p>
               )}
               
               {itemDetails.isUpgradable && (
-                <div className="upgrade-info">
+                <div className={styles.upgradeInfo}>
                   {itemDetails.isCollected && (
                     <p>Level {itemDetails.currentLevel} of {itemDetails.maxLevel}</p>
                   )}                  <button 
-                    className="upgrade-button" 
+                    className={styles.upgradeButton} 
                     onClick={() => upgradeItem(selectedItem)}
                     disabled={!itemDetails.isCollected}
                     title={!itemDetails.isCollected ? "Check the box above the item to collect it first" : ""}
@@ -356,7 +356,7 @@ const InventoryTracker = () => {
                       itemDetails.isMaxLevel ? 'Reset to Level 1' : 'Upgrade'}
                   </button>
                   {!itemDetails.isCollected && (
-                    <span className="disabled-hint">Check the box to collect first</span>
+                    <span className={styles.disabledHint}>Check the box to collect first</span>
                   )}
                 </div>
               )}              <h4>
@@ -365,12 +365,12 @@ const InventoryTracker = () => {
                    (itemDetails.isMaxLevel ? 'After reset to level 1:' : 'How to get next upgrade:') : 
                    'Where to find:')}
               </h4>
-              <p className={itemDetails.isCollected && itemDetails.isUpgradable ? "upgrade-hint" : "location-hint"}>
+              <p className={itemDetails.isCollected && itemDetails.isUpgradable ? styles.upgradeHint : styles.locationHint}>
                 {itemDetails.locationHint || "Unknown location"}
               </p>
             </div>
           ) : (
-            <div className="beginner-help">
+            <div className={styles.beginnerHelp}>
               <h4>Tips for New Players</h4>
               <ul>
                 <li>Check the box above an item to mark it as collected</li>
