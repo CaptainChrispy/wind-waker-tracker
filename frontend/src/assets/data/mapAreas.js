@@ -13,7 +13,7 @@ export const detailAreas = [
   {
     id: 'A2',
     baseSquare: 'A2',
-    position: { x: 118, y: 58 },
+    position: { x: 120, y: 58 },
     size: { width: 69, height: 69 },
     imagePrefix: 'A2',
     resolutions: {
@@ -24,7 +24,7 @@ export const detailAreas = [
   {
     id: 'A3',
     baseSquare: 'A3',
-    position: { x: 179, y: 182 },
+    position: { x: 182, y: 182 },
     size: { width: 69, height: 69 },
     imagePrefix: 'A3',
     resolutions: {
@@ -35,7 +35,7 @@ export const detailAreas = [
   {
     id: 'A4',
     baseSquare: 'A4',
-    position: { x: 180, y: 58 },
+    position: { x: 182, y: 58 },
     size: { width: 69, height: 69 },
     imagePrefix: 'A4',
     resolutions: {
@@ -46,7 +46,7 @@ export const detailAreas = [
   {
     id: 'A5',
     baseSquare: 'A5',
-    position: { x: 117, y: 120 },
+    position: { x: 119, y: 120 },
     size: { width: 69, height: 69 },
     imagePrefix: 'A5',
     resolutions: {
@@ -57,7 +57,7 @@ export const detailAreas = [
   {
     id: 'A6',
     baseSquare: 'A6',
-    position: { x: 178, y: 59 },
+    position: { x: 181, y: 59 },
     size: { width: 69, height: 69 },
     imagePrefix: 'A6',
     resolutions: {
@@ -68,7 +68,7 @@ export const detailAreas = [
   {
     id: 'A7',
     baseSquare: 'A7',
-    position: { x: 117, y: 120 },
+    position: { x: 120, y: 120 },
     size: { width: 69, height: 69 },
     imagePrefix: 'A7',
     resolutions: {
@@ -80,7 +80,7 @@ export const detailAreas = [
   {
     id: 'B1',
     baseSquare: 'B1',
-    position: { x: 180, y: 59 },
+    position: { x: 182, y: 59 },
     size: { width: 69, height: 69 },
     imagePrefix: 'B1',
     resolutions: {
@@ -91,7 +91,7 @@ export const detailAreas = [
   {
     id: 'B2',
     baseSquare: 'B2',
-    position: { x: 180, y: 128 },
+    position: { x: 184, y: 128 },
     size: { width: 69, height: 69 },
     imagePrefix: 'B2',
     resolutions: {
@@ -102,7 +102,7 @@ export const detailAreas = [
   {
     id: 'B3',
     baseSquare: 'B3',
-    position: { x: 64, y: 173 },
+    position: { x: 67, y: 173 },
     size: { width: 69, height: 69 },
     imagePrefix: 'B3',
     resolutions: {
@@ -113,7 +113,7 @@ export const detailAreas = [
   {
     id: 'B4',
     baseSquare: 'B4',
-    position: { x: 118, y: 121 },
+    position: { x: 121, y: 121 },
     size: { width: 69, height: 69 },
     imagePrefix: 'B4',
     resolutions: {
@@ -124,7 +124,7 @@ export const detailAreas = [
   {
     id: 'B5',
     baseSquare: 'B5',
-    position: { x: 55, y: 182 },
+    position: { x: 58, y: 182 },
     size: { width: 69, height: 69 },
     imagePrefix: 'B5',
     resolutions: {
@@ -135,7 +135,7 @@ export const detailAreas = [
   {
     id: 'B6',
     baseSquare: 'B6',
-    position: { x: 125, y: 107 },
+    position: { x: 127, y: 107 },
     size: { width: 69, height: 69 },
     imagePrefix: 'B6',
     resolutions: {
@@ -146,7 +146,7 @@ export const detailAreas = [
   {
     id: 'B7',
     baseSquare: 'B7',
-    position: { x: 114, y: 117 },
+    position: { x: 116, y: 117 },
     size: { width: 69, height: 69 },
     imagePrefix: 'B7',
     resolutions: {
@@ -158,7 +158,7 @@ export const detailAreas = [
   {
     id: 'C1',
     baseSquare: 'C1',
-    position: { x: 56, y: 120 },
+    position: { x: 58, y: 120 },
     size: { width: 69, height: 69 },
     imagePrefix: 'C1',
     resolutions: {
@@ -169,7 +169,7 @@ export const detailAreas = [
   {
     id: 'C2',
     baseSquare: 'C2',
-    position: { x: 56, y: 58 },
+    position: { x: 59, y: 58 },
     size: { width: 69, height: 69 },
     imagePrefix: 'C2',
     resolutions: {
@@ -180,7 +180,7 @@ export const detailAreas = [
   {
     id: 'C3',
     baseSquare: 'C3',
-    position: { x: 118, y: 182 },
+    position: { x: 120, y: 182 },
     size: { width: 69, height: 69 },
     imagePrefix: 'C3',
     resolutions: {
@@ -191,7 +191,7 @@ export const detailAreas = [
   {
     id: 'C4',
     baseSquare: 'C4',
-    position: { x: 118, y: 120 },
+    position: { x: 120, y: 120 },
     size: { width: 69, height: 69 },
     imagePrefix: 'C4',
     resolutions: {
@@ -202,7 +202,7 @@ export const detailAreas = [
   {
     id: 'C5',
     baseSquare: 'C5',
-    position: { x: 179, y: 182 },
+    position: { x: 181, y: 182 },
     size: { width: 69, height: 69 },
     imagePrefix: 'C5',
     resolutions: {
@@ -213,7 +213,7 @@ export const detailAreas = [
   {
     id: 'C6',
     baseSquare: 'C6',
-    position: { x: 56, y: 59 },
+    position: { x: 58, y: 59 },
     size: { width: 69, height: 69 },
     imagePrefix: 'C6',
     resolutions: {
@@ -224,7 +224,7 @@ export const detailAreas = [
   {
     id: 'C7',
     baseSquare: 'C7',
-    position: { x: 58, y: 120 },
+    position: { x: 61, y: 120 },
     size: { width: 69, height: 69 },
     imagePrefix: 'C7',
     resolutions: {
@@ -237,7 +237,7 @@ export const detailAreas = [
     id: 'D1',
     baseSquare: 'D1',
     position: { x: 56, y: 183 },
-    size: { width: 69, height: 69 },
+    size: { width: 73, height: 69 },
     imagePrefix: 'D1',
     resolutions: {
       medium: { width: 69, height: 69 },
@@ -247,7 +247,7 @@ export const detailAreas = [
   {
     id: 'D2',
     baseSquare: 'D2',
-    position: { x: 117, y: 125 },
+    position: { x: 120, y: 125 },
     size: { width: 69, height: 69 },
     imagePrefix: 'D2',
     resolutions: {
@@ -258,7 +258,7 @@ export const detailAreas = [
   {
     id: 'D3',
     baseSquare: 'D3',
-    position: { x: 179, y: 183 },
+    position: { x: 182, y: 183 },
     size: { width: 69, height: 69 },
     imagePrefix: 'D3',
     resolutions: {
@@ -269,7 +269,7 @@ export const detailAreas = [
   {
     id: 'D4',
     baseSquare: 'D4',
-    position: { x: 180, y: 59 },
+    position: { x: 182, y: 59 },
     size: { width: 69, height: 69 },
     imagePrefix: 'D4',
     resolutions: {
@@ -280,7 +280,7 @@ export const detailAreas = [
   {
     id: 'D5',
     baseSquare: 'D5',
-    position: { x: 117, y: 113 },
+    position: { x: 120, y: 113 },
     size: { width: 69, height: 69 },
     imagePrefix: 'D5',
     resolutions: {
@@ -291,7 +291,7 @@ export const detailAreas = [
   {
     id: 'D6',
     baseSquare: 'D6',
-    position: { x: 117, y: 121 },
+    position: { x: 120, y: 121 },
     size: { width: 69, height: 69 },
     imagePrefix: 'D6',
     resolutions: {
@@ -302,7 +302,7 @@ export const detailAreas = [
   {
     id: 'D7',
     baseSquare: 'D7',
-    position: { x: 179, y: 182 },
+    position: { x: 182, y: 182 },
     size: { width: 69, height: 69 },
     imagePrefix: 'D7',
     resolutions: {
@@ -314,7 +314,7 @@ export const detailAreas = [
   {
     id: 'E1',
     baseSquare: 'E1',
-    position: { x: 180, y: 185 },
+    position: { x: 182, y: 185 },
     size: { width: 69, height: 69 },
     imagePrefix: 'E1',
     resolutions: {
@@ -325,7 +325,7 @@ export const detailAreas = [
   {
     id: 'E2',
     baseSquare: 'E2',
-    position: { x: 179, y: 59 },
+    position: { x: 182, y: 59 },
     size: { width: 69, height: 69 },
     imagePrefix: 'E2',
     resolutions: {
@@ -336,7 +336,7 @@ export const detailAreas = [
   {
     id: 'E3',
     baseSquare: 'E3',
-    position: { x: 54, y: 121 },
+    position: { x: 56, y: 121 },
     size: { width: 69, height: 69 },
     imagePrefix: 'E3',
     resolutions: {
@@ -347,7 +347,7 @@ export const detailAreas = [
   {
     id: 'E4',
     baseSquare: 'E4',
-    position: { x: 118, y: 120 },
+    position: { x: 121, y: 120 },
     size: { width: 69, height: 69 },
     imagePrefix: 'E4',
     resolutions: {
@@ -358,7 +358,7 @@ export const detailAreas = [
   {
     id: 'E5',
     baseSquare: 'E5',
-    position: { x: 179, y: 182 },
+    position: { x: 182, y: 182 },
     size: { width: 69, height: 69 },
     imagePrefix: 'E5',
     resolutions: {
@@ -369,7 +369,7 @@ export const detailAreas = [
   {
     id: 'E6',
     baseSquare: 'E6',
-    position: { x: 180, y: 56 },
+    position: { x: 183, y: 56 },
     size: { width: 69, height: 69 },
     imagePrefix: 'E6',
     resolutions: {
@@ -380,7 +380,7 @@ export const detailAreas = [
   {
     id: 'E7',
     baseSquare: 'E7',
-    position: { x: 117, y: 120 },
+    position: { x: 120, y: 120 },
     size: { width: 69, height: 69 },
     imagePrefix: 'E7',
     resolutions: {
@@ -392,7 +392,7 @@ export const detailAreas = [
   {
     id: 'F1',
     baseSquare: 'F1',
-    position: { x: 118, y: 121 },
+    position: { x: 120, y: 121 },
     size: { width: 69, height: 69 },
     imagePrefix: 'F1',
     resolutions: {
@@ -403,7 +403,7 @@ export const detailAreas = [
   {
     id: 'F2',
     baseSquare: 'F2',
-    position: { x: 56, y: 59 },
+    position: { x: 59, y: 59 },
     size: { width: 69, height: 69 },
     imagePrefix: 'F2',
     resolutions: {
@@ -414,7 +414,7 @@ export const detailAreas = [
   {
     id: 'F3',
     baseSquare: 'F3',
-    position: { x: 118, y: 190 },
+    position: { x: 121, y: 190 },
     size: { width: 69, height: 69 },
     imagePrefix: 'F3',
     resolutions: {
@@ -425,7 +425,7 @@ export const detailAreas = [
   {
     id: 'F4',
     baseSquare: 'F4',
-    position: { x: 56, y: 59 },
+    position: { x: 59, y: 59 },
     size: { width: 69, height: 69 },
     imagePrefix: 'F4',
     resolutions: {
@@ -436,7 +436,7 @@ export const detailAreas = [
   {
     id: 'F5',
     baseSquare: 'F5',
-    position: { x: 57, y: 183 },
+    position: { x: 60, y: 183 },
     size: { width: 69, height: 69 },
     imagePrefix: 'F5',
     resolutions: {
@@ -447,7 +447,7 @@ export const detailAreas = [
   {
     id: 'F6',
     baseSquare: 'F6',
-    position: { x: 155, y: 121 },
+    position: { x: 158, y: 121 },
     size: { width: 69, height: 69 },
     imagePrefix: 'F6',
     resolutions: {
@@ -458,7 +458,7 @@ export const detailAreas = [
   {
     id: 'F7',
     baseSquare: 'F7',
-    position: { x: 55, y: 60 },
+    position: { x: 58, y: 60 },
     size: { width: 69, height: 69 },
     imagePrefix: 'F7',
     resolutions: {
@@ -470,7 +470,7 @@ export const detailAreas = [
   {
     id: 'G1',
     baseSquare: 'G1',
-    position: { x: 56, y: 121 },
+    position: { x: 59, y: 121 },
     size: { width: 69, height: 69 },
     imagePrefix: 'G1',
     resolutions: {
@@ -481,7 +481,7 @@ export const detailAreas = [
   {
     id: 'G2',
     baseSquare: 'G2',
-    position: { x: 118, y: 181 },
+    position: { x: 121, y: 181 },
     size: { width: 69, height: 69 },
     imagePrefix: 'G2',
     resolutions: {
@@ -492,7 +492,7 @@ export const detailAreas = [
   {
     id: 'G3',
     baseSquare: 'G3',
-    position: { x: 179, y: 183 },
+    position: { x: 182, y: 183 },
     size: { width: 69, height: 69 },
     imagePrefix: 'G3',
     resolutions: {
@@ -503,7 +503,7 @@ export const detailAreas = [
   {
     id: 'G4',
     baseSquare: 'G4',
-    position: { x: 118, y: 58 },
+    position: { x: 121, y: 58 },
     size: { width: 69, height: 69 },
     imagePrefix: 'G4',
     resolutions: {
@@ -514,7 +514,7 @@ export const detailAreas = [
   {
     id: 'G5',
     baseSquare: 'G5',
-    position: { x: 120, y: 182 },
+    position: { x: 124, y: 182 },
     size: { width: 69, height: 69 },
     imagePrefix: 'G5',
     resolutions: {
@@ -525,7 +525,7 @@ export const detailAreas = [
   {
     id: 'G6',
     baseSquare: 'G6',
-    position: { x: 55, y: 57 },
+    position: { x: 58, y: 57 },
     size: { width: 69, height: 69 },
     imagePrefix: 'G6',
     resolutions: {
@@ -536,7 +536,7 @@ export const detailAreas = [
   {
     id: 'G7',
     baseSquare: 'G7',
-    position: { x: 179, y: 58 },
+    position: { x: 182, y: 58 },
     size: { width: 69, height: 69 },
     imagePrefix: 'G7',
     resolutions: {
