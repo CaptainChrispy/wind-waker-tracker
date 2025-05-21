@@ -509,19 +509,20 @@ const SlidingPuzzle = () => {
       setCurrentSolutionStep(currentSolutionStep - 1);
     }
   };
-
   return (
     <div className={styles.slidingPuzzleWrapper}>
-      <header className={styles.puzzleHeader}>
-        <h1>Sliding Puzzle</h1>
+      <div className={styles.headerContainer}>
+        <header className={styles.puzzleHeader}>
+          <h1>Sliding Puzzle</h1>
 
-        <div className={styles.progressBar}>
-          <div className={styles.progressFill} style={{ width: `${progress}%` }}></div>
-          <span className={styles.progressText}>
-            {puzzles.filter(puzzle => puzzle.completed).length} / {puzzles.length} ({progress}%)
-          </span>
-        </div>
-      </header>
+          <div className={styles.progressBar}>
+            <div className={styles.progressFill} style={{ width: `${progress}%` }}></div>
+            <span className={styles.progressText}>
+              {puzzles.filter(puzzle => puzzle.completed).length} / {puzzles.length} ({progress}%)
+            </span>
+          </div>
+        </header>
+      </div>
 
       <div className={styles.modeToggleContainer}>
         <div className={styles.toggleLabel}>Play Mode</div>

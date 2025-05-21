@@ -61,21 +61,22 @@ const FigurineChecklist = () => {
     obtained: figurines.filter(fig => fig.obtained).length,
     percentage: Math.round((figurines.filter(fig => fig.obtained).length / figurines.length) * 100)
   };
-
   return (
     <div className={styles['figurine-checklist']}>
-      <header className={styles['figurine-header']}>
-        <h1>Figurine Collection</h1>
-        <div className={styles['progress-bar']}>
-          <div 
-            className={styles['progress-fill']} 
-            style={{width: `${progress.percentage}%`}}
-          ></div>
-          <span className={styles['progress-text']}>
-            {progress.obtained} / {progress.total} ({progress.percentage}%)
-          </span>
-        </div>
-      </header>
+      <div className={styles['header-container']}>
+        <header className={styles['figurine-header']}>
+          <h1>Figurine Collection</h1>
+          <div className={styles['progress-bar']}>
+            <div 
+              className={styles['progress-fill']} 
+              style={{width: `${progress.percentage}%`}}
+            ></div>
+            <span className={styles['progress-text']}>
+              {progress.obtained} / {progress.total} ({progress.percentage}%)
+            </span>
+          </div>
+        </header>
+      </div>
 
       <div className={styles['figurine-controls']}>
         <div className={styles['search-box']}>

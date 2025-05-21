@@ -6,6 +6,11 @@
   margin: 0 auto;
 }
 
+.headerContainer {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
 .slidingPuzzle {
   display: flex;
   gap: 20px;

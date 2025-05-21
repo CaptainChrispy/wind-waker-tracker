@@ -4,6 +4,11 @@
   color: #f0f0f0;
 }
 
+.header-container {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
 .figurine-header {
   text-align: center;
   margin-bottom: 30px;
