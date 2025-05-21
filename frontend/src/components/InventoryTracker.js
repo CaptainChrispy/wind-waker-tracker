@@ -309,30 +309,29 @@ const InventoryTracker = () => {
       onClick={() => setActiveCategory(category)}
     >
       {category}
-    </button>
-  ));
-
+    </button>  ));
+  
   return (
-    <div className={styles.inventoryTracker}>
-      <header className={styles.trackerHeader}>
-        <h1>Wind Waker Inventory Tracker</h1>
+    <>
+      <div className={styles.headerContainer}>
+        <h1 className={styles.mainHeader}>Wind Waker Inventory Tracker</h1>
         <div className={styles.progressBar}>
           <div className={styles.progressFill} style={{ width: `${getCompletionPercentage()}%` }}></div>
           <span className={styles.progressText}>{getCompletionPercentage()}% Complete</span>
         </div>
-      </header>
+      </div>
+      
+      <div className={styles.inventoryTracker}>
+        <div className={styles.mainContent}>
+          <div className={styles.categoryTabs}>
+            {categoryTabs}
+          </div>
+          <div className={styles.inventoryDisplay}>
+            {activeCategory === ITEM_CATEGORIES.TRIFORCE && renderTriforceChart()}
+            {renderCategory(activeCategory)}
+          </div>
 
-      <div className={styles.mainContent}>
-        <div className={styles.categoryTabs}>
-          {categoryTabs}
-        </div>
-
-        <div className={styles.inventoryDisplay}>
-          {activeCategory === ITEM_CATEGORIES.TRIFORCE && renderTriforceChart()}
-          {renderCategory(activeCategory)}
-        </div>
-
-        <div className={styles.itemDetails}>
+          <div className={styles.itemDetails}>
           {itemDetails ? (
             <div className={styles.detailBox}>
               <h3>{itemDetails.name}</h3>
@@ -379,11 +378,11 @@ const InventoryTracker = () => {
                 <li>Charts are essential for finding treasures and Triforce Shards</li>
                 <li>Collect all three Goddess Pearls to unlock the Tower of the Gods</li>
               </ul>
-            </div>
-          )}
+            </div>          )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
