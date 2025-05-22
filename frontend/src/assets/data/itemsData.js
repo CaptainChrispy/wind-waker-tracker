@@ -374,26 +374,12 @@ const TRIFORCE = {
 
 const CHARTS = {
   // Basic Charts
-  SEA_CHART: { 
-    name: "Sea Chart", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Map of the Great Sea", 
-    imageUrl: '/assets/items/sea_chart.png',
-    locationHint: "Automatically received at the start of the game" 
-  },
   GHOST_SHIP_CHART: { 
     name: "Ghost Ship Chart", 
     category: ITEM_CATEGORIES.CHARTS, 
     description: "Reveals the path of the Ghost Ship", 
-    imageUrl: '/assets/items/ghost_ship_chart.png',
+    imageUrl: '/assets/items/ghost_chart.png',
     locationHint: "Diamond Steppe Island, beneath a rock that requires bombs" 
-  },
-  IN_CREDIBLE_CHART: { 
-    name: "IN-credible Chart", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of Hyrule's Legendary Pictographs", 
-    imageUrl: '/assets/items/incredible_chart.png',
-    locationHint: "Purchased from Tingle on Tingle Island" 
   },
   TINGLE_CHART: { 
     name: "Tingle's Chart", 
@@ -402,61 +388,75 @@ const CHARTS = {
     imageUrl: '/assets/items/tingle_chart.png',
     locationHint: "Purchased from Tingle on Tingle Island" 
   },
-  PLATFORM_CHART: { 
-    name: "Platform Chart", 
+  IN_CREDIBLE_CHART: { 
+    name: "IN-credible Chart", 
     category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of submarine platforms", 
-    imageUrl: '/assets/items/platform_chart.png',
-    locationHint: "From a chest on Forsaken Fortress" 
+    description: "Shows the location of Hyrule's Legendary Pictographs", 
+    imageUrl: '/assets/items/tingle_chart.png',
+    locationHint: "Purchased from Tingle on Tingle Island" 
   },
-  BEEDLES_CHART: { 
-    name: "Beedle's Chart", 
+  OCTO_CHART: { 
+    name: "Octo Chart", 
     category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the sailing path of Beedle's Shop Ship", 
-    imageUrl: '/assets/items/beedles_chart.png',
-    locationHint: "Purchase from Beedle's Shop Ship" 
-  },
-  SUBMARINE_CHART: { 
-    name: "Submarine Chart", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of submarines", 
-    imageUrl: '/assets/items/submarine_chart.png',
-    locationHint: "In a chest on Cliff Plateau Isles" 
+    description: "Shows the location of Big Octos in the Great Sea", 
+    imageUrl: '/assets/items/special_chart.png',
+    locationHint: "Purchase from Tingle on Tingle Island" 
   },
   GREAT_FAIRY_CHART: { 
     name: "Great Fairy Chart", 
     category: ITEM_CATEGORIES.CHARTS, 
     description: "Shows the location of Great Fairy Islands", 
-    imageUrl: '/assets/items/fairy_chart.png',
+    imageUrl: '/assets/items/special_chart.png',
     locationHint: "The Windfall Island auction house" 
   },
   ISLAND_HEARTS_CHART: { 
     name: "Island Hearts Chart", 
     category: ITEM_CATEGORIES.CHARTS, 
     description: "Shows the number of Heart Pieces on each island", 
-    imageUrl: '/assets/items/heart_chart.png',
+    imageUrl: '/assets/items/special_chart.png',
     locationHint: "Minigame reward on Windfall Island" 
   },
-  LIGHT_RING_CHART: { 
-    name: "Light Ring Chart", 
+  SEA_HEART_CHART: { 
+    name: "Sea Hearts Chart", 
     category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of light rings found in the ocean", 
-    imageUrl: '/assets/items/light_ring_chart.png',
-    locationHint: "Purchase from Tingle on Tingle Island" 
+    description: "", 
+    imageUrl: '/assets/items/special_chart.png',
+    locationHint: "" 
   },
   SECRET_CAVE_CHART: { 
     name: "Secret Cave Chart", 
     category: ITEM_CATEGORIES.CHARTS, 
     description: "Shows the location of secret caves on various islands", 
-    imageUrl: '/assets/items/secret_cave_chart.png',
+    imageUrl: '/assets/items/special_chart.png',
     locationHint: "From Rock Spire Isle after completing tasks" 
   },
-  OCTO_CHART: { 
-    name: "Octo Chart", 
+  LIGHT_RING_CHART: { 
+    name: "Light Ring Chart", 
     category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of Big Octos in the Great Sea", 
-    imageUrl: '/assets/items/octo_chart.png',
+    description: "Shows the location of light rings found in the ocean", 
+    imageUrl: '/assets/items/special_chart.png',
     locationHint: "Purchase from Tingle on Tingle Island" 
+  },
+  PLATFORM_CHART: { 
+    name: "Platform Chart", 
+    category: ITEM_CATEGORIES.CHARTS, 
+    description: "Shows the location of submarine platforms", 
+    imageUrl: '/assets/items/special_chart.png',
+    locationHint: "From a chest on Forsaken Fortress" 
+  },
+  BEEDLES_CHART: { 
+    name: "Beedle's Chart", 
+    category: ITEM_CATEGORIES.CHARTS, 
+    description: "Shows the sailing path of Beedle's Shop Ship", 
+    imageUrl: '/assets/items/special_chart.png',
+    locationHint: "Purchase from Beedle's Shop Ship" 
+  },
+  SUBMARINE_CHART: { 
+    name: "Submarine Chart", 
+    category: ITEM_CATEGORIES.CHARTS, 
+    description: "Shows the location of submarines", 
+    imageUrl: '/assets/items/special_chart.png',
+    locationHint: "In a chest on Cliff Plateau Isles" 
   },
   
   // Triforce Charts
