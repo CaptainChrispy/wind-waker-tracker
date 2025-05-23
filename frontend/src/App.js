@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { SavesProvider } from './context/SavesContext';
 import DesktopNav from './components/navigation/DesktopNav';
 import MobileNav from './components/navigation/MobileNav';
 import FigurineChecklist from './components/FigurineChecklist';
@@ -25,37 +26,38 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <header className="site-header">
-        <div className="header-container">
-          <h1 className="site-title">Wind Waker Tracker</h1>
-          
-          {isMobile ? (
-            <button className="hamburger-button" onClick={() => setMenuOpen(!menuOpen)}>
-              <div className="hamburger-icon">
-                <span></span><span></span><span></span>
-              </div>
-            </button>
-          ) : (
-            <DesktopNav />
-          )}
-        </div>
-      </header>
+    <SavesProvider>
+      <BrowserRouter>
+        <header className="site-header">
+          <div className="header-container">
+            <h1 className="site-title">Wind Waker Tracker</h1>
+            {isMobile ? (
+              <button className="hamburger-button" onClick={() => setMenuOpen(!menuOpen)}>
+                <div className="hamburger-icon">
+                  <span></span><span></span><span></span>
+                </div>
+              </button>
+            ) : (
+              <DesktopNav />
+            )}
+          </div>
+        </header>
 
-      {isMobile && <MobileNav isOpen={menuOpen} onClose={() => setMenuOpen(false)} />}
+        {isMobile && <MobileNav isOpen={menuOpen} onClose={() => setMenuOpen(false)} />}
 
-      <main className="main-content">
-        <Routes>
-          <Route path="/seachart" element={<Map />} />
-          <Route path="/figurines" element={<FigurineChecklist />} />
-          <Route path="/slidingpuzzles" element={<SlidingPuzzle />} />
-          <Route path="/splooshkaboom" element={<SplooshKaboom />} />
-          <Route path="/inventory" element={<InventoryTracker />} />
-          <Route path="/" element={<Map />} />
-        </Routes>
-      </main>
-      <CompletionFooter />
-    </BrowserRouter>
+        <main className="main-content">
+          <Routes>
+            <Route path="/seachart" element={<Map />} />
+            <Route path="/figurines" element={<FigurineChecklist />} />
+            <Route path="/slidingpuzzles" element={<SlidingPuzzle />} />
+            <Route path="/splooshkaboom" element={<SplooshKaboom />} />
+            <Route path="/inventory" element={<InventoryTracker />} />
+            <Route path="/" element={<Map />} />
+          </Routes>
+        </main>
+        <CompletionFooter />
+      </BrowserRouter>
+    </SavesProvider>
   );
 }
 
