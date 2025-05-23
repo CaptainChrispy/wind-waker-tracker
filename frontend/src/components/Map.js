@@ -6,6 +6,12 @@ import 'leaflet/dist/images/marker-icon.png';
 import 'leaflet/dist/images/marker-shadow.png';
 import defaultTile from '../assets/images/map/default.png';
 import { detailAreas } from '../assets/data/mapAreas';
+import { useSaves } from '../context/SavesContext';
+import { firstQuestSeaCharts } from '../assets/data/mapMarkers/firstQuestSeaCharts';
+import { secondQuestSeaCharts } from '../assets/data/mapMarkers/secondQuestSeaCharts';
+import { lightChests } from '../assets/data/mapMarkers/lightChests';
+import treasureMarkerIcon from '../assets/images/map/treasure_marker.png';
+import lightChestMarkerIcon from '../assets/images/map/light_chest_marker.png';
 
 const ZoomListener = ({ onZoomChange }) => {
   useMapEvents({
@@ -21,6 +27,25 @@ const customIcon = new L.Icon({
   iconSize: [32, 32],    
   iconAnchor: [16, 32],  
   popupAnchor: [0, -32], 
+});
+const seaChartIconSmall = new L.Icon({
+  iconUrl: treasureMarkerIcon,
+  iconSize: [20, 20],
+  iconAnchor: [10, 10],
+  popupAnchor: [0, -10],
+});
+const seaChartIconLarge = new L.Icon({
+  iconUrl: treasureMarkerIcon,
+  iconSize: [32, 32],
+  iconAnchor: [16, 16],
+  popupAnchor: [0, -16],
+});
+const lightChestIcon = new L.DivIcon({
+  html: `<div style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;"><img src='${lightChestMarkerIcon}' style='width:12px;height:12px;display:block;'/></div>` ,
+  iconSize: [16, 16],
+  iconAnchor: [8, 8],
+  popupAnchor: [0, -8],
+  className: ''
 });
 
 const MapClickHandler = ({ onMapClick }) => {
@@ -52,6 +77,7 @@ const Map = () => {
     const saved = localStorage.getItem('mapMarkers');
     return saved ? JSON.parse(saved) : [];
   });
+  const { currentSave } = useSaves();
 
   useEffect(() => {
     localStorage.setItem('mapMarkers', JSON.stringify(markers));
@@ -191,6 +217,12 @@ const Map = () => {
     return <div>Loading map tiles...</div>;
   }
 
+  // Determine which quest chests to show
+  const questType = currentSave?.quest || 'Normal';
+  const seaChartMarkers = questType === 'Second Quest' ? secondQuestSeaCharts : firstQuestSeaCharts;
+
+  const seaChartIcon = currentZoom >= ZOOM_LEVELS.DETAILED ? seaChartIconLarge : seaChartIconSmall;
+
   return (
     <div className="map-container">
       {/* Add marker placement controls */}
@@ -287,6 +319,39 @@ const Map = () => {
             ) : null;
           })
         }
+
+        {/* Sea Chart Chests */}
+        {seaChartMarkers.map(marker => (
+          <Marker
+            key={`sea-chart-${marker.id}`}
+            position={[marker.position.y, marker.position.x]}
+            icon={seaChartIcon}
+            interactive={true}
+          >
+            <Popup>
+              <div>
+                <p><strong>Sea Chart Chest</strong></p>
+                <p><strong>Grid Square:</strong> {marker.gridSquare}</p>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
+        {/* Light Chests */}
+        {lightChests.map(marker => (
+          <Marker
+            key={`light-chest-${marker.id}`}
+            position={[marker.position.y, marker.position.x]}
+            icon={lightChestIcon}
+            interactive={true}
+          >
+            <Popup>
+              <div>
+                <p><strong>Light Chest</strong></p>
+                <p><strong>Grid Square:</strong> {marker.gridSquare}</p>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
 
         <MapClickHandler onMapClick={handleMapClick} />
         {markers.map(marker => (
