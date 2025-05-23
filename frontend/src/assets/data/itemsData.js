@@ -178,6 +178,34 @@ const EQUIPMENT = {
     imageUrl: '/assets/items/bottle.png',
     locationHint: "Catch and deliver a letter in a bottle between two lovers" 
   },
+  HEROES_BOW: { 
+    name: "Hero's Bow", 
+    category: ITEM_CATEGORIES.EQUIPMENT, 
+    description: "Fires arrows at enemies and targets", 
+    imageUrl: '/assets/items/bow.png',
+    locationHint: "Found in the Tower of the Gods dungeon" 
+  },
+  FIRE_ARROWS: { 
+    name: "Fire Arrows", 
+    category: ITEM_CATEGORIES.EQUIPMENT, 
+    description: "Magical arrows that can light torches and melt ice", 
+    imageUrl: '/assets/items/fire_arrows.png',
+    locationHint: "From the Queen of Fairies on Mother & Child Isles" 
+  },
+  ICE_ARROWS: { 
+    name: "Ice Arrows", 
+    category: ITEM_CATEGORIES.EQUIPMENT, 
+    description: "Magical arrows that can freeze enemies and create ice platforms", 
+    imageUrl: '/assets/items/ice_arrows.png',
+    locationHint: "From the Queen of Fairies on Mother & Child Isles" 
+  },
+  LIGHT_ARROWS: { 
+    name: "Light Arrows", 
+    category: ITEM_CATEGORIES.EQUIPMENT, 
+    description: "Sacred arrows that can defeat evil and activate certain mechanisms", 
+    imageUrl: '/assets/items/light_arrows.png',
+    locationHint: "From Zelda in Ganon's Tower" 
+  },
 };
 
 const UPGRADES = {
@@ -219,21 +247,7 @@ const UPGRADES = {
       { level: 3, name: "Giant Wallet", maxRupees: 5000, imageUrl: '/assets/items/largest_wallet.png', locationHint: "Collect 40 Joy Pendants and give to Mrs. Marie at school" }
     ],
     maxLevel: 3
-  },
-  FIRE_ICE_ARROWS: { 
-    name: "Special Arrows", 
-    category: ITEM_CATEGORIES.UPGRADES, 
-    description: "Magical arrows with elemental powers", 
-    imageUrl: '/assets/items/bow.png',
-    locationHint: "Start with regular arrows when you get the bow",
-    upgrades: [
-      { level: 1, name: "Regular Arrows", imageUrl: '/assets/items/bow.png' },
-      { level: 2, name: "Fire Arrows", imageUrl: '/assets/items/fire_arrows.png', locationHint: "From the Queen of Fairies on Mother & Child Isles" },
-      { level: 3, name: "Ice Arrows", imageUrl: '/assets/items/ice_arrows.png', locationHint: "From the Queen of Fairies on Mother & Child Isles" },
-      { level: 4, name: "Light Arrows", imageUrl: '/assets/items/light_arrows.png', locationHint: "From Zelda in Ganon's Tower" }
-    ],
-    maxLevel: 4
-  },
+  }
 };
 
 const SONGS = {
