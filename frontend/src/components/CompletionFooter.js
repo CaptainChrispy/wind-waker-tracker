@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './CompletionFooter.module.css';
-
-const GAME_VERSIONS = ['GameCube', 'HD'];
-const QUEST_TYPES = ['Normal', 'Second Quest'];
-
-const DEFAULT_SAVES = [
-  {
-    name: 'Save 1',
-    version: 'GameCube',
-    quest: 'Normal',
-    progress: 0,
-    figurines: [],
-  },
-];
+import { useSaves } from '../context/SavesContext';
 
 const CompletionFooter = () => {
-  const [saves, setSaves] = useState(DEFAULT_SAVES);
-  const [activeSaveIndex, setActiveSaveIndex] = useState(0);
-  const currentSave = saves[activeSaveIndex];
+  const {
+    saves,
+    setSaves,
+    activeSaveIndex,
+    setActiveSaveIndex,
+    currentSave,
+    GAME_VERSIONS,
+    QUEST_TYPES,
+  } = useSaves();
 
   const completion = (() => {
     if (!currentSave || !currentSave.figurines) return 0;
