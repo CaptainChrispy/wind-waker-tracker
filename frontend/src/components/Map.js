@@ -47,7 +47,6 @@ const Map = () => {
   const [detailImages, setDetailImages] = useState({});
   const [currentZoom, setCurrentZoom] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [showOverlay, setShowOverlay] = useState(true);
   const [isPlacingMarker, setIsPlacingMarker] = useState(false);
   const [markers, setMarkers] = useState(() => {
     const saved = localStorage.getItem('mapMarkers');
@@ -200,9 +199,6 @@ const Map = () => {
           {isPlacingMarker ? 'Cancel Placement' : 'Place Marker'}
         </button>
         <button onClick={() => setMarkers([])}>Clear All Markers</button>
-        <button onClick={() => setShowOverlay(!showOverlay)}>
-          {showOverlay ? 'Hide' : 'Show'} Chest Map
-        </button>
         <button onClick={exportMarkers}>Export Markers</button>
         <input
           type="file"
@@ -291,16 +287,6 @@ const Map = () => {
             ) : null;
           })
         }
-
-        {/* Add the chest location overlay */}
-        {showOverlay && (
-          <ImageOverlay
-            url="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMh1spjQJoznLb__klvlrrfoVE6vaIsJVuiA6-r0nZtwheI4pZT7Fr77SuB7LYD8yrIr7VMzgcywgFfv1n9rYtC-xfZQ93Yzhn8Hq-hZObynDz5Ecmeb17HRz13bzjRuB0YwsPJ1lqar0/s1600/helpchart.png"
-            bounds={[[0, 0], [rows.length * tileSize, columns.length * tileSize]]}
-            opacity={0.5}
-            zIndex={1000}
-          />
-        )}
 
         <MapClickHandler onMapClick={handleMapClick} />
         {markers.map(marker => (
