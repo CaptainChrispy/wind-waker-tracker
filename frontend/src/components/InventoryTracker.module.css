@@ -205,22 +205,30 @@
 
 .itemLevel {
   position: absolute;
-  bottom: -5px;
+  bottom: -8px;
   display: flex;
-  gap: 2px;
+  gap: 3px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 2px 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .itemLevel span {
   width: 10px;
   height: 10px;
-  background-color: #ddd;
   border-radius: 50%;
-  border: 1px solid #999;
+  display: inline-block;
 }
 
 .filled {
   background-color: #e9b61a;
-  border-color: #8b5b2b;
+  border: 1px solid #8b5b2b;
+}
+
+.unfilled {
+  background-color: #ddd;
+  border: 1px solid #999;
 }
 
 .triforceContainer {

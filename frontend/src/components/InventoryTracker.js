@@ -260,11 +260,10 @@ const InventoryTracker = () => {
                     alt={item.name} 
                     className={!hasItem ? styles.grayscale : ''}
                     onError={() => handleImageError(itemId)}
-                  />
-                  {item.upgrades && (
+                  />                  {item.upgrades && (
                     <div className={styles.itemLevel}>
                       {Array.from({ length: item.maxLevel }).map((_, idx) => (
-                        <span key={idx} className={hasItem && idx <= itemLevel ? styles.filled : ''}></span>
+                        <span key={idx} className={hasItem && idx <= itemLevel ? styles.filled : styles.unfilled}></span>
                       ))}
                     </div>
                   )}
