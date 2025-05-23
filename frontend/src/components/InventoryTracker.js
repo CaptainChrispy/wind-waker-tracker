@@ -313,7 +313,7 @@ const InventoryTracker = () => {
   return (
     <>
       <div className={styles.headerContainer}>
-        <h1 className={styles.mainHeader}>Wind Waker Inventory Tracker</h1>
+        <h1 className={styles.mainHeader}>Inventory Tracker</h1>
         <div className={styles.progressBar}>
           <div className={styles.progressFill} style={{ width: `${getCompletionPercentage()}%` }}></div>
           <span className={styles.progressText}>{getCompletionPercentage()}% Complete</span>
