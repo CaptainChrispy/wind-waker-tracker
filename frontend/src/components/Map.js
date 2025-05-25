@@ -40,11 +40,18 @@ const seaChartIconLarge = new L.Icon({
   iconAnchor: [16, 16],
   popupAnchor: [0, -16],
 });
-const lightChestIcon = new L.DivIcon({
-  html: `<div style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;"><img src='${lightChestMarkerIcon}' style='width:12px;height:12px;display:block;'/></div>` ,
-  iconSize: [16, 16],
-  iconAnchor: [8, 8],
-  popupAnchor: [0, -8],
+const lightChestIconSmall = new L.DivIcon({
+  html: `<div style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;"><img src='${lightChestMarkerIcon}' style='width:16px;height:16px;display:block;'/></div>` ,
+  iconSize: [20, 20],
+  iconAnchor: [10, 10],
+  popupAnchor: [0, -10],
+  className: ''
+});
+const lightChestIconLarge = new L.DivIcon({
+  html: `<div style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"><img src='${lightChestMarkerIcon}' style='width:28px;height:28px;display:block;'/></div>` ,
+  iconSize: [32, 32],
+  iconAnchor: [16, 16],
+  popupAnchor: [0, -16],
   className: ''
 });
 
@@ -222,6 +229,7 @@ const Map = () => {
   const seaChartMarkers = questType === 'Second Quest' ? secondQuestSeaCharts : firstQuestSeaCharts;
 
   const seaChartIcon = currentZoom >= ZOOM_LEVELS.DETAILED ? seaChartIconLarge : seaChartIconSmall;
+  const lightChestIcon = currentZoom >= ZOOM_LEVELS.MEDIUM ? lightChestIconLarge : lightChestIconSmall;
 
   return (
     <div className="map-container">
