@@ -335,22 +335,49 @@ const InventoryTracker = () => {
   };
 
   const renderTriforceChart = () => {
-    const pieces = Array.from({ length: 8 }).map((_, idx) => {
-      const key = `TRIFORCE_SHARD_${idx + 1}`;
-      return inventory[key] !== undefined;
-    });
-    
+    const shardData = [
+      { key: 'TRIFORCE_SHARD_8', x: 165, y: 0 },
+      { key: 'TRIFORCE_SHARD_4', x: 235, y: 129 },
+      { key: 'TRIFORCE_SHARD_5', x: 152, y: 136 },
+      { key: 'TRIFORCE_SHARD_1', x: 90,  y: 75 },
+      { key: 'TRIFORCE_SHARD_3', x: 80,  y: 200 },
+      { key: 'TRIFORCE_SHARD_2', x: 0,   y: 259 },
+      { key: 'TRIFORCE_SHARD_6', x: 171, y: 275 },
+      { key: 'TRIFORCE_SHARD_7', x: 322, y: 261 },
+    ];
+
+    // Calculate container size (max x/y + 300)
+    const maxX = Math.max(...shardData.map(s => s.x)) + 300;
+    const maxY = Math.max(...shardData.map(s => s.y)) + 300;
+
     return (
       <div className={styles.triforceContainer}>
         <h3>Triforce of Courage</h3>
-        <div className={styles.triforceChart}>
-          <div className={styles.triforceTop}>{pieces[0] && '▲'}</div>
-          <div className={styles.triforceMiddle}>
-            {pieces[1] && '▲'}{pieces[2] && '▲'}{pieces[3] && '▲'}
-          </div>
-          <div className={styles.triforceBottom}>
-            {pieces[4] && '▲'}{pieces[5] && '▲'}{pieces[6] && '▲'}{pieces[7] && '▲'}
-          </div>
+        <div
+          className={styles.triforceChart}
+          style={{ position: 'relative', width: maxX, height: maxY }}
+        >
+          {shardData.map(({ key, x, y }, idx) => {
+            const collected = inventory[key] !== undefined;
+            return (
+              <img
+                key={key + idx}
+                src={`/assets/items/${key.toLowerCase()}.png`}
+                alt={`Triforce Shard ${key.split('_').pop()}`}
+                style={{
+                  position: 'absolute',
+                  left: x,
+                  top: y,
+                  width: 300,
+                  height: 300,
+                  pointerEvents: 'none',
+                  zIndex: shardData.length - idx,
+                  filter: collected ? 'none' : 'grayscale(100%) opacity(0.5)',
+                  transition: 'filter 0.2s',
+                }}
+              />
+            );
+          })}
         </div>
       </div>
     );
