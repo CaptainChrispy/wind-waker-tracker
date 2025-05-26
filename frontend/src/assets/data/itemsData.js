@@ -333,7 +333,7 @@ const TRIFORCE = {
       GameCube: 1,
       HD: 1,
     },
-    imageUrl: '/assets/items/triforce_shard.png',
+    imageUrl: '/assets/items/triforce_shard_1.png',
     locationHints: {
       GameCube: "Greatfish Isle (decipher chart)",
       HD: "Greatfish Isle (use chart)",
@@ -350,7 +350,7 @@ const TRIFORCE = {
       GameCube: 2,
       HD: 2,
     },
-    imageUrl: '/assets/items/triforce_shard.png',
+    imageUrl: '/assets/items/triforce_shard_2.png',
     locationHints: {
       GameCube: "Gale Isle (decipher chart)",
       HD: "Private Oasis (direct)",
@@ -367,7 +367,7 @@ const TRIFORCE = {
       GameCube: 3,
       HD: 3,
     },
-    imageUrl: '/assets/items/triforce_shard.png',
+    imageUrl: '/assets/items/triforce_shard_3.png',
     locationHints: {
       GameCube: "Stone Watcher Island (decipher chart)",
       HD: "Stone Watcher Island (use chart 2)",
@@ -384,7 +384,7 @@ const TRIFORCE = {
       GameCube: 4,
       HD: 4,
     },
-    imageUrl: '/assets/items/triforce_shard.png',
+    imageUrl: '/assets/items/triforce_shard_4.png',
     locationHints: {
       GameCube: "Outset Island (decipher chart)",
       HD: "Ghost Ship (direct)",
@@ -401,7 +401,7 @@ const TRIFORCE = {
       GameCube: 5,
       HD: 5,
     },
-    imageUrl: '/assets/items/triforce_shard.png',
+    imageUrl: '/assets/items/triforce_shard_5.png',
     locationHints: {
       GameCube: "Cliff Plateau Isles (decipher chart)",
       HD: "Cliff Plateau Isles (use chart 3)",
@@ -418,7 +418,7 @@ const TRIFORCE = {
       GameCube: 6,
       HD: 6,
     },
-    imageUrl: '/assets/items/triforce_shard.png',
+    imageUrl: '/assets/items/triforce_shard_6.png',
     locationHints: {
       GameCube: "Southern Triangle Island (decipher chart)",
       HD: "Outset Island (direct)",
@@ -435,7 +435,7 @@ const TRIFORCE = {
       GameCube: 7,
       HD: 7,
     },
-    imageUrl: '/assets/items/triforce_shard.png',
+    imageUrl: '/assets/items/triforce_shard_7.png',
     locationHints: {
       GameCube: "Seven-Star Isles (decipher chart)",
       HD: "Stone Watcher Island (direct)",
@@ -452,7 +452,7 @@ const TRIFORCE = {
       GameCube: 8,
       HD: 8,
     },
-    imageUrl: '/assets/items/triforce_shard.png',
+    imageUrl: '/assets/items/triforce_shard_8.png',
     locationHints: {
       GameCube: "Two-Eye Reef (decipher chart)",
       HD: "Overlook Island (direct)",

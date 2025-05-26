@@ -336,11 +336,11 @@ const InventoryTracker = () => {
 
   const renderTriforceChart = () => {
     const shardData = [
-      { key: 'TRIFORCE_SHARD_8', x: 165, y: 0 },
+      { key: 'TRIFORCE_SHARD_8', x: 158, y: 0 },
       { key: 'TRIFORCE_SHARD_4', x: 235, y: 129 },
       { key: 'TRIFORCE_SHARD_5', x: 152, y: 136 },
-      { key: 'TRIFORCE_SHARD_1', x: 90,  y: 75 },
-      { key: 'TRIFORCE_SHARD_3', x: 80,  y: 200 },
+      { key: 'TRIFORCE_SHARD_1', x: 85,  y: 75 },
+      { key: 'TRIFORCE_SHARD_3', x: 75,  y: 200 },
       { key: 'TRIFORCE_SHARD_2', x: 0,   y: 259 },
       { key: 'TRIFORCE_SHARD_6', x: 171, y: 275 },
       { key: 'TRIFORCE_SHARD_7', x: 322, y: 261 },
