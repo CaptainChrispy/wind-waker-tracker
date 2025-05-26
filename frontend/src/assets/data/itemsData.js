@@ -68,16 +68,18 @@ const QUEST_ITEMS = {
   TINGLE_BOTTLE: { 
     name: "Tingle Bottle", 
     category: ITEM_CATEGORIES.QUEST_ITEMS,
-    description: "Used to send and receive messages (HD version only)", 
+    description: "Used to send and receive messages", 
     imageUrl: '/assets/items/tingle_bottle.png',
-    locationHint: "Received on Windfall Island after freeing Tingle" 
+    locationHint: "Received on Windfall Island after freeing Tingle",
+    version: 'HD'
   },
   SWIFT_SAIL: { 
     name: "Swift Sail", 
     category: ITEM_CATEGORIES.QUEST_ITEMS,
-    description: "Sail that moves faster and automatically changes wind direction (HD version only)", 
+    description: "Sail that moves faster and automatically changes wind direction", 
     imageUrl: '/assets/items/swift_sail.png',
-    locationHint: "Win the auction on Windfall Island in the HD version" 
+    locationHint: "Win the auction on Windfall Island",
+    version: 'HD'
   },
 };
 
@@ -320,69 +322,141 @@ const PEARLS = {
 };
 
 const TRIFORCE = {
-  TRIFORCE_SHARD_1: { 
-    name: "Triforce Shard 1", 
-    category: ITEM_CATEGORIES.TRIFORCE, 
-    description: "Part of the Triforce of Courage", 
-    imageUrl: '/assets/items/triforce_shard.png', 
-    position: 1,
-    locationHint: "Found on Outset Island" 
+  TRIFORCE_SHARD_1: {
+    name: "Triforce Shard 1",
+    category: ITEM_CATEGORIES.TRIFORCE,
+    descriptions: {
+      GameCube: "Found at Greatfish Isle after deciphering Triforce Chart 1.",
+      HD: "Found at Greatfish Isle after using Triforce Chart 1.",
+    },
+    positions: {
+      GameCube: 1,
+      HD: 1,
+    },
+    imageUrl: '/assets/items/triforce_shard.png',
+    locationHints: {
+      GameCube: "Greatfish Isle (decipher chart)",
+      HD: "Greatfish Isle (use chart)",
+    },
   },
-  TRIFORCE_SHARD_2: { 
-    name: "Triforce Shard 2", 
-    category: ITEM_CATEGORIES.TRIFORCE, 
-    description: "Part of the Triforce of Courage", 
-    imageUrl: '/assets/items/triforce_shard.png', 
-    position: 2,
-    locationHint: "Found on Gale Isle" 
+  TRIFORCE_SHARD_2: {
+    name: "Triforce Shard 2",
+    category: ITEM_CATEGORIES.TRIFORCE,
+    descriptions: {
+      GameCube: "Found at Gale Isle after deciphering Triforce Chart 2.",
+      HD: "Found at Private Oasis directly (no chart).",
+    },
+    positions: {
+      GameCube: 2,
+      HD: 2,
+    },
+    imageUrl: '/assets/items/triforce_shard.png',
+    locationHints: {
+      GameCube: "Gale Isle (decipher chart)",
+      HD: "Private Oasis (direct)",
+    },
   },
-  TRIFORCE_SHARD_3: { 
-    name: "Triforce Shard 3", 
-    category: ITEM_CATEGORIES.TRIFORCE, 
-    description: "Part of the Triforce of Courage", 
-    imageUrl: '/assets/items/triforce_shard.png', 
-    position: 3,
-    locationHint: "Found on Stone Watcher Island" 
+  TRIFORCE_SHARD_3: {
+    name: "Triforce Shard 3",
+    category: ITEM_CATEGORIES.TRIFORCE,
+    descriptions: {
+      GameCube: "Found at Stone Watcher Island after deciphering Triforce Chart 3.",
+      HD: "Found at Stone Watcher Island after using Triforce Chart 2.",
+    },
+    positions: {
+      GameCube: 3,
+      HD: 3,
+    },
+    imageUrl: '/assets/items/triforce_shard.png',
+    locationHints: {
+      GameCube: "Stone Watcher Island (decipher chart)",
+      HD: "Stone Watcher Island (use chart 2)",
+    },
   },
-  TRIFORCE_SHARD_4: { 
-    name: "Triforce Shard 4", 
-    category: ITEM_CATEGORIES.TRIFORCE, 
-    description: "Part of the Triforce of Courage", 
-    imageUrl: '/assets/items/triforce_shard.png', 
-    position: 4,
-    locationHint: "Found on Outset Island (different location)" 
+  TRIFORCE_SHARD_4: {
+    name: "Triforce Shard 4",
+    category: ITEM_CATEGORIES.TRIFORCE,
+    descriptions: {
+      GameCube: "Found at Outset Island after deciphering Triforce Chart 4.",
+      HD: "Found on Ghost Ship directly (no chart).",
+    },
+    positions: {
+      GameCube: 4,
+      HD: 4,
+    },
+    imageUrl: '/assets/items/triforce_shard.png',
+    locationHints: {
+      GameCube: "Outset Island (decipher chart)",
+      HD: "Ghost Ship (direct)",
+    },
   },
-  TRIFORCE_SHARD_5: { 
-    name: "Triforce Shard 5", 
-    category: ITEM_CATEGORIES.TRIFORCE, 
-    description: "Part of the Triforce of Courage", 
-    imageUrl: '/assets/items/triforce_shard.png', 
-    position: 5,
-    locationHint: "Found on Cliff Plateau Isles" 
+  TRIFORCE_SHARD_5: {
+    name: "Triforce Shard 5",
+    category: ITEM_CATEGORIES.TRIFORCE,
+    descriptions: {
+      GameCube: "Found at Cliff Plateau Isles after deciphering Triforce Chart 5.",
+      HD: "Found at Cliff Plateau Isles after using Triforce Chart 3.",
+    },
+    positions: {
+      GameCube: 5,
+      HD: 5,
+    },
+    imageUrl: '/assets/items/triforce_shard.png',
+    locationHints: {
+      GameCube: "Cliff Plateau Isles (decipher chart)",
+      HD: "Cliff Plateau Isles (use chart 3)",
+    },
   },
-  TRIFORCE_SHARD_6: { 
-    name: "Triforce Shard 6", 
-    category: ITEM_CATEGORIES.TRIFORCE, 
-    description: "Part of the Triforce of Courage", 
-    imageUrl: '/assets/items/triforce_shard.png', 
-    position: 6,
-    locationHint: "Found on Southern Triangle Island" 
+  TRIFORCE_SHARD_6: {
+    name: "Triforce Shard 6",
+    category: ITEM_CATEGORIES.TRIFORCE,
+    descriptions: {
+      GameCube: "Found at Southern Triangle Island after deciphering Triforce Chart 6.",
+      HD: "Found at Outset Island directly (no chart).",
+    },
+    positions: {
+      GameCube: 6,
+      HD: 6,
+    },
+    imageUrl: '/assets/items/triforce_shard.png',
+    locationHints: {
+      GameCube: "Southern Triangle Island (decipher chart)",
+      HD: "Outset Island (direct)",
+    },
   },
-  TRIFORCE_SHARD_7: { 
-    name: "Triforce Shard 7", 
-    category: ITEM_CATEGORIES.TRIFORCE, 
-    description: "Part of the Triforce of Courage", 
-    imageUrl: '/assets/items/triforce_shard.png', 
-    position: 7,
-    locationHint: "Found on Northern Triangle Island" 
+  TRIFORCE_SHARD_7: {
+    name: "Triforce Shard 7",
+    category: ITEM_CATEGORIES.TRIFORCE,
+    descriptions: {
+      GameCube: "Found at Seven-Star Isles after deciphering Triforce Chart 7.",
+      HD: "Found at Stone Watcher Island directly (no chart).",
+    },
+    positions: {
+      GameCube: 7,
+      HD: 7,
+    },
+    imageUrl: '/assets/items/triforce_shard.png',
+    locationHints: {
+      GameCube: "Seven-Star Isles (decipher chart)",
+      HD: "Stone Watcher Island (direct)",
+    },
   },
-  TRIFORCE_SHARD_8: { 
-    name: "Triforce Shard 8", 
-    category: ITEM_CATEGORIES.TRIFORCE, 
-    description: "Part of the Triforce of Courage", 
-    imageUrl: '/assets/items/triforce_shard.png', 
-    position: 8,
-    locationHint: "Found on Eastern Triangle Island" 
+  TRIFORCE_SHARD_8: {
+    name: "Triforce Shard 8",
+    category: ITEM_CATEGORIES.TRIFORCE,
+    descriptions: {
+      GameCube: "Found at Two-Eye Reef after deciphering Triforce Chart 8.",
+      HD: "Found at Overlook Island directly (no chart).",
+    },
+    positions: {
+      GameCube: 8,
+      HD: 8,
+    },
+    imageUrl: '/assets/items/triforce_shard.png',
+    locationHints: {
+      GameCube: "Two-Eye Reef (decipher chart)",
+      HD: "Overlook Island (direct)",
+    },
   },
 };
 
@@ -474,69 +548,141 @@ const CHARTS = {
   },
   
   // Triforce Charts
-  TRIFORCE_CHART_1: { 
-    name: "Triforce Chart 1", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of a Triforce Shard (needs deciphering)", 
-    imageUrl: '/assets/items/triforce_chart.png', 
-    number: 1,
-    locationHint: "Found in a submarine in sector A3" 
+  TRIFORCE_CHART_1: {
+    name: "Triforce Chart 1",
+    category: ITEM_CATEGORIES.CHARTS,
+    descriptions: {
+      GameCube: "Chart found on Islet of Steel, leads to Greatfish Isle shard.",
+      HD: "Chart found on Islet of Steel, leads to Greatfish Isle shard.",
+    },
+    numbers: {
+      GameCube: 1,
+      HD: 1,
+    },
+    imageUrl: '/assets/items/triforce_chart.png',
+    locationHints: {
+      GameCube: "Islet of Steel (Chart) → Greatfish Isle (Shard)",
+      HD: "Islet of Steel (Chart) → Greatfish Isle (Shard)",
+    },
   },
-  TRIFORCE_CHART_2: { 
-    name: "Triforce Chart 2", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of a Triforce Shard (needs deciphering)", 
-    imageUrl: '/assets/items/triforce_chart.png', 
-    number: 2,
-    locationHint: "Cabana Labyrinth on the Private Oasis" 
+  TRIFORCE_CHART_2: {
+    name: "Triforce Chart 2",
+    category: ITEM_CATEGORIES.CHARTS,
+    descriptions: {
+      GameCube: "Chart found on Private Oasis, leads to Gale Isle shard.",
+      HD: "Not present in HD; shard is found directly on Private Oasis.",
+    },
+    numbers: {
+      GameCube: 2,
+      HD: null,
+    },
+    imageUrl: '/assets/items/triforce_chart.png',
+    locationHints: {
+      GameCube: "Private Oasis (Chart) → Gale Isle (Shard)",
+      HD: "Private Oasis (Shard only)",
+    },
   },
-  TRIFORCE_CHART_3: { 
-    name: "Triforce Chart 3", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of a Triforce Shard (needs deciphering)", 
-    imageUrl: '/assets/items/triforce_chart.png', 
-    number: 3,
-    locationHint: "Ghost Ship" 
+  TRIFORCE_CHART_3: {
+    name: "Triforce Chart 3",
+    category: ITEM_CATEGORIES.CHARTS,
+    descriptions: {
+      GameCube: "Chart found on Bird's Peak Rock, leads to Stone Watcher Island shard.",
+      HD: "Chart found on Bird's Peak Rock, leads to Stone Watcher Island shard.",
+    },
+    numbers: {
+      GameCube: 3,
+      HD: 2,
+    },
+    imageUrl: '/assets/items/triforce_chart.png',
+    locationHints: {
+      GameCube: "Bird's Peak Rock (Chart) → Stone Watcher Island (Shard)",
+      HD: "Bird's Peak Rock (Chart) → Stone Watcher Island (Shard)",
+    },
   },
-  TRIFORCE_CHART_4: { 
-    name: "Triforce Chart 4", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of a Triforce Shard (needs deciphering)", 
-    imageUrl: '/assets/items/triforce_chart.png', 
-    number: 4,
-    locationHint: "Needle Rock Isle - Inside a Secret Cave" 
+  TRIFORCE_CHART_4: {
+    name: "Triforce Chart 4",
+    category: ITEM_CATEGORIES.CHARTS,
+    descriptions: {
+      GameCube: "Chart found on Ghost Ship, leads to Outset Island shard.",
+      HD: "Not present in HD; shard is found directly on Ghost Ship.",
+    },
+    numbers: {
+      GameCube: 4,
+      HD: null,
+    },
+    imageUrl: '/assets/items/triforce_chart.png',
+    locationHints: {
+      GameCube: "Ghost Ship (Chart) → Outset Island (Shard)",
+      HD: "Ghost Ship (Shard only)",
+    },
   },
-  TRIFORCE_CHART_5: { 
-    name: "Triforce Chart 5", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of a Triforce Shard (needs deciphering)", 
-    imageUrl: '/assets/items/triforce_chart.png', 
-    number: 5,
-    locationHint: "Overlook Island - Inside a Savage Labyrinth" 
+  TRIFORCE_CHART_5: {
+    name: "Triforce Chart 5",
+    category: ITEM_CATEGORIES.CHARTS,
+    descriptions: {
+      GameCube: "Chart found on Needle Rock Isle, leads to Cliff Plateau Isles shard.",
+      HD: "Chart found on Needle Rock Isle, leads to Cliff Plateau Isles shard.",
+    },
+    numbers: {
+      GameCube: 5,
+      HD: 3,
+    },
+    imageUrl: '/assets/items/triforce_chart.png',
+    locationHints: {
+      GameCube: "Needle Rock Isle (Chart) → Cliff Plateau Isles (Shard)",
+      HD: "Needle Rock Isle (Chart) → Cliff Plateau Isles (Shard)",
+    },
   },
-  TRIFORCE_CHART_6: { 
-    name: "Triforce Chart 6", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of a Triforce Shard (needs deciphering)", 
-    imageUrl: '/assets/items/triforce_chart.png', 
-    number: 6,
-    locationHint: "Dragon Roost Island - Climb to the peak" 
+  TRIFORCE_CHART_6: {
+    name: "Triforce Chart 6",
+    category: ITEM_CATEGORIES.CHARTS,
+    descriptions: {
+      GameCube: "Chart found on Outset Island, leads to Southern Triangle Island shard.",
+      HD: "Not present in HD; shard is found directly on Outset Island.",
+    },
+    numbers: {
+      GameCube: 6,
+      HD: null,
+    },
+    imageUrl: '/assets/items/triforce_chart.png',
+    locationHints: {
+      GameCube: "Outset Island (Chart) → Southern Triangle Island (Shard)",
+      HD: "Outset Island (Shard only)",
+    },
   },
-  TRIFORCE_CHART_7: { 
-    name: "Triforce Chart 7", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of a Triforce Shard (needs deciphering)", 
-    imageUrl: '/assets/items/triforce_chart.png', 
-    number: 7,
-    locationHint: "Stone Watcher Island - Inside the Secret Cave" 
+  TRIFORCE_CHART_7: {
+    name: "Triforce Chart 7",
+    category: ITEM_CATEGORIES.CHARTS,
+    descriptions: {
+      GameCube: "Chart found on Stone Watcher Island, leads to Seven-Star Isles shard.",
+      HD: "Not present in HD; shard is found directly on Stone Watcher Island.",
+    },
+    numbers: {
+      GameCube: 7,
+      HD: null,
+    },
+    imageUrl: '/assets/items/triforce_chart.png',
+    locationHints: {
+      GameCube: "Stone Watcher Island (Chart) → Seven-Star Isles (Shard)",
+      HD: "Stone Watcher Island (Shard only)",
+    },
   },
-  TRIFORCE_CHART_8: { 
-    name: "Triforce Chart 8", 
-    category: ITEM_CATEGORIES.CHARTS, 
-    description: "Shows the location of a Triforce Shard (needs deciphering)", 
-    imageUrl: '/assets/items/triforce_chart.png', 
-    number: 8,
-    locationHint: "Outset Island - In the Savage Labyrinth" 
+  TRIFORCE_CHART_8: {
+    name: "Triforce Chart 8",
+    category: ITEM_CATEGORIES.CHARTS,
+    descriptions: {
+      GameCube: "Chart found on Overlook Island, leads to Two-Eye Reef shard.",
+      HD: "Not present in HD; shard is found directly on Overlook Island.",
+    },
+    numbers: {
+      GameCube: 8,
+      HD: null,
+    },
+    imageUrl: '/assets/items/triforce_chart.png',
+    locationHints: {
+      GameCube: "Overlook Island (Chart) → Two-Eye Reef (Shard)",
+      HD: "Overlook Island (Shard only)",
+    },
   },
 
   // Treasure Charts
@@ -869,9 +1015,52 @@ const CHARTS = {
     imageUrl: '/assets/items/treasure_chart.png', 
     number: 41,
     locationHint: "Six-Eye Reef - From a nearby submarine" 
-  }
-
-  // TODO: Add the HD charts, add hero mode charts
+  },
+  TREASURE_CHART_42: { 
+    name: "Treasure Chart 42", 
+    category: ITEM_CATEGORIES.CHARTS, 
+    description: "Shows the location of a sunken treasure (HD only)", 
+    imageUrl: '/assets/items/treasure_chart.png', 
+    number: 42,
+    locationHint: "HD exclusive chart location",
+    version: 'HD'
+  },
+  TREASURE_CHART_43: { 
+    name: "Treasure Chart 43", 
+    category: ITEM_CATEGORIES.CHARTS, 
+    description: "Shows the location of a sunken treasure (HD only)", 
+    imageUrl: '/assets/items/treasure_chart.png', 
+    number: 43,
+    locationHint: "HD exclusive chart location",
+    version: 'HD'
+  },
+  TREASURE_CHART_44: { 
+    name: "Treasure Chart 44", 
+    category: ITEM_CATEGORIES.CHARTS, 
+    description: "Shows the location of a sunken treasure (HD only)", 
+    imageUrl: '/assets/items/treasure_chart.png', 
+    number: 44,
+    locationHint: "HD exclusive chart location",
+    version: 'HD'
+  },
+  TREASURE_CHART_45: { 
+    name: "Treasure Chart 45", 
+    category: ITEM_CATEGORIES.CHARTS, 
+    description: "Shows the location of a sunken treasure (HD only)", 
+    imageUrl: '/assets/items/treasure_chart.png', 
+    number: 45,
+    locationHint: "HD exclusive chart location",
+    version: 'HD'
+  },
+  TREASURE_CHART_46: { 
+    name: "Treasure Chart 46", 
+    category: ITEM_CATEGORIES.CHARTS, 
+    description: "Shows the location of a sunken treasure (HD only)", 
+    imageUrl: '/assets/items/treasure_chart.png', 
+    number: 46,
+    locationHint: "HD exclusive chart location",
+    version: 'HD'
+  },
 };
 
 const ITEMS = {

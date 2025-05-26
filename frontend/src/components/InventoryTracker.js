@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './InventoryTracker.module.css';
 import { ITEM_CATEGORIES, ITEMS } from '../assets/data/itemsData';
+import { useSaves } from '../context/SavesContext';
 
 const InventoryTracker = () => {
   const [inventory, setInventory] = useState({});
@@ -8,6 +9,34 @@ const InventoryTracker = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [itemDetails, setItemDetails] = useState(null);
   const [imageErrors, setImageErrors] = useState({});
+  const { currentSave } = useSaves();
+
+  const gameVersion = currentSave?.version || 'GameCube';
+
+  const getVersionedItems = () => {
+    const items = JSON.parse(JSON.stringify(ITEMS));
+    // Filter items by version property and by versioned fields
+    return Object.fromEntries(
+      Object.entries(items).filter(([_, item]) => {
+        // Remove items that are not present in this version (for versioned fields)
+        if (item.descriptions && !item.descriptions[gameVersion]) return false;
+        if (item.numbers && !item.numbers[gameVersion]) return false;
+        if (item.positions && !item.positions[gameVersion]) return false;
+        if (item.locationHints && !item.locationHints[gameVersion]) return false;
+        // Remove items with explicit version property that doesn't match
+        if (item.version && item.version !== gameVersion) return false;
+        return true;
+      })
+    );
+  };
+  const versionedItems = getVersionedItems();
+
+  const getVersionedField = (item, field, fallbackField) => {
+    if (item && item[field] && typeof item[field] === 'object') {
+      return item[field][gameVersion] ?? '';
+    }
+    return item && item[fallbackField] ? item[fallbackField] : '';
+  };
 
   useEffect(() => {
     const savedInventory = localStorage.getItem('windWakerInventory');
@@ -130,10 +159,12 @@ const InventoryTracker = () => {
 
   const updateItemDetails = (itemId, currentInventory) => {
     if (!ITEMS[itemId]) return;
-    
     const item = ITEMS[itemId];
     let details;
-    
+
+    // Handle versioned Triforce Shards/Charts
+    const isVersioned = item.descriptions || item.numbers || item.positions || item.locationHints;
+
     if (item.upgrades) {
       const currentLevel = currentInventory[itemId];
       const isCollected = currentLevel !== undefined;
@@ -176,6 +207,19 @@ const InventoryTracker = () => {
                          upgradeInfo.maxRupees ? `Holds up to ${upgradeInfo.maxRupees} rupees` : ''
         };
       }
+    } else if (isVersioned) {
+      // For versioned Triforce Shards/Charts
+      const isCollected = Boolean(currentInventory[itemId]);
+      details = {
+        name: item.name,
+        description: getVersionedField(item, 'descriptions', 'description'),
+        locationHint: getVersionedField(item, 'locationHints', 'locationHint'),
+        isUpgradable: false,
+        isCollected: isCollected,
+        imageUrl: item.imageUrl,
+        number: getVersionedField(item, 'numbers', 'number'),
+        position: getVersionedField(item, 'positions', 'position'),
+      };
     } else {
       // For regular items
       const isCollected = Boolean(currentInventory[itemId]);
@@ -205,15 +249,15 @@ const InventoryTracker = () => {
   };
 
   const getCompletionPercentage = () => {
-    const totalItems = Object.keys(ITEMS)
-      .filter(itemId => !itemId.includes('UPGRADE')) // Don't count the old upgrade items? (probably no)
+    const totalItems = Object.keys(versionedItems)
+      .filter(itemId => !itemId.includes('UPGRADE'))
       .length;
     const obtainedItems = Object.keys(inventory).length;
     return Math.floor((obtainedItems / totalItems) * 100);
   };
 
   const renderCategory = (category) => {
-    const categoryItems = Object.entries(ITEMS)
+    const categoryItems = Object.entries(versionedItems)
       .filter(([_, item]) => item.category === category)
       // Filter out old upgrade items that were replaced
       .filter(([itemId, _]) => 
@@ -227,18 +271,28 @@ const InventoryTracker = () => {
           {categoryItems.map(([itemId, item]) => {
             const hasItem = inventory[itemId] !== undefined;
             const itemLevel = item.upgrades ? (inventory[itemId] || 0) : 0;
-            
+
             // Determine image URL based on item type and level
             let displayImageUrl = item.imageUrl;
             if (item.upgrades && hasItem && item.upgrades[itemLevel]) {
               displayImageUrl = item.upgrades[itemLevel].imageUrl;
             }
-            
-            // Use placeholder if there was a previous error loading this image
             if (imageErrors[itemId]) {
               displayImageUrl = '/assets/items/placeholder.png';
             }
-            
+
+            // For versioned Triforce Shards/Charts, dynamically change the name to include the number/position if present
+            let displayName = item.name;
+            if (item.descriptions || item.numbers || item.positions || item.locationHints) {
+              const number = getVersionedField(item, 'numbers', 'number') || getVersionedField(item, 'positions', 'position');
+              if (number && /\d+$/.test(item.name)) {
+                // If the name already ends with a number, replace it
+                displayName = item.name.replace(/\d+$/, String(number));
+              } else if (number) {
+                displayName = `${item.name.split('(')[0].trim()} ${number}`;
+              }
+            }
+
             return (
               <div 
                 key={itemId}
@@ -260,7 +314,8 @@ const InventoryTracker = () => {
                     alt={item.name} 
                     className={!hasItem ? styles.grayscale : ''}
                     onError={() => handleImageError(itemId)}
-                  />                  {item.upgrades && (
+                  />
+                  {item.upgrades && (
                     <div className={styles.itemLevel}>
                       {Array.from({ length: item.maxLevel }).map((_, idx) => (
                         <span key={idx} className={hasItem && idx <= itemLevel ? styles.filled : styles.unfilled}></span>
@@ -269,7 +324,7 @@ const InventoryTracker = () => {
                   )}
                 </div>
                 <span className={styles.itemName}>
-                  {item.upgrades && hasItem ? item.upgrades[itemLevel].name : item.name}
+                  {item.upgrades && hasItem ? item.upgrades[itemLevel].name : displayName}
                 </span>
               </div>
             );
