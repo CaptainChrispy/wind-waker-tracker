@@ -10,12 +10,18 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-
-// Sample route
-app.get('/', (req, res) => {
-  res.send('Wind Waker Tracker API');
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
 });
 
+const slidingPuzzleSolver = require('./slidingPuzzleSolver');
+app.use('/api/solve-sliding-puzzle', slidingPuzzleSolver);
+
+// Catch-all for 404s
+app.use((req, res) => {
+  res.status(404).send('Not found');
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

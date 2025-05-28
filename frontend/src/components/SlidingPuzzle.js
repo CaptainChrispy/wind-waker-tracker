@@ -176,6 +176,7 @@ const SlidingPuzzle = () => {
     setCurrentSolutionStep(0);
   };
 
+  // Only keep the isSolvable check and server call for solution
   const isSolvable = () => {
     if (isPuzzleSolved(tiles)) {
       return true;
@@ -209,269 +210,25 @@ const SlidingPuzzle = () => {
     return result;
   };
 
-  const getManhattanDistance = (tiles) => {
-    let distance = 0;
-    for (let i = 0; i < tiles.length; i++) {
-      const tile = tiles[i];
-      if (tile !== EMPTY_TILE) {
-        const targetRow = Math.floor(tile / GRID_SIZE);
-        const targetCol = tile % GRID_SIZE;
-        const currentRow = Math.floor(i / GRID_SIZE);
-        const currentCol = i % GRID_SIZE;
-        distance += Math.abs(targetRow - currentRow) + Math.abs(targetCol - currentCol);
-      }
-    }
-    return distance;
-  };
-
-  const getLinearConflicts = (tiles) => {
-    let conflicts = 0;
-
-    // Check rows for conflicts
-    for (let row = 0; row < GRID_SIZE; row++) {
-      const rowTiles = [];
-      for (let col = 0; col < GRID_SIZE; col++) {
-        const index = row * GRID_SIZE + col;
-        const tile = tiles[index];
-        if (tile !== EMPTY_TILE && Math.floor(tile / GRID_SIZE) === row) {
-          rowTiles.push(tile);
-        }
-      }
-      
-      // Check for conflicts in this row
-      for (let i = 0; i < rowTiles.length; i++) {
-        for (let j = i + 1; j < rowTiles.length; j++) {
-          if (rowTiles[i] > rowTiles[j]) conflicts++;
-        }
-      }
-    }
-
-    // Check columns for conflicts
-    for (let col = 0; col < GRID_SIZE; col++) {
-      const colTiles = [];
-      for (let row = 0; row < GRID_SIZE; row++) {
-        const index = row * GRID_SIZE + col;
-        const tile = tiles[index];
-        if (tile !== EMPTY_TILE && (tile % GRID_SIZE) === col) {
-          colTiles.push(tile);
-        }
-      }
-      
-      // Check for conflicts in this column
-      for (let i = 0; i < colTiles.length; i++) {
-        for (let j = i + 1; j < colTiles.length; j++) {
-          if (colTiles[i] > colTiles[j]) conflicts++;
-        }
-      }
-    }
-
-    return conflicts * 2; // Each conflict requires at least 2 moves to resolve
-  };
-
-  class PriorityQueue {
-    constructor() {
-      this.items = [];
-    }
-    
-    enqueue(element, priority) {
-      const item = { element, priority };
-      let added = false;
-      
-      for (let i = 0; i < this.items.length; i++) {
-        if (this.items[i].priority > priority) {
-          this.items.splice(i, 0, item);
-          added = true;
-          break;
-        }
-      }
-      
-      if (!added) {
-        this.items.push(item);
-      }
-    }
-    
-    dequeue() {
-      return this.items.shift()?.element;
-    }
-    
-    isEmpty() {
-      return this.items.length === 0;
-    }
-  }
-
-  // Generate moves from a position
-  const getNextMoves = (currentTiles, emptyPos) => {
-    const moves = [];
-    const row = Math.floor(emptyPos / GRID_SIZE);
-    const col = emptyPos % GRID_SIZE;
-    
-    // Up move (tile below moves up)
-    if (row < GRID_SIZE - 1) {
-      const newPos = emptyPos + GRID_SIZE;
-      const newTiles = [...currentTiles];
-      newTiles[emptyPos] = newTiles[newPos];
-      newTiles[newPos] = EMPTY_TILE;
-      moves.push({
-        tiles: newTiles,
-        emptyPos: newPos,
-        move: 'up',
-        tileIndex: newPos
-      });
-    }
-    
-    // Down move (tile above moves down)
-    if (row > 0) {
-      const newPos = emptyPos - GRID_SIZE;
-      const newTiles = [...currentTiles];
-      newTiles[emptyPos] = newTiles[newPos];
-      newTiles[newPos] = EMPTY_TILE;
-      moves.push({
-        tiles: newTiles,
-        emptyPos: newPos,
-        move: 'down',
-        tileIndex: newPos
-      });
-    }
-    
-    // Left move (tile to right moves left)
-    if (col < GRID_SIZE - 1) {
-      const newPos = emptyPos + 1;
-      const newTiles = [...currentTiles];
-      newTiles[emptyPos] = newTiles[newPos];
-      newTiles[newPos] = EMPTY_TILE;
-      moves.push({
-        tiles: newTiles,
-        emptyPos: newPos,
-        move: 'left',
-        tileIndex: newPos
-      });
-    }
-    
-    // Right move (tile to left moves right)
-    if (col > 0) {
-      const newPos = emptyPos - 1;
-      const newTiles = [...currentTiles];
-      newTiles[emptyPos] = newTiles[newPos];
-      newTiles[newPos] = EMPTY_TILE;
-      moves.push({
-        tiles: newTiles,
-        emptyPos: newPos,
-        move: 'right',
-        tileIndex: newPos
-      });
-    }
-    
-    return moves;
-  };
-
-  // Main A* search solver
-  const solvePuzzleAStar = async (initialTiles, initialEmptyPos) => {
-    return new Promise(resolve => {
-      // If already solved, return empty path
-      if (isPuzzleSolved(initialTiles)) {
-        resolve([]);
-        return;
-      }
-
-      const queue = new PriorityQueue();
-      const visited = new Set();
-      
-      const startState = {
-        tiles: initialTiles,
-        emptyPos: initialEmptyPos,
-        g: 0,
-        h: getManhattanDistance(initialTiles) + getLinearConflicts(initialTiles),
-        path: []
-      };
-      
-      queue.enqueue(startState, startState.g + startState.h);
-      visited.add(initialTiles.join(','));
-      
-      const chunkSize = 1000; // Process 1000 states at a time
-      let nodesExplored = 0;
-      
-      const processChunk = () => {
-        const maxIterationsInChunk = chunkSize;
-        let iterations = 0;
-        
-        while (!queue.isEmpty() && iterations < maxIterationsInChunk) {
-          const current = queue.dequeue();
-          iterations++;
-          nodesExplored++;
-          
-          if (isPuzzleSolved(current.tiles)) {
-            // Convert the path of tile moves to solution steps
-            const steps = current.path.map(step => ({
-              tilePos: step.tileIndex,
-              direction: step.move,   
-              tiles: step.resultTiles 
-            }));
-
-            resolve(steps);
-            return;
-          }
-          
-          const possibleMoves = getNextMoves(current.tiles, current.emptyPos);
-          
-          for (const move of possibleMoves) {
-            const tileString = move.tiles.join(',');
-            if (!visited.has(tileString)) {
-              visited.add(tileString);
-              
-              const nextState = {
-                tiles: move.tiles,
-                emptyPos: move.emptyPos,
-                g: current.g + 1,
-                h: getManhattanDistance(move.tiles) + getLinearConflicts(move.tiles),
-                path: [...current.path, {
-                  move: move.move,
-                  tileIndex: move.tileIndex,
-                  resultTiles: [...move.tiles]
-                }]
-              };
-              
-              queue.enqueue(nextState, nextState.g + nextState.h);
-            }
-          }
-        }
-        
-        if (queue.isEmpty()) {
-          // No solution found after exhausting the search space
-          resolve([]);
-          return;
-        }
-        
-        // Continue with the next chunk
-        setTimeout(processChunk, 0);
-      };
-      
-      // Start the search process
-      processChunk();
-    });
-  };
-
-  // Update the generateSolution function to store initial state
+  // Only call the backend for solution
   const generateSolution = async () => {
     if (!isSolvable()) {
       alert("This puzzle configuration is not solvable. Please rearrange the tiles.");
       return;
     }
-    
     setMode('solve');
     setIsSolving(true);
-    
     try {
-      // Save initial state for reverting to beginning
       const initialTileState = [...tiles];
-      
-      const steps = await solvePuzzleAStar(initialTileState, emptyPosition);
-      
+      const response = await fetch('http://localhost:5000/api/solve-sliding-puzzle', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tiles: initialTileState, emptyPosition })
+      });
+      const data = await response.json();
+      const steps = data.solution || [];
       if (steps.length > 0) {
-        // Add the initial state to the first step
-        if (steps[0]) {
-          steps[0].initialTiles = initialTileState;
-        }
-        
+        if (steps[0]) steps[0].initialTiles = initialTileState;
         setSolutionSteps(steps);
         setCurrentSolutionStep(0);
         alert(`Solution found in ${steps.length} moves!`);
@@ -499,16 +256,15 @@ const SlidingPuzzle = () => {
   const applyPreviousMove = () => {
     if (solutionSteps.length > 0 && currentSolutionStep > 0) {
       if (currentSolutionStep === 1) {
-        // If we're at the first step, we need to revert to the initial puzzle state
         setTiles([...solutionSteps[0].initialTiles]);
       } else {
-        // Otherwise use the state from two steps back
         const prevStep = solutionSteps[currentSolutionStep - 2];
         setTiles([...prevStep.tiles]);
       }
       setCurrentSolutionStep(currentSolutionStep - 1);
     }
   };
+
   return (
     <div className={styles.slidingPuzzleWrapper}>
       <div className={styles.headerContainer}>
