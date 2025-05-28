@@ -359,6 +359,42 @@ input:checked + .toggleSlider:before {
 }
 
 /* ===================================
+   STEP DOTS INDICATOR
+=================================== */
+.stepDotsContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+.stepDot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #b08d2f;
+  color: #fffbe6;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px #a97c1b44;
+  transition: all 0.2s;
+  opacity: 0.7;
+}
+.stepDotActive {
+  width: 38px;
+  height: 38px;
+  background: #ffe066;
+  color: #b08d2f;
+  font-size: 1.3rem;
+  opacity: 1;
+  box-shadow: 0 0 0 4px #ffe06688, 0 2px 12px #b08d2f44;
+  z-index: 2;
+}
+
+/* ===================================
    RESPONSIVE STYLES
 =================================== */
 @media (max-width: 768px) {

@@ -387,6 +387,42 @@ const SlidingPuzzle = () => {
                   <button onClick={generateSolution} disabled={!isSolvable()}>Generate Solution</button>
                   <button onClick={resetPuzzle}>Reset</button>
                   <div className={styles.solutionNavigation}>
+                    {/* Step Dots Indicator (show max 5, centered on current step) */}
+                    {solutionSteps.length > 0 && (
+                      <div className={styles.stepDotsContainer}>
+                        {(() => {
+                          const total = solutionSteps.length;
+                          const maxDots = 5;
+                          let start = 0;
+                          let end = Math.min(maxDots, total);
+                          if (total > maxDots) {
+                            if (currentSolutionStep <= 2) {
+                              start = 0;
+                              end = maxDots;
+                            } else if (currentSolutionStep >= total - 3) {
+                              start = total - maxDots;
+                              end = total;
+                            } else {
+                              start = currentSolutionStep - 2;
+                              end = currentSolutionStep + 3;
+                            }
+                          }
+                          return Array.from({ length: end - start }, (_, i) => {
+                            const idx = start + i;
+                            return (
+                              <div
+                                key={idx}
+                                className={
+                                  `${styles.stepDot} ${idx === currentSolutionStep ? styles.stepDotActive : ''}`
+                                }
+                              >
+                                {idx + 1}
+                              </div>
+                            );
+                          });
+                        })()}
+                      </div>
+                    )}
                     <button 
                       onClick={applyPreviousMove} 
                       disabled={!solutionSteps.length || currentSolutionStep === 0}
