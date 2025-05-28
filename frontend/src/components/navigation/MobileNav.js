@@ -32,6 +32,22 @@ const MobileNav = ({ isOpen, onClose }) => (
           <span className="nav-icon puzzle-icon"></span>
           Sliding Puzzles
         </NavLink>
+        <NavLink 
+          to="/splooshkaboom" 
+          className={({ isActive }) => isActive ? "mobile-nav-link active" : "mobile-nav-link"}
+          onClick={onClose}
+        >
+          <span className="nav-icon kaboom-icon"></span>
+          Sploosh Kaboom
+        </NavLink>
+        <NavLink 
+          to="/inventory" 
+          className={({ isActive }) => isActive ? "mobile-nav-link active" : "mobile-nav-link"}
+          onClick={onClose}
+        >
+          <span className="nav-icon inventory-icon"></span>
+          Inventory
+        </NavLink>
       </nav>
     </div>
   </>
