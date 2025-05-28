@@ -284,7 +284,7 @@ async function solvePuzzleAStar(initialTiles, initialEmptyPos) {
  *
  * Returns the optimal solution steps for the given sliding puzzle state.
  */
-router.post('/api/solve-sliding-puzzle', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { tiles, emptyPosition } = req.body;
     if (!Array.isArray(tiles) || typeof emptyPosition !== 'number') {
