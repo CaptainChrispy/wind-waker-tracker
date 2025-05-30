@@ -16,8 +16,19 @@ const FigurineChecklist = () => {
   ];
 
   const [figurines, setFigurines] = useState(() => {
+    // Always use the latest figurineData from the JSON file, but preserve obtained state from localStorage if available
     const saved = localStorage.getItem('ww-figurines');
-    return saved ? JSON.parse(saved) : figurineData;
+    if (!saved) return figurineData;
+    try {
+      const savedArr = JSON.parse(saved);
+      // Merge obtained state from savedArr into the latest figurineData
+      return figurineData.map(fig => {
+        const match = savedArr.find(f => f.id === fig.id);
+        return match ? { ...fig, obtained: match.obtained } : fig;
+      });
+    } catch {
+      return figurineData;
+    }
   });
 
   const [filter, setFilter] = useState('all');
@@ -138,6 +149,12 @@ const FigurineChecklist = () => {
               }
             >
               <div className={styles['figurine-number']}>#{figurine.id}</div>
+              <img 
+                src={figurine.image} 
+                alt={figurine.name} 
+                className={styles['figurine-image-small']} 
+                loading="lazy"
+              />
               <div className={styles['figurine-details']}>
                 <h3>{figurine.name}</h3>
                 <p>Location: {figurine.location}</p>
