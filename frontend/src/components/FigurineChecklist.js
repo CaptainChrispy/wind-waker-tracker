@@ -140,21 +140,21 @@ const FigurineChecklist = () => {
           filteredFigurines.map(figurine => (
             <div 
               key={figurine.id} 
-              className={
-                [
-                  styles['figurine-item'],
-                  figurine.obtained ? styles['obtained'] : '',
-                  figurine.missable ? styles['missable'] : ''
-                ].join(' ').trim()
-              }
+              className={[
+                styles['figurine-item'],
+                figurine.obtained ? styles['obtained'] : '',
+                figurine.missable ? styles['missable'] : ''
+              ].join(' ').trim()}
             >
-              <div className={styles['figurine-number']}>#{figurine.id}</div>
-              <img 
-                src={figurine.image} 
-                alt={figurine.name} 
-                className={styles['figurine-image-small']} 
-                loading="lazy"
-              />
+              <div className={styles['figurine-image-wrapper']}>
+                <img 
+                  src={figurine.image} 
+                  alt={figurine.name} 
+                  className={styles['figurine-image']} 
+                  loading="lazy"
+                />
+                <div className={styles['figurine-number-overlay']}>#{figurine.id}</div>
+              </div>
               <div className={styles['figurine-details']}>
                 <h3>{figurine.name}</h3>
                 <p>Location: {figurine.location}</p>
