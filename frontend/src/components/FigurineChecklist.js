@@ -4,24 +4,20 @@ import figurineData from '../assets/data/figurines.json';
 
 const FigurineChecklist = () => {
   const categories = [
-    "Hyrule",
     "Outset Island",
     "Windfall Island",
     "Forest Haven", 
     "Dragon Roost Island",
     "Great Sea",
     "Bosses",
-    "Special",
     "Enemies"
   ];
 
   const [figurines, setFigurines] = useState(() => {
-    // Always use the latest figurineData from the JSON file, but preserve obtained state from localStorage if available
     const saved = localStorage.getItem('ww-figurines');
     if (!saved) return figurineData;
     try {
       const savedArr = JSON.parse(saved);
-      // Merge obtained state from savedArr into the latest figurineData
       return figurineData.map(fig => {
         const match = savedArr.find(f => f.id === fig.id);
         return match ? { ...fig, obtained: match.obtained } : fig;
