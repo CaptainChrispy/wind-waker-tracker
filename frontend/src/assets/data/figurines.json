@@ -1,136 +1,1208 @@
 [
-  { "id": 1, "name": "Tott", "location": "TBD", "category": "Windfall Island", "obtained": false, "missable": true, "image": "/assets/figurines/WindfallIsland/Tott.png" },
-  { "id": 2, "name": "Tetra", "location": "Hyrule Castle (before reveal)", "category": "Great Sea", "obtained": false, "missable": true, "image": "/assets/figurines/GreatSea/Tetra.png" },
-  { "id": 3, "name": "Candy", "location": "TBD", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Candy.png" },
-  { "id": 4, "name": "Ganondorf", "location": "Ganon's Tower / Legendary Pictograph (Full Moon)", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/Ganondorf.png" },
-  { "id": 5, "name": "Aryll", "location": "N/A (Bundled with Grandma)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Aryll.png" },
-  { "id": 6, "name": "Grandma", "location": "Outset Island (Link's House)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Grandma.png" },
-  { "id": 7, "name": "Orca", "location": "Outset Island (House, 1st floor)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Orca.png" },
-  { "id": 8, "name": "Sturgeon", "location": "Outset Island (House, 2nd floor)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Sturgeon.png" },
-  { "id": 9, "name": "Sue-Belle", "location": "Outset Island (Outside/House)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/SueBelle.png" },
-  { "id": 10, "name": "Mesa", "location": "Outset Island (Outside/House)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Mesa.png" },
-  { "id": 11, "name": "Abe", "location": "Outset Island (Outside/House)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Abe.png" },
-  { "id": 12, "name": "Rose", "location": "Outset Island (Outside/House)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Rose.png" },
-  { "id": 13, "name": "Joel", "location": "Outset Island (Outside/House)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Joel.png" },
-  { "id": 14, "name": "Zill", "location": "Outset Island (Outside/House)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Zill.png" },
-  { "id": 15, "name": "Jabun", "location": "N/A (Legendary Pictograph - Last Quarter Moon)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Jabun.png" },
-  { "id": 16, "name": "Crab", "location": "Outset Island (Beach) / Various", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Crab.png" },
-  { "id": 17, "name": "Seagull", "location": "Various (Great Sea)", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/Seagull.png" },
-  { "id": 18, "name": "Pig", "location": "Outset Island / Windfall Island", "category": "Outset Island", "obtained": false, "missable": false, "image": "/assets/figurines/OutsetIsland/WildPig.png" },
-  { "id": 19, "name": "Phantom Ganon", "location": "Forsaken Fortress / Ganon's Tower", "category": "Bosses", "obtained": false, "missable": true, "image": "/assets/figurines/Bosses/PhantomGanon.png" },
-  { "id": 20, "name": "Helmaroc King", "location": "Forsaken Fortress (Boss)", "category": "Bosses", "obtained": false, "missable": true, "image": "/assets/figurines/Bosses/HelmarocKing.png" },
-  { "id": 21, "name": "Mighty Darknut", "location": "Hyrule Castle / Ganon's Tower (Caped Version)", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/MightyDarknut.png" },
-  { "id": 22, "name": "Mila", "location": "Windfall Island (Shop/Outside)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Mila.png" },
-  { "id": 23, "name": "Maggie", "location": "Windfall Island (House/Outside)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Maggie.png" },
-  { "id": 24, "name": "Maggie's Father", "location": "Windfall Island (House)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/MaggieFather.png" },
-  { "id": 25, "name": "Killer Bees", "location": "Windfall Island (Outside/School)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/KillerBees.png" },
-  { "id": 26, "name": "Tingle", "location": "Tingle Island / Windfall Island (Jail)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/Tingle.png" },
-  { "id": 27, "name": "Ankle", "location": "Tingle Island", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/Ankle.png" },
-  { "id": 28, "name": "David Jr.", "location": "Tingle Island", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/DavidJr.png" },
-  { "id": 29, "name": "Zunari", "location": "Windfall Island (Shop Stall)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Zunari.png" },
-  { "id": 30, "name": "Lenzo", "location": "Windfall Island (Pictograph Shop)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Lenzo.png" },
-  { "id": 31, "name": "Anton", "location": "Windfall Island (Walking around)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Anton.png" },
-  { "id": 32, "name": "Linda", "location": "Windfall Island (Near Chu Jelly Juice Shop)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Linda.png" },
-  { "id": 33, "name": "Kamo", "location": "Windfall Island (Near Bomb Shop/Ferris Wheel)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Kamo.png" },
-  { "id": 34, "name": "Potova & Joanna", "location": "Windfall Island (School/Beach)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/PotovaJoanna.png" },
-  { "id": 35, "name": "Minenco", "location": "Windfall Island (Near Potion Shop/Auction House)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Minenco.png" },
-  { "id": 36, "name": "Pompie & Vera", "location": "Windfall Island (Near Zunari's Shop)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/PompieVera.png" },
-  { "id": 37, "name": "Miss Marie", "location": "Windfall Island (School)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/MrsMarie.png" },
-  { "id": 38, "name": "Garrickson", "location": "Windfall Island (Outside/Cafe Bar)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Garrickson.png" },
-  { "id": 39, "name": "Gossack", "location": "Windfall Island (Cafe Bar)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Gossack.png" },
-  { "id": 40, "name": "Cannon", "location": "Windfall Island (Bomb Shop)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Cannon.png" },
-  { "id": 41, "name": "Mila's Father", "location": "Windfall Island (Shop/Near Tree)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/MilaFather.png" },
-  { "id": 42, "name": "Salvatore", "location": "Windfall Island (Sploosh Kaboom) / Spectacle Island", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/Salvatore.png" },
-  { "id": 43, "name": "Sam", "location": "Windfall Island (Near Auction House)", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Sam.png" },
-  { "id": 44, "name": "Medli", "location": "Dragon Roost Island / Earth Temple", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Medli.png" },
-  { "id": 45, "name": "Valoo", "location": "Dragon Roost Island (Mountain Top)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Valoo.png" },
-  { "id": 46, "name": "Komali", "location": "Dragon Roost Island (Chieftain's room/Outside)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Komali.png" },
-  { "id": 47, "name": "Kogoli", "location": "Dragon Roost Island (Outside deck)", "category": "Dragon Roost Island", "obtained": false, "missable": true, "image": "/assets/figurines/DragonRoost/Kogoli.png" },
-  { "id": 48, "name": "Quill", "location": "N/A (Bundled with Rito Chieftain)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Quill.png" },
-  { "id": 49, "name": "Kreeb", "location": "TBD", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Kreeb.png" },
-  { "id": 50, "name": "Koboli", "location": "Dragon Roost Island (Mail Sorting)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Koboli.png" },
-  { "id": 51, "name": "Laruto", "location": "N/A (Legendary Pictograph - First Quarter Moon)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Laruto.png" },
-  { "id": 52, "name": "Pashli", "location": "Dragon Roost Island (Mail Sorting)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Pashli.png" },
-  { "id": 53, "name": "Baito", "location": "Dragon Roost Island (Mail Sorting)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Baito.png" },
-  { "id": 54, "name": "Skett & Akoot", "location": "Dragon Roost Island (Guards)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/SkettAkoot.png" },
-  { "id": 55, "name": "Basht & Bisht", "location": "Dragon Roost Island (Guards)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/BashtBisht.png" },
-  { "id": 56, "name": "Hoskit", "location": "Dragon Roost Island (Guard outside Chieftain's room)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Hoskit.png" },
-  { "id": 57, "name": "Ilari", "location": "Dragon Roost Island (Upper level/Launch Platform)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Ilari.png" },
-  { "id": 58, "name": "Namali", "location": "Dragon Roost Island (Mail Sorting)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Namali.png" },
-  { "id": 59, "name": "Rito Chieftain", "location": "Dragon Roost Island (Chieftain's room)", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Chieftain.png" },
-  { "id": 60, "name": "Zephos & Cyclos", "location": "Great Sea (Cyclos' tornado)", "category": "Dragon Roost Island", "obtained": false, "missable": true, "image": "/assets/figurines/DragonRoost/ZephosCyclos.png" },
-  { "id": 61, "name": "Obli", "location": "Flight Control Platform", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Obli.png" },
-  { "id": 62, "name": "Willi", "location": "Flight Control Platform", "category": "Dragon Roost Island", "obtained": false, "missable": false, "image": "/assets/figurines/DragonRoost/Willi.png" },
-  { "id": 63, "name": "Fado", "location": "N/A (Legendary Pictograph - Waxing Crescent Moon)", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Fado.png" },
-  { "id": 64, "name": "Makar", "location": "Forest Haven / Wind Temple", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Makar.png" },
-  { "id": 65, "name": "Great Deku Tree", "location": "Forest Haven", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/DekuTree.png" },
-  { "id": 66, "name": "Hollo", "location": "Forest Haven (Potion Shop)", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Hollo.png" },
-  { "id": 67, "name": "Elma", "location": "Forest Haven / Needle Rock Isle", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Elma.png" },
-  { "id": 68, "name": "Olivio", "location": "Forest Haven / Eastern Fairy Island", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Olivio.png" },
-  { "id": 69, "name": "Aldo", "location": "Forest Haven / Cliff Plateau Isles", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Aldo.png" },
-  { "id": 70, "name": "Oakin", "location": "Forest Haven / Star Island", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Oakin.png" },
-  { "id": 71, "name": "Drona", "location": "Forest Haven / Private Oasis", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Drona.png" },
-  { "id": 72, "name": "Irch", "location": "Forest Haven / Shark Island", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Irch.png" },
-  { "id": 73, "name": "Rown", "location": "Forest Haven / Mother and Child Isles", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Rown.png" },
-  { "id": 74, "name": "Linder", "location": "Forest Haven / Greatfish Isle", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Linder.png" },
-  { "id": 75, "name": "Carlov", "location": "Nintendo Gallery", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Carlov.png" },
-  { "id": 76, "name": "Manny", "location": "Nintendo Gallery", "category": "Forest Haven", "obtained": false, "missable": false, "image": "/assets/figurines/ForestHaven/Manny.png" },
-  { "id": 77, "name": "Fishman", "location": "Great Sea (Any sector)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/Fishman.png" },
-  { "id": 78, "name": "Old Man Ho Ho", "location": "Various Islands (Lookout platforms)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/HoHo.png" },
-  { "id": 79, "name": "Fairy Queen", "location": "N/A (Legendary Pictograph - Waning Crescent Moon)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/QueenFairy.png" },
-  { "id": 80, "name": "Great Fairy", "location": "Fairy Fountains / Legendary Pictograph (Waning Gibbous Moon)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/GreatFairy.png" },
-  { "id": 81, "name": "Beedle", "location": "Beedle's Shop Ship (Various locations)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/Beedle.png" },
-  { "id": 82, "name": "Wandering Merchant", "location": "Mother & Child Isles / Bomb Island / Greatfish Isle (Goron)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/WanderingMerchant.png" },
-  { "id": 83, "name": "Gillian", "location": "TBD", "category": "Windfall Island", "obtained": false, "missable": true, "image": "/assets/figurines/WindfallIsland/Gillian.png" },
-  { "id": 84, "name": "King of Hyrule", "location": "Hyrule Castle / Legendary Pictograph (Waxing Gibbous Moon)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/KingOfHyrule.png" },
-  { "id": 85, "name": "Princess Zelda", "location": "N/A (Bundled with King of Hyrule)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/Zelda.png" },
-  { "id": 86, "name": "Salvage Corp", "location": "Great Sea (Near islands)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/SalvageCorp.png" },
-  { "id": 87, "name": "Gonzo", "location": "N/A (Bundled with Tetra)", "category": "Great Sea", "obtained": false, "missable": true, "image": "/assets/figurines/GreatSea/Gonzo.png" },
-  { "id": 88, "name": "Mako", "location": "N/A (Bundled with Tetra)", "category": "Great Sea", "obtained": false, "missable": true, "image": "/assets/figurines/GreatSea/Mako.png" },
-  { "id": 89, "name": "Niko", "location": "Pirate Ship / Outset Island", "category": "Great Sea", "obtained": false, "missable": true, "image": "/assets/figurines/GreatSea/Niko.png" },
-  { "id": 90, "name": "Nudge", "location": "N/A (Bundled with Tetra)", "category": "Great Sea", "obtained": false, "missable": true, "image": "/assets/figurines/GreatSea/Nudge.png" },
-  { "id": 91, "name": "Senza", "location": "N/A (Bundled with Tetra)", "category": "Great Sea", "obtained": false, "missable": true, "image": "/assets/figurines/GreatSea/Senza.png" },
-  { "id": 92, "name": "Zuko", "location": "N/A (Bundled with Tetra)", "category": "Great Sea", "obtained": false, "missable": true, "image": "/assets/figurines/GreatSea/Zuko.png" },
-  { "id": 93, "name": "Loot", "location": "Boating Course / Windfall Cafe Bar", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/Loot.png" },
-  { "id": 94, "name": "Fairy", "location": "Various (Pots, enemies, etc.)", "category": "Great Sea", "obtained": false, "missable": false, "image": "/assets/figurines/GreatSea/Fairy.png" },
-  { "id": 95, "name": "Knuckle", "location": "Tingle Island (HD) / Outset Island (GCN)", "category": "Special", "obtained": false, "missable": true, "image": "/assets/figurines/Special/Knuckle.png" },
-  { "id": 96, "name": "Big Octo", "location": "Great Sea (Specific locations)", "category": "Bosses", "obtained": false, "missable": true, "image": "/assets/figurines/Bosses/BigOcto.png" },
-  { "id": 97, "name": "Gohma", "location": "Dragon Roost Cavern / Ganon's Tower", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/Gohma.png" },
-  { "id": 98, "name": "Kalle Demos", "location": "Forbidden Woods / Ganon's Tower", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/KalleDemos.png" },
-  { "id": 99, "name": "Gohdan", "location": "Tower of the Gods / Ganon's Tower", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/Gohdan.png" },
-  { "id": 100, "name": "Jalhalla", "location": "Earth Temple / Ganon's Tower", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/Jalhalla.png" },
-  { "id": 101, "name": "Molgera", "location": "Wind Temple / Ganon's Tower", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/Molgera.png" },
-  { "id": 102, "name": "Puppet Ganon", "location": "Ganon's Tower (Boss)", "category": "Bosses", "obtained": false, "missable": true, "image": "/assets/figurines/Bosses/PuppetGanon.png" },
-  { "id": 103, "name": "ChuChu", "location": "Various Dungeons/Caves", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/ChuChu.png" },
-  { "id": 104, "name": "Bokoblin", "location": "Various Dungeons/Islands/Sea Platforms", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Bokoblin.png" },
-  { "id": 105, "name": "Missy", "location": "TBD", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Missy.png" },
-  { "id": 106, "name": "Dampa", "location": "TBD", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Dampa.png" },
-  { "id": 107, "name": "Darknut", "location": "Tower of the Gods / Earth Temple / Hyrule Castle / Ganon's Tower", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/bosses/Darknut.png" },
-  { "id": 108, "name": "Floor Master", "location": "Tower of the Gods / Earth Temple / Wind Temple", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/FloorMaster.png" },
-  { "id": 109, "name": "Gyorg", "location": "Great Sea (Shark type enemy)", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Gyorg.png" },
-  { "id": 110, "name": "Kargaroc", "location": "Dragon Roost Island / Various Islands", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Kargaroc.png" },
-  { "id": 111, "name": "Keese & Fire Keese", "location": "Various Caves/Dungeons", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/KeeseFireKeese.png" },
-  { "id": 112, "name": "Magtail", "location": "Dragon Roost Cavern / Fire Mountain", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Magtail.png" },
-  { "id": 113, "name": "Miniblin", "location": "Forsaken Fortress / Various Caves", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Miniblin.png" },
-  { "id": 114, "name": "Morth", "location": "Forbidden Woods / Forest Haven", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Morth.png" },
-  { "id": 115, "name": "Mothula", "location": "Forbidden Woods / Forest Haven / Wind Temple", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/Mothula.png" },
-  { "id": 116, "name": "Octorok", "location": "Great Sea / Forest Haven", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Octorok.png" },
-  { "id": 117, "name": "Peahat", "location": "Various Islands/Dungeons", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Peahat.png" },
-  { "id": 118, "name": "Poe", "location": "Earth Temple / Ghost Ship", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Poe.png" },
-  { "id": 119, "name": "Rat", "location": "Forsaken Fortress / Windfall Island Jail / Various Caves", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Rat.png" },
-  { "id": 120, "name": "Red Bubble and Blue Bubble", "location": "Dragon Roost Cavern / Earth Temple / Wind Temple / Tower of the Gods / Ganon's Tower", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/RedBubble.png" },
-  { "id": 121, "name": "Darknut (with Shield)", "location": "Tower of the Gods / Hyrule Castle / Ganon's Tower (Golden)", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/DarknutWithShield.png" },
-  { "id": 122, "name": "Red Wizzrobe", "location": "Wind Temple (Miniboss)", "category": "Bosses", "obtained": false, "missable": true, "image": "/assets/figurines/Bosses/RedWizzrobe.png" },
-  { "id": 123, "name": "ReDead", "location": "Earth Temple / Various Caves", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/ReDead.png" },
-  { "id": 124, "name": "Seahat", "location": "Great Sea", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Seahat.png" },
-  { "id": 125, "name": "Stalfos", "location": "Earth Temple / Ganon's Tower", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/Stalfos.png" },
-  { "id": 126, "name": "Wizzrobe", "location": "Tower of the Gods / Wind Temple / Ganon's Tower", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/Wizzrobe.png" },
-  { "id": 127, "name": "Armos", "location": "Tower of the Gods / Wind Temple", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/Armos.png" },
-  { "id": 128, "name": "Armos Knight", "location": "Tower of the Gods / Ganon's Tower", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/ArmosKnight.png" },
-  { "id": 129, "name": "Boko Baba", "location": "Forest Haven / Forbidden Woods", "category": "Enemies", "obtained": false, "missable": false, "image": "/assets/figurines/Enemies/BokoBaba.png" },
-  { "id": 130, "name": "Gummy", "location": "TBD", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Gummy.png" },
-  { "id": 131, "name": "Kane", "location": "TBD", "category": "Windfall Island", "obtained": false, "missable": false, "image": "/assets/figurines/WindfallIsland/Kane.png" },
-  { "id": 132, "name": "Moblin", "location": "Forsaken Fortress / Various Caves/Islands", "category": "Bosses", "obtained": false, "missable": false, "image": "/assets/figurines/Bosses/Moblin.png" },
-  { "id": 133, "name": "Doc Bandam", "location": "TBD", "category": "Windfall Island", "obtained": false, "missable": true, "image": "/assets/figurines/WindfallIsland/Bandam.png" },
-  { "id": 134, "name": "Link & King of Red Lions", "location": "N/A (Reward for completing Gallery)", "category": "Great Sea", "obtained": false, "missable": true, "image": "/assets/figurines/GreatSea/LinkRedLions.png" }
+  {
+    "id": 1,
+    "name": "Fado",
+    "location": "N/A (Legendary Pictograph - Waxing Crescent Moon)",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Fado.png"
+  },
+  {
+    "id": 2,
+    "name": "Makar",
+    "location": "Forest Haven / Wind Temple",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Makar.png"
+  },
+  {
+    "id": 3,
+    "name": "Great Deku Tree",
+    "location": "Forest Haven",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/DekuTree.png"
+  },
+  {
+    "id": 4,
+    "name": "Hollo",
+    "location": "Forest Haven (Potion Shop)",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Hollo.png"
+  },
+  {
+    "id": 5,
+    "name": "Elma",
+    "location": "Forest Haven / Needle Rock Isle",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Elma.png"
+  },
+  {
+    "id": 6,
+    "name": "Olivio",
+    "location": "Forest Haven / Eastern Fairy Island",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Olivio.png"
+  },
+  {
+    "id": 7,
+    "name": "Aldo",
+    "location": "Forest Haven / Cliff Plateau Isles",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Aldo.png"
+  },
+  {
+    "id": 8,
+    "name": "Oakin",
+    "location": "Forest Haven / Star Island",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Oakin.png"
+  },
+  {
+    "id": 9,
+    "name": "Drona",
+    "location": "Forest Haven / Private Oasis",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Drona.png"
+  },
+  {
+    "id": 10,
+    "name": "Irch",
+    "location": "Forest Haven / Shark Island",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Irch.png"
+  },
+  {
+    "id": 11,
+    "name": "Rown",
+    "location": "Forest Haven / Mother and Child Isles",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Rown.png"
+  },
+  {
+    "id": 12,
+    "name": "Linder",
+    "location": "Forest Haven / Greatfish Isle",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Linder.png"
+  },
+  {
+    "id": 13,
+    "name": "Carlov",
+    "location": "Nintendo Gallery",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Carlov.png"
+  },
+  {
+    "id": 14,
+    "name": "Manny",
+    "location": "Nintendo Gallery",
+    "category": "Forest Haven",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/ForestHaven/Manny.png"
+  },
+  {
+    "id": 15,
+    "name": "Medli",
+    "location": "Dragon Roost Island / Earth Temple",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Medli.png"
+  },
+  {
+    "id": 16,
+    "name": "Valoo",
+    "location": "Dragon Roost Island (Mountain Top)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Valoo.png"
+  },
+  {
+    "id": 17,
+    "name": "Komali",
+    "location": "Dragon Roost Island (Chieftain's room/Outside)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Komali.png"
+  },
+  {
+    "id": 18,
+    "name": "Kogoli",
+    "location": "Dragon Roost Island (Outside deck)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/DragonRoost/Kogoli.png"
+  },
+  {
+    "id": 19,
+    "name": "Quill",
+    "location": "N/A (Bundled with Rito Chieftain)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Quill.png"
+  },
+  {
+    "id": 20,
+    "name": "Koboli",
+    "location": "Dragon Roost Island (Mail Sorting)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Koboli.png"
+  },
+  {
+    "id": 21,
+    "name": "Laruto",
+    "location": "N/A (Legendary Pictograph - First Quarter Moon)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Laruto.png"
+  },
+  {
+    "id": 22,
+    "name": "Pashli",
+    "location": "Dragon Roost Island (Mail Sorting)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Pashli.png"
+  },
+  {
+    "id": 23,
+    "name": "Baito",
+    "location": "Dragon Roost Island (Mail Sorting)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Baito.png"
+  },
+  {
+    "id": 24,
+    "name": "Skett & Akoot",
+    "location": "Dragon Roost Island (Guards)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/SkettAkoot.png"
+  },
+  {
+    "id": 25,
+    "name": "Basht & Bisht",
+    "location": "Dragon Roost Island (Guards)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/BashtBisht.png"
+  },
+  {
+    "id": 26,
+    "name": "Hoskit",
+    "location": "Dragon Roost Island (Guard outside Chieftain's room)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Hoskit.png"
+  },
+  {
+    "id": 27,
+    "name": "Ilari",
+    "location": "Dragon Roost Island (Upper level/Launch Platform)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Ilari.png"
+  },
+  {
+    "id": 28,
+    "name": "Namali",
+    "location": "Dragon Roost Island (Mail Sorting)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Namali.png"
+  },
+  {
+    "id": 29,
+    "name": "Rito Chieftain",
+    "location": "Dragon Roost Island (Chieftain's room)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Chieftain.png"
+  },
+  {
+    "id": 30,
+    "name": "Zephos & Cyclos",
+    "location": "Great Sea (Cyclos' tornado)",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/DragonRoost/ZephosCyclos.png"
+  },
+  {
+    "id": 31,
+    "name": "Obli",
+    "location": "Flight Control Platform",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Obli.png"
+  },
+  {
+    "id": 32,
+    "name": "Willi",
+    "location": "Flight Control Platform",
+    "category": "Dragon Roost Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/DragonRoost/Willi.png"
+  },
+  {
+    "id": 33,
+    "name": "ChuChu",
+    "location": "Various Dungeons/Caves",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/ChuChu.png"
+  },
+  {
+    "id": 34,
+    "name": "Bokoblin",
+    "location": "Various Dungeons/Islands/Sea Platforms",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Bokoblin.png"
+  },
+  {
+    "id": 35,
+    "name": "Floor Master",
+    "location": "Tower of the Gods / Earth Temple / Wind Temple",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/FloorMaster.png"
+  },
+  {
+    "id": 36,
+    "name": "Gyorg",
+    "location": "Great Sea (Shark type enemy)",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Gyorg.png"
+  },
+  {
+    "id": 37,
+    "name": "Kargaroc",
+    "location": "Dragon Roost Island / Various Islands",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Kargaroc.png"
+  },
+  {
+    "id": 38,
+    "name": "Keese & Fire Keese",
+    "location": "Various Caves/Dungeons",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/KeeseFireKeese.png"
+  },
+  {
+    "id": 39,
+    "name": "Magtail",
+    "location": "Dragon Roost Cavern / Fire Mountain",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Magtail.png"
+  },
+  {
+    "id": 40,
+    "name": "Miniblin",
+    "location": "Forsaken Fortress / Various Caves",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Miniblin.png"
+  },
+  {
+    "id": 41,
+    "name": "Morth",
+    "location": "Forbidden Woods / Forest Haven",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Morth.png"
+  },
+  {
+    "id": 42,
+    "name": "Octorok",
+    "location": "Great Sea / Forest Haven",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Octorok.png"
+  },
+  {
+    "id": 43,
+    "name": "Peahat",
+    "location": "Various Islands/Dungeons",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Peahat.png"
+  },
+  {
+    "id": 44,
+    "name": "Poe",
+    "location": "Earth Temple / Ghost Ship",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Poe.png"
+  },
+  {
+    "id": 45,
+    "name": "Rat",
+    "location": "Forsaken Fortress / Windfall Island Jail / Various Caves",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Rat.png"
+  },
+  {
+    "id": 46,
+    "name": "Red Bubble and Blue Bubble",
+    "location": "Dragon Roost Cavern / Earth Temple / Wind Temple / Tower of the Gods / Ganon's Tower",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/RedBlueBubble.png"
+  },
+  {
+    "id": 47,
+    "name": "ReDead",
+    "location": "Earth Temple / Various Caves",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/ReDead.png"
+  },
+  {
+    "id": 48,
+    "name": "Seahat",
+    "location": "Great Sea",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Seahat.png"
+  },
+  {
+    "id": 49,
+    "name": "Armos",
+    "location": "Tower of the Gods / Wind Temple",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/Armos.png"
+  },
+  {
+    "id": 50,
+    "name": "Armos Knight",
+    "location": "Tower of the Gods / Ganon's Tower",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/ArmosKnight.png"
+  },
+  {
+    "id": 51,
+    "name": "Boko Baba",
+    "location": "Forest Haven / Forbidden Woods",
+    "category": "Enemies",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Enemies/BokoBaba.png"
+  },
+  {
+    "id": 52,
+    "name": "Ganondorf",
+    "location": "Ganon's Tower / Legendary Pictograph (Full Moon)",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/Ganondorf.png"
+  },
+  {
+    "id": 53,
+    "name": "Phantom Ganon",
+    "location": "Forsaken Fortress / Ganon's Tower",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/Bosses/PhantomGanon.png"
+  },
+  {
+    "id": 54,
+    "name": "Helmaroc King",
+    "location": "Forsaken Fortress (Boss)",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/Bosses/HelmarocKing.png"
+  },
+  {
+    "id": 55,
+    "name": "Mighty Darknut",
+    "location": "Hyrule Castle / Ganon's Tower (Caped Version)",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/MightyDarknut.png"
+  },
+  {
+    "id": 56,
+    "name": "Big Octo",
+    "location": "Great Sea (Specific locations)",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/Bosses/BigOcto.png"
+  },
+  {
+    "id": 57,
+    "name": "Gohma",
+    "location": "Dragon Roost Cavern / Ganon's Tower",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/Gohma.png"
+  },
+  {
+    "id": 58,
+    "name": "Kalle Demos",
+    "location": "Forbidden Woods / Ganon's Tower",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/KalleDemos.png"
+  },
+  {
+    "id": 59,
+    "name": "Gohdan",
+    "location": "Tower of the Gods / Ganon's Tower",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/Gohdan.png"
+  },
+  {
+    "id": 60,
+    "name": "Jalhalla",
+    "location": "Earth Temple / Ganon's Tower",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/Jalhalla.png"
+  },
+  {
+    "id": 61,
+    "name": "Molgera",
+    "location": "Wind Temple / Ganon's Tower",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/Molgera.png"
+  },
+  {
+    "id": 62,
+    "name": "Puppet Ganon",
+    "location": "Ganon's Tower (Boss)",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/Bosses/PuppetGanon.png"
+  },
+  {
+    "id": 63,
+    "name": "Mothula",
+    "location": "Forbidden Woods / Forest Haven / Wind Temple",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/Mothula.png"
+  },
+  {
+    "id": 64,
+    "name": "Darknut",
+    "location": "Tower of the Gods / Earth Temple / Hyrule Castle / Ganon's Tower",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/bosses/Darknut.png"
+  },
+  {
+    "id": 65,
+    "name": "Darknut (with Shield)",
+    "location": "Tower of the Gods / Hyrule Castle / Ganon's Tower (Golden)",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/DarknutWithShield.png"
+  },
+  {
+    "id": 66,
+    "name": "Red Wizzrobe",
+    "location": "Wind Temple (Miniboss)",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/Bosses/RedWizzrobe.png"
+  },
+  {
+    "id": 67,
+    "name": "Stalfos",
+    "location": "Earth Temple / Ganon's Tower",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/Stalfos.png"
+  },
+  {
+    "id": 68,
+    "name": "Wizzrobe",
+    "location": "Tower of the Gods / Wind Temple / Ganon's Tower",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/Wizzrobe.png"
+  },
+  {
+    "id": 69,
+    "name": "Moblin",
+    "location": "Forsaken Fortress / Various Caves/Islands",
+    "category": "Bosses",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/Bosses/Moblin.png"
+  },
+  {
+    "id": 70,
+    "name": "Aryll",
+    "location": "N/A (Bundled with Grandma)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Aryll.png"
+  },
+  {
+    "id": 71,
+    "name": "Grandma",
+    "location": "Outset Island (Link's House)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Grandma.png"
+  },
+  {
+    "id": 72,
+    "name": "Orca",
+    "location": "Outset Island (House, 1st floor)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Orca.png"
+  },
+  {
+    "id": 73,
+    "name": "Sturgeon",
+    "location": "Outset Island (House, 2nd floor)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Sturgeon.png"
+  },
+  {
+    "id": 74,
+    "name": "Sue-Belle",
+    "location": "Outset Island (Outside/House)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/SueBelle.png"
+  },
+  {
+    "id": 75,
+    "name": "Mesa",
+    "location": "Outset Island (Outside/House)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Mesa.png"
+  },
+  {
+    "id": 76,
+    "name": "Abe",
+    "location": "Outset Island (Outside/House)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Abe.png"
+  },
+  {
+    "id": 77,
+    "name": "Rose",
+    "location": "Outset Island (Outside/House)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Rose.png"
+  },
+  {
+    "id": 78,
+    "name": "Joel",
+    "location": "Outset Island (Outside/House)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Joel.png"
+  },
+  {
+    "id": 79,
+    "name": "Zill",
+    "location": "Outset Island (Outside/House)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Zill.png"
+  },
+  {
+    "id": 80,
+    "name": "Jabun",
+    "location": "N/A (Legendary Pictograph - Last Quarter Moon)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Jabun.png"
+  },
+  {
+    "id": 81,
+    "name": "Crab",
+    "location": "Outset Island (Beach) / Various",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Crab.png"
+  },
+  {
+    "id": 82,
+    "name": "Seagull",
+    "location": "Various (Great Sea)",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/Seagull.png"
+  },
+  {
+    "id": 83,
+    "name": "Pig",
+    "location": "Outset Island / Windfall Island",
+    "category": "Outset Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/OutsetIsland/WildPig.png"
+  },
+  {
+    "id": 84,
+    "name": "Tott",
+    "location": "TBD",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/WindfallIsland/Tott.png"
+  },
+  {
+    "id": 85,
+    "name": "Candy",
+    "location": "TBD",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Candy.png"
+  },
+  {
+    "id": 86,
+    "name": "Mila",
+    "location": "Windfall Island (Shop/Outside)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Mila.png"
+  },
+  {
+    "id": 87,
+    "name": "Maggie",
+    "location": "Windfall Island (House/Outside)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Maggie.png"
+  },
+  {
+    "id": 88,
+    "name": "Maggie's Father",
+    "location": "Windfall Island (House)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/MaggieFather.png"
+  },
+  {
+    "id": 89,
+    "name": "Killer Bees",
+    "location": "Windfall Island (Outside/School)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/KillerBees.png"
+  },
+  {
+    "id": 90,
+    "name": "Zunari",
+    "location": "Windfall Island (Shop Stall)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Zunari.png"
+  },
+  {
+    "id": 91,
+    "name": "Lenzo",
+    "location": "Windfall Island (Pictograph Shop)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Lenzo.png"
+  },
+  {
+    "id": 92,
+    "name": "Anton",
+    "location": "Windfall Island (Walking around)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Anton.png"
+  },
+  {
+    "id": 93,
+    "name": "Linda",
+    "location": "Windfall Island (Near Chu Jelly Juice Shop)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Linda.png"
+  },
+  {
+    "id": 94,
+    "name": "Kamo",
+    "location": "Windfall Island (Near Bomb Shop/Ferris Wheel)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Kamo.png"
+  },
+  {
+    "id": 95,
+    "name": "Potova & Joanna",
+    "location": "Windfall Island (School/Beach)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/PotovaJoanna.png"
+  },
+  {
+    "id": 96,
+    "name": "Minenco",
+    "location": "Windfall Island (Near Potion Shop/Auction House)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Minenco.png"
+  },
+  {
+    "id": 97,
+    "name": "Pompie & Vera",
+    "location": "Windfall Island (Near Zunari's Shop)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/PompieVera.png"
+  },
+  {
+    "id": 98,
+    "name": "Miss Marie",
+    "location": "Windfall Island (School)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/MrsMarie.png"
+  },
+  {
+    "id": 99,
+    "name": "Garrickson",
+    "location": "Windfall Island (Outside/Cafe Bar)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Garrickson.png"
+  },
+  {
+    "id": 100,
+    "name": "Gossack",
+    "location": "Windfall Island (Cafe Bar)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Gossack.png"
+  },
+  {
+    "id": 101,
+    "name": "Cannon",
+    "location": "Windfall Island (Bomb Shop)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Cannon.png"
+  },
+  {
+    "id": 102,
+    "name": "Mila's Father",
+    "location": "Windfall Island (Shop/Near Tree)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/MilaFather.png"
+  },
+  {
+    "id": 103,
+    "name": "Sam",
+    "location": "Windfall Island (Near Auction House)",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Sam.png"
+  },
+  {
+    "id": 104,
+    "name": "Kreeb",
+    "location": "TBD",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Kreeb.png"
+  },
+  {
+    "id": 105,
+    "name": "Missy",
+    "location": "TBD",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Missy.png"
+  },
+  {
+    "id": 106,
+    "name": "Dampa",
+    "location": "TBD",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Dampa.png"
+  },
+  {
+    "id": 107,
+    "name": "Gummy",
+    "location": "TBD",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Gummy.png"
+  },
+  {
+    "id": 108,
+    "name": "Kane",
+    "location": "TBD",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/WindfallIsland/Kane.png"
+  },
+  {
+    "id": 109,
+    "name": "Gillian",
+    "location": "TBD",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/WindfallIsland/Gillian.png"
+  },
+  {
+    "id": 110,
+    "name": "Doc Bandam",
+    "location": "TBD",
+    "category": "Windfall Island",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/WindfallIsland/Bandam.png"
+  },
+  {
+    "id": 111,
+    "name": "Tetra",
+    "location": "Hyrule Castle (before reveal)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/GreatSea/Tetra.png"
+  },
+  {
+    "id": 112,
+    "name": "Tingle",
+    "location": "Tingle Island / Windfall Island (Jail)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/Tingle.png"
+  },
+  {
+    "id": 113,
+    "name": "Ankle",
+    "location": "Tingle Island",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/Ankle.png"
+  },
+  {
+    "id": 114,
+    "name": "David Jr.",
+    "location": "Tingle Island",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/DavidJr.png"
+  },
+  {
+    "id": 115,
+    "name": "Salvatore",
+    "location": "Windfall Island (Sploosh Kaboom) / Spectacle Island",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/Salvatore.png"
+  },
+  {
+    "id": 116,
+    "name": "Fishman",
+    "location": "Great Sea (Any sector)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/Fishman.png"
+  },
+  {
+    "id": 117,
+    "name": "Old Man Ho Ho",
+    "location": "Various Islands (Lookout platforms)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/HoHo.png"
+  },
+  {
+    "id": 118,
+    "name": "Fairy Queen",
+    "location": "N/A (Legendary Pictograph - Waning Crescent Moon)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/QueenFairy.png"
+  },
+  {
+    "id": 119,
+    "name": "Great Fairy",
+    "location": "Fairy Fountains / Legendary Pictograph (Waning Gibbous Moon)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/GreatFairy.png"
+  },
+  {
+    "id": 120,
+    "name": "Beedle",
+    "location": "Beedle's Shop Ship (Various locations)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/Beedle.png"
+  },
+  {
+    "id": 121,
+    "name": "Wandering Merchant",
+    "location": "Mother & Child Isles / Bomb Island / Greatfish Isle (Goron)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/WanderingMerchant.png"
+  },
+  {
+    "id": 122,
+    "name": "King of Hyrule",
+    "location": "Hyrule Castle / Legendary Pictograph (Waxing Gibbous Moon)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/KingOfHyrule.png"
+  },
+  {
+    "id": 123,
+    "name": "Princess Zelda",
+    "location": "N/A (Bundled with King of Hyrule)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/Zelda.png"
+  },
+  {
+    "id": 124,
+    "name": "Salvage Corp",
+    "location": "Great Sea (Near islands)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/SalvageCorp.png"
+  },
+  {
+    "id": 125,
+    "name": "Gonzo",
+    "location": "N/A (Bundled with Tetra)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/GreatSea/Gonzo.png"
+  },
+  {
+    "id": 126,
+    "name": "Mako",
+    "location": "N/A (Bundled with Tetra)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/GreatSea/Mako.png"
+  },
+  {
+    "id": 127,
+    "name": "Niko",
+    "location": "Pirate Ship / Outset Island",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/GreatSea/Niko.png"
+  },
+  {
+    "id": 128,
+    "name": "Nudge",
+    "location": "N/A (Bundled with Tetra)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/GreatSea/Nudge.png"
+  },
+  {
+    "id": 129,
+    "name": "Senza",
+    "location": "N/A (Bundled with Tetra)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/GreatSea/Senza.png"
+  },
+  {
+    "id": 130,
+    "name": "Zuko",
+    "location": "N/A (Bundled with Tetra)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/GreatSea/Zuko.png"
+  },
+  {
+    "id": 131,
+    "name": "Loot",
+    "location": "Boating Course / Windfall Cafe Bar",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/Loot.png"
+  },
+  {
+    "id": 132,
+    "name": "Fairy",
+    "location": "Various (Pots, enemies, etc.)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": false,
+    "image": "/assets/figurines/GreatSea/Fairy.png"
+  },
+  {
+    "id": 133,
+    "name": "Link & King of Red Lions",
+    "location": "N/A (Reward for completing Gallery)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/GreatSea/LinkRedLions.png"
+  },
+  {
+    "id": 134,
+    "name": "Knuckle",
+    "location": "Tingle Island (HD) / Outset Island (GCN)",
+    "category": "Great Sea",
+    "obtained": false,
+    "missable": true,
+    "image": "/assets/figurines/GreatSea/Knuckle.png"
+  }
 ]
