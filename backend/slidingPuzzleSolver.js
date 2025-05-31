@@ -15,8 +15,7 @@ const router = express.Router();
 
 // --- Puzzle Constants ---
 const GRID_SIZE = 4;
-const TILE_COUNT = GRID_SIZE * GRID_SIZE;
-const EMPTY_TILE = TILE_COUNT - 1;
+const EMPTY_TILE = GRID_SIZE - 1;
 
 /**
  * Calculates the sum of Manhattan distances for all tiles from their goal positions.
@@ -152,9 +151,7 @@ function isSolvable(tiles, emptyPosition) {
   }
   const emptyRow = Math.floor(emptyPosition / GRID_SIZE);
   const emptyRowFromBottom = GRID_SIZE - emptyRow;
-  return (emptyRowFromBottom % 2 === 0)
-    ? (inversions % 2 === 1)
-    : (inversions % 2 === 0);
+  return ((inversions + emptyRowFromBottom) % 2 === 0);
 }
 
 // --- Fast Priority Queue (Binary Heap) ---

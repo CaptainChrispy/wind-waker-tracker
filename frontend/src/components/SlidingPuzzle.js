@@ -19,7 +19,11 @@ import puzzle16 from '../assets/images/sliding-puzzle/puzzle16.png';
 
 const GRID_SIZE = 4;
 const TILE_COUNT = GRID_SIZE * GRID_SIZE;
-const EMPTY_TILE = TILE_COUNT - 1;
+const EMPTY_TILE = GRID_SIZE - 1;
+
+function getSolvedTiles() {
+  return [...Array(TILE_COUNT).keys()];
+}
 
 const initialPuzzles = [
   { id: 1, image: puzzle1, completed: false },
@@ -81,19 +85,20 @@ const SlidingPuzzle = () => {
   }, [puzzles]);
 
   const instaSolve = () => {
-    const solvedTiles = [...Array(TILE_COUNT).keys()];
-    setTiles(solvedTiles);
+    setTiles(getSolvedTiles());
     setEmptyPosition(EMPTY_TILE);
-
     const updatedPuzzles = [...puzzles];
     updatedPuzzles[currentPuzzleIndex].completed = true;
     setPuzzles(updatedPuzzles);
   };
 
   const initializePuzzle = () => {
-    const newTiles = [...Array(TILE_COUNT).keys()].sort(() => Math.random() - 0.5);
+    let newTiles;
+    do {
+      newTiles = [...Array(TILE_COUNT).keys()].sort(() => Math.random() - 0.5);
+    } while (newTiles.indexOf(EMPTY_TILE) !== EMPTY_TILE); // ensure empty is at top right
     setTiles(newTiles);
-    setEmptyPosition(newTiles.indexOf(EMPTY_TILE));
+    setEmptyPosition(EMPTY_TILE);
   };
 
   const getTileStyle = (tileNumber) => {
@@ -138,7 +143,14 @@ const SlidingPuzzle = () => {
   };
 
   const isPuzzleSolved = (tilesToCheck) => {
-    return tilesToCheck.every((tile, index) => tile === index);
+    for (let i = 0; i < tilesToCheck.length; i++) {
+      if (i === EMPTY_TILE) {
+        if (tilesToCheck[i] !== EMPTY_TILE) return false;
+      } else {
+        if (tilesToCheck[i] !== i) return false;
+      }
+    }
+    return true;
   };
 
   const updateProgress = () => {
@@ -178,36 +190,17 @@ const SlidingPuzzle = () => {
 
   // Only keep the isSolvable check and server call for solution
   const isSolvable = () => {
-    if (isPuzzleSolved(tiles)) {
-      return true;
-    }
-
+    if (isPuzzleSolved(tiles)) return true;
     let inversions = 0;
-    const tilesWithoutEmpty = [];
-    for (let i = 0; i < tiles.length; i++) {
-      if (tiles[i] !== EMPTY_TILE) {
-        tilesWithoutEmpty.push(tiles[i]);
-      }
-    }
-
+    const tilesWithoutEmpty = tiles.filter(tile => tile !== EMPTY_TILE);
     for (let i = 0; i < tilesWithoutEmpty.length; i++) {
       for (let j = i + 1; j < tilesWithoutEmpty.length; j++) {
-        if (tilesWithoutEmpty[i] > tilesWithoutEmpty[j]) {
-          inversions++;
-        }
+        if (tilesWithoutEmpty[i] > tilesWithoutEmpty[j]) inversions++;
       }
     }
-
     const emptyRow = Math.floor(emptyPosition / GRID_SIZE);
     const emptyRowFromBottom = GRID_SIZE - emptyRow;
-
-    // Even row from bottom => inversions must be odd
-    // Odd row from bottom => inversions must be even
-    const result = (emptyRowFromBottom % 2 === 0)
-      ? (inversions % 2 === 1)
-      : (inversions % 2 === 0);
-
-    return result;
+    return ((inversions + emptyRowFromBottom) % 2 === 0);
   };
 
   // Only call the backend for solution
