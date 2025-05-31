@@ -193,9 +193,27 @@
   opacity: 1;
 }
 
+.missable-tag {
+  color: #b71c1c;
+  background: none;
+  border: none;
+  font-size: 0.92rem;
+  font-weight: bold;
+  padding: 0;
+  border-radius: 0;
+  margin-top: 4px;
+  margin-left: 2px;
+  box-shadow: none;
+  letter-spacing: 0.04em;
+  text-shadow: none;
+  position: relative;
+  z-index: 2;
+}
+
 .missable {
   border-style: dashed;
   border-color: #e57373;
+  box-shadow: 0 0 0 2px #e5737340;
 }
 
 .figurine-image-wrapper {
@@ -230,12 +248,16 @@
   font-weight: bold;
   padding: 2px 10px;
   border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(44, 62, 80, 0.10);
+  box-shadow: 0 1px 3px rgba(44,62,80,0.10);
   border: 1px solid #ffd740;
 }
 
 .figurine-details {
   margin-bottom: 6px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .figurine-details h3 {
@@ -245,20 +267,21 @@
 }
 
 .figurine-details p {
-  margin: 0 0 4px 0;
-  font-size: 0.98rem;
-}
-
-.missable-tag {
-  display: inline-block;
-  background: #e57373;
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: bold;
-  padding: 2px 8px;
-  border-radius: 7px;
-  margin-top: 2px;
-  box-shadow: 0 1px 2px rgba(44, 62, 80, 0.10);
+  margin: 0 0 10px 0;
+  font-size: 0.96rem;
+  color: #234d20;
+  background: #f8fff2;
+  border-left: 5px solid #43a047;
+  border-radius: 0 8px 8px 0;
+  padding: 8px 12px 8px 14px;
+  line-height: 1.6;
+  word-break: break-word;
+  max-width: 100%;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+  text-align: left;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 0.01em;
+  font-weight: 500;
 }
 
 .figurine-checkbox {
@@ -300,37 +323,6 @@
   margin-left: 2px;
 }
 
-.no-results {
-  grid-column: 1/-1;
-  text-align: center;
-  color: #e57373;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 30px 0;
-}
-
-.figurine-tips {
-  background-color: rgba(233, 182, 26, 0.18);
-  border: 1px solid #e9b61a;
-  border-radius: 7px;
-  padding: 18px;
-  margin-top: 24px;
-}
-
-.figurine-tips h3 {
-  color: #8b5b2b;
-  margin-top: 0;
-}
-
-.figurine-tips ul {
-  padding-left: 20px;
-}
-
-.figurine-tips li {
-  margin-bottom: 8px;
-  color: #5a3a1a;
-}
-
 @media (max-width: 900px) {
   .figurine-list {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -360,6 +352,11 @@
     padding: 8px 10px;
     font-size: 14px;
     min-width: 70px;
+  }
+  .figurine-details p {
+    font-size: 0.92rem;
+    padding: 7px 6px 7px 10px;
+    border-radius: 0 6px 6px 0;
   }
 }
 
