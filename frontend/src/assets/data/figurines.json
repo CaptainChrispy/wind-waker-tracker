@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Fado",
-    "location": "N/A (Legendary Pictograph - Waxing Crescent Moon)",
+    "location": "Legendary Pictograph - Captured during a waxing crescent moon. Obtainable at the Nintendo Gallery once the picture has been taken.",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "Makar",
-    "location": "Forest Haven / Wind Temple",
+    "location": "Found in Forest Haven (outside the Great Deku Tree's chamber) or later in the Wind Temple. Best taken before entering the Wind Temple.",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "Great Deku Tree",
-    "location": "Forest Haven",
+    "location": "Forest Haven (inside his chamber).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "Hollo",
-    "location": "Forest Haven (Potion Shop)",
+    "location": "Forest Haven (inside the Potion Shop).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "Elma",
-    "location": "Forest Haven / Needle Rock Isle",
+    "location": "Forest Haven (standing near the waterfall) or at Needle Rock Isle (after delivering letter).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "name": "Olivio",
-    "location": "Forest Haven / Eastern Fairy Island",
+    "location": "Forest Haven (standing on a ledge near the entrance) or at Eastern Fairy Island (after delivering letter).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "name": "Aldo",
-    "location": "Forest Haven / Cliff Plateau Isles",
+    "location": "Forest Haven (on a platform near the Great Deku Tree's chamber) or at Cliff Plateau Isles (after delivering letter).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "name": "Oakin",
-    "location": "Forest Haven / Star Island",
+    "location": "Forest Haven (on a higher platform near the entrance) or at Star Island (after delivering letter).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "name": "Drona",
-    "location": "Forest Haven / Private Oasis",
+    "location": "Forest Haven (on a leaf platform) or at Private Oasis (after delivering letter).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -83,7 +83,7 @@
   {
     "id": 10,
     "name": "Irch",
-    "location": "Forest Haven / Shark Island",
+    "location": "Forest Haven (near the water's edge) or at Shark Island (after delivering letter).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -92,7 +92,7 @@
   {
     "id": 11,
     "name": "Rown",
-    "location": "Forest Haven / Mother and Child Isles",
+    "location": "Forest Haven (on a lower platform) or at Mother and Child Isles (after delivering letter).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -101,7 +101,7 @@
   {
     "id": 12,
     "name": "Linder",
-    "location": "Forest Haven / Greatfish Isle",
+    "location": "Forest Haven (on a small island) or at Greatfish Isle (after delivering letter).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -110,7 +110,7 @@
   {
     "id": 13,
     "name": "Carlov",
-    "location": "Nintendo Gallery",
+    "location": "Nintendo Gallery (standing behind the counter).",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -119,7 +119,7 @@
   {
     "id": 14,
     "name": "Manny",
-    "location": "Nintendo Gallery",
+    "location": "Initially found on top of the northern small island in Forest Haven, then moves inside the Nintendo Gallery itself. Take a pictograph of him outside before he moves into the gallery.",
     "category": "Forest Haven",
     "obtained": false,
     "missable": false,
@@ -128,7 +128,7 @@
   {
     "id": 15,
     "name": "Medli",
-    "location": "Dragon Roost Island / Earth Temple",
+    "location": "Dragon Roost Island (inside the Rito's room) or at the Earth Temple (as your partner). Best taken before entering Earth Temple.",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -137,7 +137,7 @@
   {
     "id": 16,
     "name": "Valoo",
-    "location": "Dragon Roost Island (Mountain Top)",
+    "location": "After saving Medli from Dragon Roost Cavern, take a pictograph of Valoo from a distance while he rests on the mountain top of Dragon Roost Island.",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -146,7 +146,7 @@
   {
     "id": 17,
     "name": "Komali",
-    "location": "Dragon Roost Island (Chieftain's room/Outside)",
+    "location": "Dragon Roost Island (initially in the Chieftain's room, later found outside on the island).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -155,7 +155,7 @@
   {
     "id": 18,
     "name": "Kogoli",
-    "location": "Dragon Roost Island (Outside deck)",
+    "location": "Dragon Roost Island (on the outside deck, before clearing Dragon Roost Cavern). **Missable!** He disappears after the dungeon.",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": true,
@@ -164,7 +164,7 @@
   {
     "id": 19,
     "name": "Quill",
-    "location": "N/A (Bundled with Rito Chieftain)",
+    "location": "Bundled with the Rito Chieftain figurine. Not a separate pictograph.",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -173,7 +173,7 @@
   {
     "id": 20,
     "name": "Koboli",
-    "location": "Dragon Roost Island (Mail Sorting)",
+    "location": "Dragon Roost Island (working at the mail sorting desk).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -182,7 +182,7 @@
   {
     "id": 21,
     "name": "Laruto",
-    "location": "N/A (Legendary Pictograph - First Quarter Moon)",
+    "location": "Legendary Pictograph - Captured during the first quarter moon. Obtainable at the Nintendo Gallery once the picture has been taken.",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -191,7 +191,7 @@
   {
     "id": 22,
     "name": "Pashli",
-    "location": "Dragon Roost Island (Mail Sorting)",
+    "location": "Dragon Roost Island (working at the mail sorting desk).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -200,7 +200,7 @@
   {
     "id": 23,
     "name": "Baito",
-    "location": "Dragon Roost Island (Mail Sorting)",
+    "location": "Dragon Roost Island (working at the mail sorting desk).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -209,7 +209,7 @@
   {
     "id": 24,
     "name": "Skett & Akoot",
-    "location": "Dragon Roost Island (Guards)",
+    "location": "Dragon Roost Island (standing guard near the bridge leading to the Chieftain's room).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -218,7 +218,7 @@
   {
     "id": 25,
     "name": "Basht & Bisht",
-    "location": "Dragon Roost Island (Guards)",
+    "location": "Dragon Roost Island (standing guard near the main entrance).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -227,7 +227,7 @@
   {
     "id": 26,
     "name": "Hoskit",
-    "location": "Dragon Roost Island (Guard outside Chieftain's room)",
+    "location": "Dragon Roost Island (guarding the entrance to the Chieftain's room).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -236,7 +236,7 @@
   {
     "id": 27,
     "name": "Ilari",
-    "location": "Dragon Roost Island (Upper level/Launch Platform)",
+    "location": "Dragon Roost Island (on the upper level, near the launch platform).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -245,7 +245,7 @@
   {
     "id": 28,
     "name": "Namali",
-    "location": "Dragon Roost Island (Mail Sorting)",
+    "location": "Dragon Roost Island (working at the mail sorting desk).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -254,7 +254,7 @@
   {
     "id": 29,
     "name": "Rito Chieftain",
-    "location": "Dragon Roost Island (Chieftain's room)",
+    "location": "Dragon Roost Island (inside his room).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -263,7 +263,7 @@
   {
     "id": 30,
     "name": "Zephos & Cyclos",
-    "location": "Great Sea (Cyclos' tornado)",
+    "location": "Zephos is found on Dragon Roost Island. Cyclos appears in tornadoes on the Great Sea; take his pictograph before shooting him down with your bow to learn the Ballad of Gales. **Missable!** Cyclos disappears after you learn the song.",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": true,
@@ -272,7 +272,7 @@
   {
     "id": 31,
     "name": "Obli",
-    "location": "Flight Control Platform",
+    "location": "Flight Control Platform (standing on the platform).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -281,7 +281,7 @@
   {
     "id": 32,
     "name": "Willi",
-    "location": "Flight Control Platform",
+    "location": "Flight Control Platform (inside the building).",
     "category": "Dragon Roost Island",
     "obtained": false,
     "missable": false,
@@ -290,7 +290,7 @@
   {
     "id": 33,
     "name": "ChuChu",
-    "location": "Various Dungeons/Caves",
+    "location": "Various Dungeons and Caves (e.g., Dragon Roost Cavern, Forsaken Fortress, Wind Temple).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -299,7 +299,7 @@
   {
     "id": 34,
     "name": "Bokoblin",
-    "location": "Various Dungeons/Islands/Sea Platforms",
+    "location": "Various Dungeons, Islands, and Sea Platforms (e.g., Forsaken Fortress, Dragon Roost Cavern, Pawprint Isle).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -308,7 +308,7 @@
   {
     "id": 35,
     "name": "Floor Master",
-    "location": "Tower of the Gods / Earth Temple / Wind Temple",
+    "location": "Tower of the Gods, Earth Temple, Wind Temple.",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -317,7 +317,7 @@
   {
     "id": 36,
     "name": "Gyorg",
-    "location": "Great Sea (Shark type enemy)",
+    "location": "Great Sea (a large, shark-like enemy found swimming in specific sectors).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -326,7 +326,7 @@
   {
     "id": 37,
     "name": "Kargaroc",
-    "location": "Dragon Roost Island / Various Islands",
+    "location": "Dragon Roost Island (flying around the peak) or various other islands and sea platforms.",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -335,7 +335,7 @@
   {
     "id": 38,
     "name": "Keese & Fire Keese",
-    "location": "Various Caves/Dungeons",
+    "location": "Various Caves and Dungeons (e.g., Dragon Roost Cavern, Fire Mountain, Earth Temple).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -344,7 +344,7 @@
   {
     "id": 39,
     "name": "Magtail",
-    "location": "Dragon Roost Cavern / Fire Mountain",
+    "location": "Dragon Roost Cavern (crawling on walls) or Fire Mountain (inside the cave).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -353,7 +353,7 @@
   {
     "id": 40,
     "name": "Miniblin",
-    "location": "Forsaken Fortress / Various Caves",
+    "location": "Forsaken Fortress (early in the game) or various caves (e.g., Savage Labyrinth).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -362,7 +362,7 @@
   {
     "id": 41,
     "name": "Morth",
-    "location": "Forbidden Woods / Forest Haven",
+    "location": "Forbidden Woods (attached to enemies or objects) or Forest Haven (floating in water).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -371,7 +371,7 @@
   {
     "id": 42,
     "name": "Octorok",
-    "location": "Great Sea / Forest Haven",
+    "location": "Great Sea (shooting rocks from the water) or Forest Haven (in the water).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -380,7 +380,7 @@
   {
     "id": 43,
     "name": "Peahat",
-    "location": "Various Islands/Dungeons",
+    "location": "Various Islands (floating in the air, e.g., Southern Fairy Island) or Dungeons (e.g., Forbidden Woods).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -389,7 +389,7 @@
   {
     "id": 44,
     "name": "Poe",
-    "location": "Earth Temple / Ghost Ship",
+    "location": "Earth Temple (ghostly enemies) or the Ghost Ship (found inside).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -398,7 +398,7 @@
   {
     "id": 45,
     "name": "Rat",
-    "location": "Forsaken Fortress / Windfall Island Jail / Various Caves",
+    "location": "Forsaken Fortress (in various rooms) or Windfall Island (in the jail cell) or various caves.",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -407,7 +407,7 @@
   {
     "id": 46,
     "name": "Red Bubble and Blue Bubble",
-    "location": "Dragon Roost Cavern / Earth Temple / Wind Temple / Tower of the Gods / Ganon's Tower",
+    "location": "Various Dungeons (e.g., Dragon Roost Cavern, Earth Temple, Wind Temple, Tower of the Gods, Ganon's Tower).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -416,7 +416,7 @@
   {
     "id": 47,
     "name": "ReDead",
-    "location": "Earth Temple / Various Caves",
+    "location": "Earth Temple (found in several rooms) or various caves (e.g., Savage Labyrinth).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -425,7 +425,7 @@
   {
     "id": 48,
     "name": "Seahat",
-    "location": "Great Sea",
+    "location": "Great Sea (small flying enemies, often near watchtowers).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -434,7 +434,7 @@
   {
     "id": 49,
     "name": "Armos",
-    "location": "Tower of the Gods / Wind Temple",
+    "location": "Tower of the Gods (statues that come to life) or Wind Temple (activated statues).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -443,7 +443,7 @@
   {
     "id": 50,
     "name": "Armos Knight",
-    "location": "Tower of the Gods / Ganon's Tower",
+    "location": "Tower of the Gods (mini-boss) or Ganon's Tower (found in later rooms).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -452,7 +452,7 @@
   {
     "id": 51,
     "name": "Boko Baba",
-    "location": "Forest Haven / Forbidden Woods",
+    "location": "Forest Haven (man-eating plants) or Forbidden Woods (as enemies).",
     "category": "Enemies",
     "obtained": false,
     "missable": false,
@@ -461,7 +461,7 @@
   {
     "id": 52,
     "name": "Ganondorf",
-    "location": "Ganon's Tower / Legendary Pictograph (Full Moon)",
+    "location": "Ganon's Tower (final boss fight). Also available as a Legendary Pictograph - Captured during a full moon. Obtainable at the Nintendo Gallery once the picture has been taken.",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -470,7 +470,7 @@
   {
     "id": 53,
     "name": "Phantom Ganon",
-    "location": "Forsaken Fortress / Ganon's Tower",
+    "location": "Forsaken Fortress (mini-boss) or Ganon's Tower (appears in multiple rooms). **Missable!** Ensure you get his pictograph at Forsaken Fortress.",
     "category": "Bosses",
     "obtained": false,
     "missable": true,
@@ -479,7 +479,7 @@
   {
     "id": 54,
     "name": "Helmaroc King",
-    "location": "Forsaken Fortress (Boss)",
+    "location": "Forsaken Fortress (boss fight). **Missable!** Must be captured during the boss battle.",
     "category": "Bosses",
     "obtained": false,
     "missable": true,
@@ -488,7 +488,7 @@
   {
     "id": 55,
     "name": "Mighty Darknut",
-    "location": "Hyrule Castle / Ganon's Tower (Caped Version)",
+    "location": "Hyrule Castle (found before it's flooded) or Ganon's Tower (caped version, later in the game).",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -497,7 +497,7 @@
   {
     "id": 56,
     "name": "Big Octo",
-    "location": "Great Sea (Specific locations)",
+    "location": "Great Sea (appears in specific 4x4 sectors when disturbed by your boat). **Missable!** There are a limited number of them.",
     "category": "Bosses",
     "obtained": false,
     "missable": true,
@@ -506,7 +506,7 @@
   {
     "id": 57,
     "name": "Gohma",
-    "location": "Dragon Roost Cavern / Ganon's Tower",
+    "location": "Dragon Roost Cavern (boss fight) or Ganon's Tower (re-fight).",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -515,7 +515,7 @@
   {
     "id": 58,
     "name": "Kalle Demos",
-    "location": "Forbidden Woods / Ganon's Tower",
+    "location": "Forbidden Woods (boss fight) or Ganon's Tower (re-fight).",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -524,7 +524,7 @@
   {
     "id": 59,
     "name": "Gohdan",
-    "location": "Tower of the Gods / Ganon's Tower",
+    "location": "Tower of the Gods (boss fight) or Ganon's Tower (re-fight).",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -533,7 +533,7 @@
   {
     "id": 60,
     "name": "Jalhalla",
-    "location": "Earth Temple / Ganon's Tower",
+    "location": "Earth Temple (boss fight) or Ganon's Tower (re-fight).",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -542,7 +542,7 @@
   {
     "id": 61,
     "name": "Molgera",
-    "location": "Wind Temple / Ganon's Tower",
+    "location": "Wind Temple (boss fight) or Ganon's Tower (re-fight).",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -551,7 +551,7 @@
   {
     "id": 62,
     "name": "Puppet Ganon",
-    "location": "Ganon's Tower (Boss)",
+    "location": "Ganon's Tower (part of the final boss sequence). **Missable!** Must be captured during the fight.",
     "category": "Bosses",
     "obtained": false,
     "missable": true,
@@ -560,7 +560,7 @@
   {
     "id": 63,
     "name": "Mothula",
-    "location": "Forbidden Woods / Forest Haven / Wind Temple",
+    "location": "Forbidden Woods (mini-boss) or Forest Haven (found in a grotto) or Wind Temple.",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -569,16 +569,16 @@
   {
     "id": 64,
     "name": "Darknut",
-    "location": "Tower of the Gods / Earth Temple / Hyrule Castle / Ganon's Tower",
+    "location": "Tower of the Gods, Earth Temple, Hyrule Castle, Ganon's Tower (regular armored version).",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
-    "image": "/assets/figurines/bosses/Darknut.png"
+    "image": "/assets/figurines/Bosses/Darknut.png"
   },
   {
     "id": 65,
     "name": "Darknut (with Shield)",
-    "location": "Tower of the Gods / Hyrule Castle / Ganon's Tower (Golden)",
+    "location": "Tower of the Gods, Hyrule Castle, Ganon's Tower (the version with a shield, sometimes golden).",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -587,7 +587,7 @@
   {
     "id": 66,
     "name": "Red Wizzrobe",
-    "location": "Wind Temple (Miniboss)",
+    "location": "Wind Temple (mini-boss in a specific room). **Missable!** Only appears once as a mini-boss.",
     "category": "Bosses",
     "obtained": false,
     "missable": true,
@@ -596,7 +596,7 @@
   {
     "id": 67,
     "name": "Stalfos",
-    "location": "Earth Temple / Ganon's Tower",
+    "location": "Earth Temple (skeletal enemies) or Ganon's Tower.",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -605,7 +605,7 @@
   {
     "id": 68,
     "name": "Wizzrobe",
-    "location": "Tower of the Gods / Wind Temple / Ganon's Tower",
+    "location": "Tower of the Gods, Wind Temple, Ganon's Tower (magic-wielding enemies).",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -614,7 +614,7 @@
   {
     "id": 69,
     "name": "Moblin",
-    "location": "Forsaken Fortress / Various Caves/Islands",
+    "location": "Forsaken Fortress (early in the game) or various caves and islands (e.g., Needle Rock Isle).",
     "category": "Bosses",
     "obtained": false,
     "missable": false,
@@ -623,7 +623,7 @@
   {
     "id": 70,
     "name": "Aryll",
-    "location": "N/A (Bundled with Grandma)",
+    "location": "Bundled with the Grandma figurine. Not a separate pictograph.",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -632,7 +632,7 @@
   {
     "id": 71,
     "name": "Grandma",
-    "location": "Outset Island (Link's House)",
+    "location": "Outset Island (inside Link's house).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -641,7 +641,7 @@
   {
     "id": 72,
     "name": "Orca",
-    "location": "Outset Island (House, 1st floor)",
+    "location": "Outset Island (inside his house, 1st floor).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -650,7 +650,7 @@
   {
     "id": 73,
     "name": "Sturgeon",
-    "location": "Outset Island (House, 2nd floor)",
+    "location": "Outset Island (inside his house, 2nd floor, above Orca).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -659,7 +659,7 @@
   {
     "id": 74,
     "name": "Sue-Belle",
-    "location": "Outset Island (Outside/House)",
+    "location": "Outset Island (carrying water jugs, either outside or inside her house).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -668,7 +668,7 @@
   {
     "id": 75,
     "name": "Mesa",
-    "location": "Outset Island (Outside/House)",
+    "location": "Outset Island (usually found near the general store or his house).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -677,7 +677,7 @@
   {
     "id": 76,
     "name": "Abe",
-    "location": "Outset Island (Outside/House)",
+    "location": "Outset Island (often near the pigs or his house).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -686,7 +686,7 @@
   {
     "id": 77,
     "name": "Rose",
-    "location": "Outset Island (Outside/House)",
+    "location": "Outset Island (often near the pigs or her house).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -695,7 +695,7 @@
   {
     "id": 78,
     "name": "Joel",
-    "location": "Outset Island (Outside/House)",
+    "location": "Outset Island (one of the kids, often playing outside).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -704,7 +704,7 @@
   {
     "id": 79,
     "name": "Zill",
-    "location": "Outset Island (Outside/House)",
+    "location": "Outset Island (one of the kids, often playing outside).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -713,7 +713,7 @@
   {
     "id": 80,
     "name": "Jabun",
-    "location": "N/A (Legendary Pictograph - Last Quarter Moon)",
+    "location": "Legendary Pictograph - Captured during a last quarter moon. Obtainable at the Nintendo Gallery once the picture has been taken.",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -722,7 +722,7 @@
   {
     "id": 81,
     "name": "Crab",
-    "location": "Outset Island (Beach) / Various",
+    "location": "Outset Island (on the beach) or various other beaches and coastal areas.",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -731,7 +731,7 @@
   {
     "id": 82,
     "name": "Seagull",
-    "location": "Various (Great Sea)",
+    "location": "Various locations across the Great Sea (flying in the air).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -740,7 +740,7 @@
   {
     "id": 83,
     "name": "Pig",
-    "location": "Outset Island / Windfall Island",
+    "location": "Outset Island (wandering around) or Windfall Island (specific locations for side quests).",
     "category": "Outset Island",
     "obtained": false,
     "missable": false,
@@ -749,16 +749,16 @@
   {
     "id": 84,
     "name": "Tott",
-    "location": "TBD",
+    "location": "Windfall Island (singing on the pier, near the mailbox).",
     "category": "Windfall Island",
     "obtained": false,
-    "missable": true,
+    "missable": false,
     "image": "/assets/figurines/WindfallIsland/Tott.png"
   },
   {
     "id": 85,
     "name": "Candy",
-    "location": "TBD",
+    "location": "Windfall Island (often found behind the auction house or near the town entrance).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -767,7 +767,7 @@
   {
     "id": 86,
     "name": "Mila",
-    "location": "Windfall Island (Shop/Outside)",
+    "location": "Windfall Island (initially inside the shop, later found outside near the tree).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -776,7 +776,7 @@
   {
     "id": 87,
     "name": "Maggie",
-    "location": "Windfall Island (House/Outside)",
+    "location": "Windfall Island (initially inside her house, later found outside near the town entrance).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -785,7 +785,7 @@
   {
     "id": 88,
     "name": "Maggie's Father",
-    "location": "Windfall Island (House)",
+    "location": "Windfall Island (inside their house).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -794,7 +794,7 @@
   {
     "id": 89,
     "name": "Killer Bees",
-    "location": "Windfall Island (Outside/School)",
+    "location": "Windfall Island (the group of children, often found playing outside the school).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -803,7 +803,7 @@
   {
     "id": 90,
     "name": "Zunari",
-    "location": "Windfall Island (Shop Stall)",
+    "location": "Windfall Island (at his shop stall in the town square).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -812,7 +812,7 @@
   {
     "id": 91,
     "name": "Lenzo",
-    "location": "Windfall Island (Pictograph Shop)",
+    "location": "Windfall Island (inside the Pictograph Shop).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -821,7 +821,7 @@
   {
     "id": 92,
     "name": "Anton",
-    "location": "Windfall Island (Walking around)",
+    "location": "Windfall Island (walking around the town square, often looking at Mila).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -830,7 +830,7 @@
   {
     "id": 93,
     "name": "Linda",
-    "location": "Windfall Island (Near Chu Jelly Juice Shop)",
+    "location": "Windfall Island (often found near the Chu Jelly Juice Shop).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -839,7 +839,7 @@
   {
     "id": 94,
     "name": "Kamo",
-    "location": "Windfall Island (Near Bomb Shop/Ferris Wheel)",
+    "location": "Windfall Island (standing near the Bomb Shop or the Ferris wheel).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -848,7 +848,7 @@
   {
     "id": 95,
     "name": "Potova & Joanna",
-    "location": "Windfall Island (School/Beach)",
+    "location": "Windfall Island (Potova is inside the school, Joanna is often on the beach).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -857,7 +857,7 @@
   {
     "id": 96,
     "name": "Minenco",
-    "location": "Windfall Island (Near Potion Shop/Auction House)",
+    "location": "Windfall Island (often found near the Potion Shop or the Auction House).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -866,7 +866,7 @@
   {
     "id": 97,
     "name": "Pompie & Vera",
-    "location": "Windfall Island (Near Zunari's Shop)",
+    "location": "Windfall Island (often found gossiping near Zunari's shop).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -875,7 +875,7 @@
   {
     "id": 98,
     "name": "Miss Marie",
-    "location": "Windfall Island (School)",
+    "location": "Windfall Island (inside the school).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -884,7 +884,7 @@
   {
     "id": 99,
     "name": "Garrickson",
-    "location": "Windfall Island (Outside/Cafe Bar)",
+    "location": "Windfall Island (walking around outside, often near the Cafe Bar).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -893,7 +893,7 @@
   {
     "id": 100,
     "name": "Gossack",
-    "location": "Windfall Island (Cafe Bar)",
+    "location": "Windfall Island (inside the Cafe Bar, looking glum).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -902,7 +902,7 @@
   {
     "id": 101,
     "name": "Cannon",
-    "location": "Windfall Island (Bomb Shop)",
+    "location": "Windfall Island (inside the Bomb Shop).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -911,7 +911,7 @@
   {
     "id": 102,
     "name": "Mila's Father",
-    "location": "Windfall Island (Shop/Near Tree)",
+    "location": "Windfall Island (inside his shop or occasionally near the tree).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -920,7 +920,7 @@
   {
     "id": 103,
     "name": "Sam",
-    "location": "Windfall Island (Near Auction House)",
+    "location": "Windfall Island (near the Auction House, sitting on a bench).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -929,7 +929,7 @@
   {
     "id": 104,
     "name": "Kreeb",
-    "location": "TBD",
+    "location": "Windfall Island (walking around near the shops, often complaining).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -938,7 +938,7 @@
   {
     "id": 105,
     "name": "Missy",
-    "location": "TBD",
+    "location": "Windfall Island (sitting on a bench near the town gate, next to Joel).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -947,7 +947,7 @@
   {
     "id": 106,
     "name": "Dampa",
-    "location": "TBD",
+    "location": "Windfall Island (by the entrance of the Potion Shop).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -956,7 +956,7 @@
   {
     "id": 107,
     "name": "Gummy",
-    "location": "TBD",
+    "location": "Windfall Island (outside the jail, under the archway).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -965,7 +965,7 @@
   {
     "id": 108,
     "name": "Kane",
-    "location": "TBD",
+    "location": "Windfall Island (near the Bomb Shop, under the Ferris wheel).",
     "category": "Windfall Island",
     "obtained": false,
     "missable": false,
@@ -974,25 +974,25 @@
   {
     "id": 109,
     "name": "Gillian",
-    "location": "TBD",
+    "location": "Windfall Island (inside the Cafe Bar, serving drinks).",
     "category": "Windfall Island",
     "obtained": false,
-    "missable": true,
+    "missable": false,
     "image": "/assets/figurines/WindfallIsland/Gillian.png"
   },
   {
     "id": 110,
     "name": "Doc Bandam",
-    "location": "TBD",
+    "location": "Windfall Island (inside the Potion Shop).",
     "category": "Windfall Island",
     "obtained": false,
-    "missable": true,
+    "missable": false,
     "image": "/assets/figurines/WindfallIsland/Bandam.png"
   },
   {
     "id": 111,
     "name": "Tetra",
-    "location": "Hyrule Castle (before reveal)",
+    "location": "Pirate Ship (before entering Hyrule Castle). **Missable!** Her appearance changes later in the game.",
     "category": "Great Sea",
     "obtained": false,
     "missable": true,
@@ -1001,7 +1001,7 @@
   {
     "id": 112,
     "name": "Tingle",
-    "location": "Tingle Island / Windfall Island (Jail)",
+    "location": "Tingle Island (on his island) or Windfall Island (initially in the jail cell).",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1010,7 +1010,7 @@
   {
     "id": 113,
     "name": "Ankle",
-    "location": "Tingle Island",
+    "location": "Tingle Island (one of Tingle's brothers).",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1019,7 +1019,7 @@
   {
     "id": 114,
     "name": "David Jr.",
-    "location": "Tingle Island",
+    "location": "Tingle Island (one of Tingle's brothers).",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1028,7 +1028,7 @@
   {
     "id": 115,
     "name": "Salvatore",
-    "location": "Windfall Island (Sploosh Kaboom) / Spectacle Island",
+    "location": "Windfall Island (running the Sploosh Kaboom game) or Spectacle Island (after winning a prize, during the game).",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1037,7 +1037,7 @@
   {
     "id": 116,
     "name": "Fishman",
-    "location": "Great Sea (Any sector)",
+    "location": "Great Sea (appears in any sector when you sail into it for the first time).",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1046,7 +1046,7 @@
   {
     "id": 117,
     "name": "Old Man Ho Ho",
-    "location": "Various Islands (Lookout platforms)",
+    "location": "Found on various islands across the Great Sea, always looking through his telescope. Take a pictograph of him on any island he appears on.",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1055,7 +1055,7 @@
   {
     "id": 118,
     "name": "Fairy Queen",
-    "location": "N/A (Legendary Pictograph - Waning Crescent Moon)",
+    "location": "Legendary Pictograph - Captured during a waning crescent moon. Obtainable at the Nintendo Gallery once the picture has been taken.",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1064,7 +1064,7 @@
   {
     "id": 119,
     "name": "Great Fairy",
-    "location": "Fairy Fountains / Legendary Pictograph (Waning Gibbous Moon)",
+    "location": "Inside various Fairy Fountains across the Great Sea. Also available as a Legendary Pictograph - Captured during a waning gibbous moon. Obtainable at the Nintendo Gallery once the picture has been taken.",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1073,7 +1073,7 @@
   {
     "id": 120,
     "name": "Beedle",
-    "location": "Beedle's Shop Ship (Various locations)",
+    "location": "On his shop ship, found sailing in various locations around the Great Sea (he follows your position).",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1082,7 +1082,7 @@
   {
     "id": 121,
     "name": "Wandering Merchant",
-    "location": "Mother & Child Isles / Bomb Island / Greatfish Isle (Goron)",
+    "location": "Various locations like Mother & Child Isles, Bomb Island, and Greatfish Isle (this is the Goron merchant).",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1091,7 +1091,7 @@
   {
     "id": 122,
     "name": "King of Hyrule",
-    "location": "Hyrule Castle / Legendary Pictograph (Waxing Gibbous Moon)",
+    "location": "Hyrule Castle (before it's flooded). Also available as a Legendary Pictograph - Captured during a waxing gibbous moon. Obtainable at the Nintendo Gallery once the picture has been taken.",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1100,7 +1100,7 @@
   {
     "id": 123,
     "name": "Princess Zelda",
-    "location": "N/A (Bundled with King of Hyrule)",
+    "location": "Bundled with the King of Hyrule figurine. Not a separate pictograph.",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1109,7 +1109,7 @@
   {
     "id": 124,
     "name": "Salvage Corp",
-    "location": "Great Sea (Near islands)",
+    "location": "Great Sea (on their boat, usually found near islands with sunken treasures).",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1118,7 +1118,7 @@
   {
     "id": 125,
     "name": "Gonzo",
-    "location": "N/A (Bundled with Tetra)",
+    "location": "Pirate Ship (one of Tetra's crew members). **Missable!** Only available before entering Hyrule Castle.",
     "category": "Great Sea",
     "obtained": false,
     "missable": true,
@@ -1127,7 +1127,7 @@
   {
     "id": 126,
     "name": "Mako",
-    "location": "N/A (Bundled with Tetra)",
+    "location": "Pirate Ship (one of Tetra's crew members). **Missable!** Only available before entering Hyrule Castle.",
     "category": "Great Sea",
     "obtained": false,
     "missable": true,
@@ -1136,7 +1136,7 @@
   {
     "id": 127,
     "name": "Niko",
-    "location": "Pirate Ship / Outset Island",
+    "location": "Pirate Ship (one of Tetra's crew members) or Outset Island (after the pirate ship departs). **Missable!** Can become unavailable later.",
     "category": "Great Sea",
     "obtained": false,
     "missable": true,
@@ -1145,7 +1145,7 @@
   {
     "id": 128,
     "name": "Nudge",
-    "location": "N/A (Bundled with Tetra)",
+    "location": "Pirate Ship (one of Tetra's crew members). **Missable!** Only available before entering Hyrule Castle.",
     "category": "Great Sea",
     "obtained": false,
     "missable": true,
@@ -1154,7 +1154,7 @@
   {
     "id": 129,
     "name": "Senza",
-    "location": "N/A (Bundled with Tetra)",
+    "location": "Pirate Ship (one of Tetra's crew members). **Missable!** Only available before entering Hyrule Castle.",
     "category": "Great Sea",
     "obtained": false,
     "missable": true,
@@ -1163,7 +1163,7 @@
   {
     "id": 130,
     "name": "Zuko",
-    "location": "N/A (Bundled with Tetra)",
+    "location": "Pirate Ship (one of Tetra's crew members). **Missable!** Only available before entering Hyrule Castle.",
     "category": "Great Sea",
     "obtained": false,
     "missable": true,
@@ -1172,7 +1172,7 @@
   {
     "id": 131,
     "name": "Loot",
-    "location": "Boating Course / Windfall Cafe Bar",
+    "location": "Boating Course (the record keeper) or Windfall Island (inside the Cafe Bar).",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1181,7 +1181,7 @@
   {
     "id": 132,
     "name": "Fairy",
-    "location": "Various (Pots, enemies, etc.)",
+    "location": "Various locations (found in pots, dropped by enemies, or in Fairy Fountains).",
     "category": "Great Sea",
     "obtained": false,
     "missable": false,
@@ -1190,16 +1190,16 @@
   {
     "id": 133,
     "name": "Link & King of Red Lions",
-    "location": "N/A (Reward for completing Gallery)",
+    "location": "Reward for completing the entire Nintendo Gallery (collecting all other 133 figurines).",
     "category": "Great Sea",
     "obtained": false,
-    "missable": true,
+    "missable": false,
     "image": "/assets/figurines/GreatSea/LinkRedLions.png"
   },
   {
     "id": 134,
     "name": "Knuckle",
-    "location": "Tingle Island (HD) / Outset Island (GCN)",
+    "location": "Tingle Island (HD Remaster only, found by drawing a specific chart) or Outset Island (GCN, found in a grotto by following Tingle's instructions). **Missable!** Can be difficult to find or unlock.",
     "category": "Great Sea",
     "obtained": false,
     "missable": true,
