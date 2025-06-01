@@ -1,0 +1,207 @@
+.tingleTunerWrapper {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #2D5E17;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(0,0,0,0.2);
+  padding: 2rem 2.5rem;
+  color: #ffffff;
+  border: 4px solid #FADF63;
+}
+
+.header-container {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+.figurine-header {
+  text-align: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.figurine-header h1 {
+  color: #ffcc00;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 2rem;
+  padding-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.progress-bar {
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #2e7d32;
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  line-height: 25px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  font-size: 1.1rem;
+}
+.hdMessage, .gcMessage {
+  background: #333333;
+  border: 2px solid #FADF63;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.hdMessage h2, .gcMessage h2 {
+  color: #FADF63;
+  margin-bottom: 0.8rem;
+}
+.tunerContent {
+  margin-top: 1rem;
+}
+.intro {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+.tunerList {
+  list-style: disc inside;
+  margin-bottom: 1.5rem;
+}
+.tunerItem {
+  margin-bottom: 0.5rem;
+}
+.tingleStatues {
+  background: #223344;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
+}
+.tingleStatues h2 {
+  color: #7fffd4;
+  margin-bottom: 0.5rem;
+}
+.tingleStatues ol {
+  margin-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.tingleStatuesChecklist {
+  background: #333333;
+  border-radius: 12px;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  margin: 0 0 3rem 0;
+  border: 3px solid #FADF63;
+  box-shadow: 0 2px 8px #0005, inset 0 0 10px rgba(0,0,0,0.4);
+}
+.tingleStatuesChecklist h2 {
+  color: #FADF63;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+.statueChecklistList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+.statueChecklistItem {
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.statueChecklistItem label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.08rem;
+}
+.statueName {
+  font-weight: bold;
+  color: #FADF63;
+}
+.statueLocation {
+  color: #ffffff;
+  font-size: 0.98em;
+}
+.statueHint {
+  color: #e0e0e0;
+  font-size: 0.9em;
+  margin-left: 1.7rem;
+  background: rgba(0,0,0,0.2);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+.statueRewardMsg {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  color: #FADF63;
+  text-align: center;
+  font-size: 1.1em;
+}
+.tunerAbilitiesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+.tunerAbilityItem {
+  background: #2D5E17;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  color: #fff;
+  padding: 0.8rem 1rem;
+  width: calc(45% - 1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  position: relative;
+  border: 3px solid #FADF63;
+  margin: 0;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.tunerAbilityItem:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 18px rgba(0,0,0,0.4);
+}
+.abilityName {
+  font-weight: bold;
+  color: #FADF63;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+.gcMessage h3 {
+  color: #FADF63;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+.statueCheckbox {
+  accent-color: #2D5E17;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+  cursor: pointer;
+  border: 2px solid #FADF63;
+}
