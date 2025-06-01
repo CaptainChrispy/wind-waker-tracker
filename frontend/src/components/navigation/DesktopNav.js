@@ -22,6 +22,10 @@ const DesktopNav = () => (
       <span className="nav-icon inventory-icon"></span>
       Inventory
     </NavLink>
+    <NavLink to="/tingletuner" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+      <span className="nav-icon tingle-icon"></span>
+      Tingle Tuner
+    </NavLink>
   </nav>
 );
 

@@ -7,6 +7,7 @@ import FigurineChecklist from './components/FigurineChecklist';
 import SlidingPuzzle from './components/SlidingPuzzle';
 import SplooshKaboom from './components/SplooshKaboom';
 import InventoryTracker from './components/InventoryTracker';
+import TingleTuner from './components/TingleTuner';
 import Map from './components/Map';
 import './App.css';
 import CompletionFooter from './components/CompletionFooter';
@@ -52,6 +53,7 @@ function App() {
             <Route path="/slidingpuzzles" element={<SlidingPuzzle />} />
             <Route path="/splooshkaboom" element={<SplooshKaboom />} />
             <Route path="/inventory" element={<InventoryTracker />} />
+            <Route path="/tingletuner" element={<TingleTuner />} />
             <Route path="/" element={<Map />} />
           </Routes>
         </main>
