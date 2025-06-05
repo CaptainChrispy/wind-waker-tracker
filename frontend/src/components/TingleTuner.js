@@ -2,10 +2,6 @@ import React from 'react';
 import styles from './TingleTuner.module.css';
 import { useSaves } from '../context/SavesContext';
 
-// Assuming you have image assets for statues and Tingle
-// import TingleArtworkGC from '../assets/tingle-gc.png';
-// import TingleArtworkHD from '../assets/tingle-hd.png';
-
 const TINGLE_TUNER_ITEMS_GC = [
   { name: 'Tingle Tuner', description: 'Connect a Game Boy Advance (GBA) via a GBA Link Cable to Controller Port 2 of your GameCube. This unlocks a real-time second screen for additional features and interactions.', cost: 'N/A' },
   { name: 'Tingle Bomb', description: 'Use bombs via the Tingle Tuner. Tap the bomb icon on your GBA screen. Particularly useful for finding Tingle Statues. Each bomb detonates immediately on Link\'s position.', cost: '1 Rupee' },
@@ -21,31 +17,36 @@ const TINGLE_STATUES = [
     name: 'Dragon Tingle Statue',
     location: 'Dragon Roost Cavern',
     hint: 'In the large room with the moving pot elevator, drop a bomb near the wall to the left of the entrance from the dungeon\'s second floor (before crossing the large gap to the boss door).',
-    // imageUrl: '/path/to/dragon-statue-location.jpg'
+    image: '/assets/tingle_statues/statues/DragonTingle.png',
+    locationImage: '/assets/tingle_statues/Locations/DragonRoost.jpg',
   },
   {
     name: 'Forbidden Tingle Statue',
     location: 'Forbidden Woods',
     hint: 'In the room with the large spinning platforms and propeller plants, look for a bombable spot on the wall behind the giant flower that spits out Boko Babas.',
-    // imageUrl: '/path/to/forbidden-statue-location.jpg'
+    image: '/assets/tingle_statues/statues/ForbiddenTingle.png',
+    locationImage: '/assets/tingle_statues/Locations/ForbiddenWoods.jpg',
   },
   {
     name: 'Goddess Tingle Statue',
     location: 'Tower of the Gods',
     hint: 'On the third floor, in the large room with multiple moving platforms and Beamos statues, there\'s a hidden spot on the wall near the entrance to the next room (where you typically push a block to reveal a path).',
-    // imageUrl: '/path/to/goddess-statue-location.jpg'
+    image: '/assets/tingle_statues/statues/GoddessTingle.png',
+    locationImage: '/assets/tingle_statues/Locations/TowerofGods.jpg',
   },
   {
     name: 'Earth Tingle Statue',
     location: 'Earth Temple',
     hint: 'In the dark room filled with coffins and Redeads, locate a bombable wall section, usually near the entrance from the central hub room.',
-    // imageUrl: '/path/to/earth-statue-location.jpg'
+    image: '/assets/tingle_statues/statues/EarthTingle.png',
+    locationImage: '/assets/tingle_statues/Locations/EarthTemple.jpg',
   },
   {
     name: 'Wind Tingle Statue',
     location: 'Wind Temple',
     hint: 'In the room with the giant stone head (where you use the Hookshot to climb), look for a bombable wall section on the lower level, near the large fan.',
-    // imageUrl: '/path/to/wind-statue-location.jpg'
+    image: '/assets/tingle_statues/statues/WindTingle.png',
+    locationImage: '/assets/tingle_statues/Locations/WindTemple.jpg',
   },
 ];
 
@@ -98,7 +99,19 @@ const TingleTuner = () => {
                     <span className={styles.statueName}>{statue.name}</span>
                     <span className={styles.statueLocation}> ({statue.location})</span>
                   </label>
-                  <div className={styles.statueHint}>{statue.hint}</div>
+                  <div className={styles.statueHeader}>
+                    <img
+                      src={statue.image}
+                      alt={statue.name}
+                      className={styles.statueImage}
+                    />
+                    <div className={styles.statueHint}>{statue.hint}</div>
+                  </div>
+                  <img
+                    src={statue.locationImage}
+                    alt={`Location for ${statue.name}`}
+                    className={styles.statueLocationImage}
+                  />
                 </li>
               ))}
             </ul>

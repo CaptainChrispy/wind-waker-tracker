@@ -142,11 +142,12 @@
 }
 .statueHint {
   color: #e0e0e0;
-  font-size: 0.9em;
-  margin-left: 1.7rem;
-  background: rgba(0,0,0,0.2);
-  padding: 0.3rem 0.5rem;
-  border-radius: 4px;
+  font-size: 1em;
+  margin-left: 0;
+  background: rgba(0,0,0,0.18);
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  line-height: 1.5;
 }
 .statueRewardMsg {
   margin-top: 1.5rem;
@@ -204,4 +205,31 @@
   margin-right: 0.5em;
   cursor: pointer;
   border: 2px solid #FADF63;
+}
+.statueHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+.statueImage {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 3px solid #FADF63;
+  background: #222;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  flex-shrink: 0;
+}
+.statueLocationImage {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0.7rem auto 1.2rem auto;
+  border: 3px solid #FADF63;
+  border-radius: 10px;
+  background: #111;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  padding: 0.3rem;
 }
