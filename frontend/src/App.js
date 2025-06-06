@@ -14,12 +14,12 @@ import CompletionFooter from './components/CompletionFooter';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1100);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-      if (window.innerWidth >= 768) setMenuOpen(false);
+      setIsMobile(window.innerWidth < 1100);
+      if (window.innerWidth >= 1100) setMenuOpen(false);
     };
 
     window.addEventListener('resize', handleResize);

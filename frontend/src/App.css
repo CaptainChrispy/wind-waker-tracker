@@ -53,16 +53,26 @@ body {
 =================================== */
 .main-nav {
   display: flex;
-  gap: 20px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 .nav-link {
   text-decoration: none;
   color: white;
-  font-size: 1.1rem;
+  font-size: clamp(0.85rem, 1.08vw, 1.08rem);
   position: relative;
-  padding: 8px;
-  transition: color 0.3s ease;
+  padding: 8px 12px;
+  transition: color 0.3s ease, font-size 0.3s ease;
+  min-width: 90px;
+  text-align: center;
+  flex: 1 1 0%;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -84,6 +94,28 @@ body {
 
 .nav-link:hover::after, .nav-link.active::after {
   width: 80%;
+}
+
+@media (max-width: 1100px) and (min-width: 900px) {
+  .main-nav {
+    gap: 10px;
+  }
+  .nav-link {
+    font-size: 0.98rem;
+    padding: 7px 6px;
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-nav {
+    gap: 8px;
+  }
+  .nav-link {
+    font-size: clamp(0.75rem, 3vw, 0.98rem);
+    padding: 6px 4px;
+    min-width: 70px;
+  }
 }
 
 /* ===================================
