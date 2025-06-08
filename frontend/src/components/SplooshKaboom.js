@@ -124,7 +124,7 @@ const SplooshKaboom = () => {
   const [hits, setHits] = useState(0);
   const [isShipsMode, setIsShipsMode] = useState(true);
   const [mode, setMode] = useState('play');
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const [bombsRemaining, setBombsRemaining] = useState(TOTAL_BOMBS);
   const [destroyedShips, setDestroyedShips] = useState(new Set());
   const [isShaking, setIsShaking] = useState(false);
