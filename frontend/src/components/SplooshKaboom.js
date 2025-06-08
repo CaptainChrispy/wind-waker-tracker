@@ -197,14 +197,41 @@ const SplooshKaboom = () => {
     setHitCounts(updates.hitCounts);
   };
 
-  const allShipsSunk = hits === SHIP_CONFIG.reduce((sum, length) => sum + length, 0);
-
-  const toggleMode = () => {
+  const allShipsSunk = hits === SHIP_CONFIG.reduce((sum, length) => sum + length, 0);  const toggleMode = () => {
     setMode(prevMode => (prevMode === 'play' ? 'solve' : 'play'));
   };
     return (
-    <div className={`${styles.splooshKaboom} ${isShaking ? styles.gameShake : ''}`}>
-      <h1>Sploosh Kaboom</h1>
+    <>
+      <div className={styles['header-container']}>
+        <header className={styles['game-header']}>
+          <h1>Sploosh Kaboom</h1>
+          
+          {/* Play/Solve Mode Toggle */}
+          <div className={styles.modeToggleContainer}>
+            <div className={styles.toggleLabel}>Play Mode</div>
+            <label className={styles.toggleSwitch}>
+              <input
+                type="checkbox"
+                checked={mode === 'solve'}
+                onChange={toggleMode}
+              />
+              <span className={styles.toggleSlider}></span>
+            </label>
+            <div className={styles.toggleLabel}>Solve Mode</div>
+          </div>
+        </header>
+      </div>
+      
+      <div className={styles.modeCaptionWrapper}>
+        <div className={styles.modeCaption}>
+          {mode === 'play'
+            ? 'Play Mode: Try to sink all ships or squids!'
+            : 'Solve Mode: View and adjust ship/squid placements.'}
+        </div>
+      </div>
+      
+      <div className={`${styles.splooshKaboom} ${isShaking ? styles.gameShake : ''}`}>
+      
       <div className={styles.gameLayout}>
         <BombDisplay bombsRemaining={bombsRemaining} />
         <Grid grid={grid} onCellClick={handleCellClick} />
@@ -213,26 +240,6 @@ const SplooshKaboom = () => {
           destroyedShips={destroyedShips}
         />
       </div>
-
-      {/* Play/Solve Mode Toggle */}
-      <div className={styles.modeToggleContainer}>
-        <div className={styles.toggleLabel}>Play Mode</div>
-        <label className={styles.toggleSwitch}>
-          <input
-            type="checkbox"
-            checked={mode === 'solve'}
-            onChange={toggleMode}
-          />
-          <span className={styles.toggleSlider}></span>
-        </label>
-        <div className={styles.toggleLabel}>Solve Mode</div>
-      </div>
-
-      <p className={styles.modeCaption}>
-        {mode === 'play'
-          ? 'Play Mode: Try to sink all ships or squids!'
-          : 'Solve Mode: View and adjust ship/squid placements.'}
-      </p>
 
       {allShipsSunk && <h2>All {isShipsMode ? 'Ships' : 'Squids'} sunk! You win!</h2>}
 
@@ -265,9 +272,9 @@ const SplooshKaboom = () => {
           aria-label={isMuted ? "Unmute sounds" : "Mute sounds"}
         >
           {isMuted ? '🔇' : '🔊'}
-        </button>
-      </div>
+        </button>      </div>
     </div>
+    </>
   );
 };
 
