@@ -259,11 +259,23 @@ body {
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 80px;
 }
 
 /* ===================================
    RESPONSIVE STYLES
 =================================== */
+@media (min-width: 768px) {
+  .site-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    padding: 15px;
+  }
+}
 @media (min-width: 768px) {
   .site-title {
     font-size: 2rem;
