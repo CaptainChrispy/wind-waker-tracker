@@ -197,10 +197,14 @@ const SplooshKaboom = () => {
     setHitCounts(updates.hitCounts);
   };
 
-  const allShipsSunk = hits === SHIP_CONFIG.reduce((sum, length) => sum + length, 0);  const toggleMode = () => {
+  const allShipsSunk = hits === SHIP_CONFIG.reduce((sum, length) => sum + length, 0);
+  const hasLost = bombsRemaining === 0 && !allShipsSunk;
+
+  const toggleMode = () => {
     setMode(prevMode => (prevMode === 'play' ? 'solve' : 'play'));
   };
-    return (
+
+  return (
     <>
       <div className={styles['header-container']}>
         <header className={styles['game-header']}>
@@ -229,12 +233,45 @@ const SplooshKaboom = () => {
             : 'Solve Mode: View and adjust ship/squid placements.'}
         </div>
       </div>
-      
       <div className={`${styles.splooshKaboom} ${isShaking ? styles.gameShake : ''}`}>
-      
       <div className={styles.gameLayout}>
         <BombDisplay bombsRemaining={bombsRemaining} />
-        <Grid grid={grid} onCellClick={handleCellClick} />
+        <div className={styles.grid}>
+          {grid.map((row, rowIndex) => (
+            <div key={rowIndex} className={styles.row}>
+              {row.map((cell, colIndex) => {
+                const isUnguessed = cell !== 'hit' && cell !== 'miss';
+                let displaySymbol = '';
+                let extraClass = '';
+                if (hasLost && isUnguessed) {
+                  // Reveal what was under this cell
+                  if (shipMap[rowIndex][colIndex] !== -1) {
+                    displaySymbol = '💥';
+                  } else {
+                    displaySymbol = '❌';
+                  }
+                  extraClass = styles.cellTransparent;
+                } else {
+                  displaySymbol = cell === 'hit' ? '💥' : cell === 'miss' ? '❌' : '';
+                }
+                return (
+                  <div
+                    key={`${rowIndex}-${colIndex}`}
+                    className={
+                      `${styles.cell} ` +
+                      `${cell === 'hit' ? styles.hit : ''} ` +
+                      `${cell === 'miss' ? styles.miss : ''} ` +
+                      `${extraClass}`
+                    }
+                    onClick={() => handleCellClick(rowIndex, colIndex)}
+                  >
+                    {displaySymbol}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
         <ShipDisplay 
           isSquidMode={!isShipsMode} 
           destroyedShips={destroyedShips}
