@@ -173,8 +173,8 @@ const FigurineChecklist = () => {
         <div className={styles['figurine-tips']}>
           <h3>Tips for Figurine Collection</h3>
           <ul>
-            <li>Take pictographs of characters before they become unavailable!</li>
-            <li>You need the Deluxe Picto Box for colored pictographs.</li>
+            <li>Take pictographs of characters before they become unavailable.</li>
+            <li>You <strong>must</strong> have the Deluxe Picto Box to obtain any figurines (regular pictographs do not work).</li>
             <li>Bring pictographs to Carlov at the Nintendo Gallery.</li>
             <li>Each figurine takes a day to create - use the Song of Passing to speed up time.</li>
           </ul>
