@@ -48,6 +48,14 @@ const MobileNav = ({ isOpen, onClose }) => (
           <span className="nav-icon inventory-icon"></span>
           Inventory
         </NavLink>
+        <NavLink 
+          to="/tingletuner" 
+          className={({ isActive }) => isActive ? "mobile-nav-link active" : "mobile-nav-link"}
+          onClick={onClose}
+        >
+          <span className="nav-icon tingle-icon"></span>
+          Tingle Tuner
+        </NavLink>
       </nav>
     </div>
   </>
