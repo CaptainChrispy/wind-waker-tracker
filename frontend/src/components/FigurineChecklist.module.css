@@ -1,3 +1,6 @@
+/* ===================================
+   LAYOUT & CONTAINER STYLES
+=================================== */
 .figurine-checklist {
   max-width: 1200px;
   margin: 0 auto;
@@ -31,6 +34,9 @@
   letter-spacing: 1px;
 }
 
+/* ===================================
+   PROGRESS BAR
+=================================== */
 .progress-bar {
   height: 25px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -60,6 +66,9 @@
   font-size: 1.1rem;
 }
 
+/* ===================================
+   CONTROLS (SEARCH, FILTER, SORT)
+=================================== */
 .figurine-controls {
   display: flex;
   flex-wrap: wrap;
@@ -97,6 +106,9 @@
   margin-right: 0;
 }
 
+/* ===================================
+   CATEGORY TABS
+=================================== */
 .category-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -128,6 +140,9 @@
   background-color: #2a5c00;
 }
 
+/* ===================================
+   FIGURINE LIST & ITEMS
+=================================== */
 .figurine-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -163,7 +178,7 @@
 
 .obtained {
   border-color: #2a762a;
-  background: linear-gradient(135deg, #b6f7b6 60%, #43a047 100%) !important;
+  background-color: #b6f7b6;
   box-shadow: 0 0 0 3px #2a762a33, 0 0 16px 2px #43a04755;
   position: relative;
   transition: background 0.3s, box-shadow 0.3s;
@@ -216,6 +231,9 @@
   box-shadow: 0 0 0 2px #e5737340;
 }
 
+/* ===================================
+   FIGURINE IMAGE & NUMBER
+=================================== */
 .figurine-image-wrapper {
   width: 90px;
   height: 90px;
@@ -252,6 +270,9 @@
   border: 1px solid #ffd740;
 }
 
+/* ===================================
+   FIGURINE DETAILS
+=================================== */
 .figurine-details {
   margin-bottom: 6px;
   width: 100%;
@@ -284,6 +305,9 @@
   font-weight: 500;
 }
 
+/* ===================================
+   CHECKBOX STYLES
+=================================== */
 .figurine-checkbox {
   display: flex;
   align-items: center;
@@ -323,6 +347,9 @@
   margin-left: 2px;
 }
 
+/* ===================================
+   TIPS SECTION
+=================================== */
 .figurine-tips {
   background: linear-gradient(135deg, #f7f3e3 0%, #e5d6b0 100%);
   border: 2px solid #8b5b2b;
@@ -363,6 +390,9 @@
   font-size: 1.1em;
 }
 
+/* ===================================
+   RESPONSIVE STYLES
+=================================== */
 @media (max-width: 900px) {
   .figurine-list {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
