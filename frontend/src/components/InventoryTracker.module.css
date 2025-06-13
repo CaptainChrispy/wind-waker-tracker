@@ -1,25 +1,9 @@
-.mainHeader {
-  color: #ffcc00;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  margin-bottom: 0;
-  font-size: 2rem;
-  padding-bottom: 15px;
-}
-
+/* ===================================
+   LAYOUT & CONTAINER STYLES
+=================================== */
 .headerContainer {
   max-width: 800px;
   margin: 0 auto 20px auto;
-}
-
-.progressBar {
-  height: 25px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
 }
 
 .inventoryTracker {
@@ -42,6 +26,24 @@
   border-bottom: 2px solid #8b5b2b;
 }
 
+.mainHeader {
+  color: #ffcc00;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 2rem;
+  padding-bottom: 15px;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ===================================
+   PROGRESS BAR
+=================================== */
 .progressBar {
   height: 25px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -70,12 +72,9 @@
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-.mainContent {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
+/* ===================================
+   CATEGORY TABS
+=================================== */
 .categoryTabs {
   display: flex;
   flex-wrap: wrap;
@@ -107,6 +106,9 @@
   background-color: #2a5c00;
 }
 
+/* ===================================
+   INVENTORY DISPLAY & CATEGORIES
+=================================== */
 .inventoryDisplay {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
@@ -125,6 +127,9 @@
   margin-bottom: 15px;
 }
 
+/* ===================================
+   ITEMS GRID & ITEM CARDS
+=================================== */
 .itemsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -231,6 +236,9 @@
   border: 1px solid #999;
 }
 
+/* ===================================
+   TRIFORCE CHART
+=================================== */
 .triforceContainer {
   display: flex;
   flex-direction: column;
@@ -261,6 +269,9 @@
   letter-spacing: 5px;
 }
 
+/* ===================================
+   ITEM DETAILS & BOXES
+=================================== */
 .itemDetails {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
@@ -371,6 +382,9 @@
   background-color: #724924;
 }
 
+/* ===================================
+   BEGINNER HELP
+=================================== */
 .beginnerHelp {
   background-color: rgba(233, 182, 26, 0.2);
   border: 1px solid #e9b61a;
@@ -392,6 +406,9 @@
   color: #5a3a1a;
 }
 
+/* ===================================
+   RESPONSIVE STYLES
+=================================== */
 @media (max-width: 768px) {
   .inventoryTracker {
     padding: 10px;
