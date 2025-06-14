@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './InventoryTracker.module.css';
 import { ITEM_CATEGORIES, ITEMS } from '../assets/data/itemsData';
 import { useSaves } from '../context/SavesContext';
+import { useNavigate } from 'react-router-dom';
 
 const InventoryTracker = () => {
   const [inventory, setInventory] = useState({});
@@ -10,6 +11,7 @@ const InventoryTracker = () => {
   const [itemDetails, setItemDetails] = useState(null);
   const [imageErrors, setImageErrors] = useState({});
   const { currentSave } = useSaves();
+  const navigate = useNavigate();
 
   const gameVersion = currentSave?.version || 'GameCube';
 
@@ -392,6 +394,11 @@ const InventoryTracker = () => {
       {category}
     </button>  ));
   
+  const handleViewOnMap = () => {
+    if (!selectedItem) return;
+    navigate(`/seachart?chart=${encodeURIComponent(selectedItem)}`);
+  };
+
   return (
     <>
       <div className={styles.headerContainer}>
@@ -422,6 +429,11 @@ const InventoryTracker = () => {
                 <p className={styles.detailAdditional}>{itemDetails.additionalInfo}</p>
               )}
               
+              {(selectedItem && ITEMS[selectedItem]?.category === ITEM_CATEGORIES.CHARTS) && (
+                <button className={styles.upgradeButton} style={{marginBottom: 8}} onClick={handleViewOnMap}>
+                  View on Map
+                </button>
+              )}
               {itemDetails.isUpgradable && (
                 <div className={styles.upgradeInfo}>
                   {itemDetails.isCollected && (

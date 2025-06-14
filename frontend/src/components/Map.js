@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MapContainer, ImageOverlay, useMapEvents, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -12,6 +12,7 @@ import { secondQuestSeaCharts } from '../assets/data/mapMarkers/secondQuestSeaCh
 import { lightChests } from '../assets/data/mapMarkers/lightChests';
 import treasureMarkerIcon from '../assets/images/map/treasure_marker.png';
 import lightChestMarkerIcon from '../assets/images/map/light_chest_marker.png';
+import { useLocation } from 'react-router-dom';
 
 const ZoomListener = ({ onZoomChange }) => {
   useMapEvents({
@@ -85,6 +86,8 @@ const Map = () => {
     return saved ? JSON.parse(saved) : [];
   });
   const { currentSave } = useSaves();
+  const markerRefs = useRef({});
+  const location = useLocation();
 
   useEffect(() => {
     localStorage.setItem('mapMarkers', JSON.stringify(markers));
@@ -220,6 +223,26 @@ const Map = () => {
     }));
   };
 
+  // This is some dumb, temp code just to prove the concept
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const selectedChart = params.get('chart');
+    if (selectedChart) {
+      setTimeout(() => {
+        const questType = currentSave?.quest || 'Normal';
+        const seaChartMarkers = questType === 'Second Quest' ? secondQuestSeaCharts : firstQuestSeaCharts;
+        const a1Marker = seaChartMarkers.find(m => m.gridSquare === 'A1');
+        if (a1Marker && markerRefs.current[a1Marker.id]) {
+          markerRefs.current[a1Marker.id].openPopup();
+          const map = markerRefs.current[a1Marker.id]._map;
+          if (map) {
+            map.setView([a1Marker.position.y, a1Marker.position.x], 3, { animate: true });
+          }
+        }
+      }, 500);
+    }
+  }, [location.search, currentSave]);
+
   if (loading) {
     return <div>Loading map tiles...</div>;
   }
@@ -335,6 +358,7 @@ const Map = () => {
             position={[marker.position.y, marker.position.x]}
             icon={seaChartIcon}
             interactive={true}
+            ref={el => markerRefs.current[marker.id] = el}
           >
             <Popup>
               <div>
