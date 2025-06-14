@@ -128,6 +128,7 @@ const SplooshKaboom = () => {
   const [bombsRemaining, setBombsRemaining] = useState(TOTAL_BOMBS);
   const [destroyedShips, setDestroyedShips] = useState(new Set());
   const [isShaking, setIsShaking] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   // Use useMemo to create the audio objects only once
   const kaboomAudio = useMemo(() => new Audio(kaboomSound), []);
@@ -182,8 +183,10 @@ const SplooshKaboom = () => {
 
         kaboomAudio.currentTime = 0;
         kaboomAudio.play();
-        setIsShaking(true);
-        setTimeout(() => setIsShaking(false), 500);
+        if (!reduceMotion) {
+          setIsShaking(true);
+          setTimeout(() => setIsShaking(false), 500);
+        }
     } else {
         updates.grid[row][col] = 'miss';
         splooshAudio.currentTime = 0;
@@ -309,7 +312,15 @@ const SplooshKaboom = () => {
           aria-label={isMuted ? "Unmute sounds" : "Mute sounds"}
         >
           {isMuted ? '🔇' : '🔊'}
-        </button>      </div>
+        </button>
+        <button
+          className={styles.reduceMotionButton + ' ' + (reduceMotion ? styles.reduceMotionActive : '')}
+          onClick={() => setReduceMotion(r => !r)}
+          aria-label={reduceMotion ? "Enable motion" : "Reduce motion"}
+        >
+          {reduceMotion ? '🛑 Motion' : '🏃 Motion'}
+        </button>
+      </div>
     </div>
     </>
   );
