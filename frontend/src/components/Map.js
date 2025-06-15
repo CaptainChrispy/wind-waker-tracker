@@ -13,6 +13,7 @@ import { lightChests } from '../assets/data/mapMarkers/lightChests';
 import treasureMarkerIcon from '../assets/images/map/treasure_marker.png';
 import lightChestMarkerIcon from '../assets/images/map/light_chest_marker.png';
 import { useLocation } from 'react-router-dom';
+import mapSidebarStyles from './MapSidebar.module.css';
 
 const ZoomListener = ({ onZoomChange }) => {
   useMapEvents({
@@ -87,9 +88,18 @@ const Map = () => {
   });
   const [showSeaChartChests, setShowSeaChartChests] = useState(true);
   const [showLightChests, setShowLightChests] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const { currentSave } = useSaves();
   const markerRefs = useRef({});
   const location = useLocation();
+
+  // Responsive: detect mobile
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('mapMarkers', JSON.stringify(markers));
@@ -257,54 +267,125 @@ const Map = () => {
   const lightChestIcon = currentZoom >= ZOOM_LEVELS.MEDIUM ? lightChestIconLarge : lightChestIconSmall;
 
   return (
-    <div className="map-container">
-      {/* Add marker placement controls and toggles */}
-      <div style={{ position: 'absolute', top: '10px', left: '10px', zIndex: 1000, display: 'flex', gap: '10px', flexDirection: 'column' }}>
-        <div style={{ display: 'flex', gap: '10px' }}>
-          <button onClick={() => setIsPlacingMarker(!isPlacingMarker)}>
-            {isPlacingMarker ? 'Cancel Placement' : 'Place Marker'}
-          </button>
-          <button onClick={() => setMarkers([])}>Clear All Markers</button>
-          <button onClick={exportMarkers}>Export Markers</button>
-          <input
-            type="file"
-            accept=".json"
-            onChange={importMarkers}
-            style={{ display: 'none' }}
-            id="import-markers"
-          />
-          <button onClick={() => document.getElementById('import-markers').click()}>
-            Import Markers
-          </button>
-        </div>
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', background: 'rgba(255,255,255,0.85)', borderRadius: '6px', padding: '4px 8px' }}>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <input
-              type="checkbox"
-              checked={showSeaChartChests}
-              onChange={e => setShowSeaChartChests(e.target.checked)}
-            />
-            Sea Chart Chests
-          </label>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <input
-              type="checkbox"
-              checked={showLightChests}
-              onChange={e => setShowLightChests(e.target.checked)}
-            />
-            Light Chests
-          </label>
-        </div>
+    <div className="map-container" style={{ position: 'relative', width: '100%', height: '100%' }}>
+      {/* Collapsible sidebar: left for desktop, top for mobile */}
+      <div
+        className={
+          mapSidebarStyles.mapSidebar +
+          ' ' +
+          (!sidebarOpen ? mapSidebarStyles.closed : '')
+        }
+        style={
+          isMobile
+            ? {
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 'auto',
+                width: '100vw',
+                height: sidebarOpen ? 280 : 48,
+                borderRadius: '0 0 24px 24px',
+                borderTop: 'none',
+                borderBottom: '4px solid #ffe066',
+                boxShadow: '0 2px 16px rgba(0,0,0,0.13)',
+                position: 'absolute',
+                zIndex: 500,
+              }
+            : {
+                top: 0,
+                left: 0,
+                height: '100%',
+                width: sidebarOpen ? 200 : 44,
+                borderRadius: '0 24px 24px 0',
+                borderLeft: 'none',
+                borderRight: '4px solid #ffe066',
+                boxShadow: '2px 0 16px rgba(0,0,0,0.13)',
+                position: 'absolute',
+                zIndex: 500,
+              }
+        }
+      >
+        <button
+          className={mapSidebarStyles.sidebarToggle}
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+          aria-label={sidebarOpen ? (isMobile ? 'Close drawer' : 'Close sidebar') : (isMobile ? 'Open drawer' : 'Open sidebar')}          style={isMobile
+            ? { position: 'absolute', left: '50%', top: 6, transform: 'translateX(-50%)', zIndex: 501 }
+            : { position: 'absolute', top: '50%', left: 8, transform: 'translateY(-50%)', zIndex: 501 }}
+        >
+          <span style={{
+            fontSize: 22,
+            display: 'inline-block',
+            transition: 'transform 0.2s',
+            transform: isMobile
+              ? (sidebarOpen ? 'rotate(180deg)' : 'rotate(0deg)')
+              : (sidebarOpen ? 'rotate(180deg)' : 'rotate(0deg)')
+          }}>
+            {isMobile ? '⮟' : '⮞'}
+          </span>
+        </button>
+        {sidebarOpen && (
+          <div className={mapSidebarStyles.sidebarContent} style={isMobile ? { flexDirection: 'row', gap: 24 } : {}}>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div className={mapSidebarStyles.sectionTitle}>Map Markers</div>
+              <button
+                className={mapSidebarStyles.sidebarButton + (isPlacingMarker ? ' ' + mapSidebarStyles.active : '')}
+                onClick={() => setIsPlacingMarker(!isPlacingMarker)}
+              >
+                {isPlacingMarker ? 'Cancel Placement' : 'Place Marker'}
+              </button>
+              <button
+                className={mapSidebarStyles.sidebarButton}
+                onClick={() => setMarkers([])}
+              >
+                Clear All Markers
+              </button>
+              <button
+                className={mapSidebarStyles.sidebarButton}
+                onClick={exportMarkers}
+              >
+                Export Markers
+              </button>
+              <input
+                type="file"
+                accept=".json"
+                onChange={importMarkers}
+                style={{ display: 'none' }}
+                id="import-markers"
+              />
+              <button
+                className={mapSidebarStyles.sidebarButton}
+                onClick={() => document.getElementById('import-markers').click()}
+              >
+                Import Markers
+              </button>
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div className={mapSidebarStyles.sectionTitle}>Map Layers</div>
+              <label className={mapSidebarStyles.toggleLabel}>
+                <input
+                  type="checkbox"
+                  checked={showSeaChartChests}
+                  onChange={e => setShowSeaChartChests(e.target.checked)}
+                />
+                Sea Chart Chests
+              </label>
+              <label className={mapSidebarStyles.toggleLabel}>
+                <input
+                  type="checkbox"
+                  checked={showLightChests}
+                  onChange={e => setShowLightChests(e.target.checked)}
+                />
+                Light Chests
+              </label>
+            </div>
+          </div>
+        )}
       </div>
-
-      {/* Add cursor style when placing marker */}
+      {/* Map itself */}
       <MapContainer 
-        center={[ 
-          (rows.length * tileSize) / 2,
-          (columns.length * tileSize) / 2
-        ]} 
-        zoom={-1} 
-        style={{  height: "100vh", width: "100%" }}
+        center={[(rows.length * tileSize) / 2, (columns.length * tileSize) / 2]}
+        zoom={-1}
+        style={{ height: '100vh', width: '100%' }}
         minZoom={-1}
         maxZoom={4}
         crs={L.CRS.Simple}
