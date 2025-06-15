@@ -85,6 +85,8 @@ const Map = () => {
     const saved = localStorage.getItem('mapMarkers');
     return saved ? JSON.parse(saved) : [];
   });
+  const [showSeaChartChests, setShowSeaChartChests] = useState(true);
+  const [showLightChests, setShowLightChests] = useState(true);
   const { currentSave } = useSaves();
   const markerRefs = useRef({});
   const location = useLocation();
@@ -256,23 +258,43 @@ const Map = () => {
 
   return (
     <div className="map-container">
-      {/* Add marker placement controls */}
-      <div style={{ position: 'absolute', top: '10px', left: '10px', zIndex: 1000, display: 'flex', gap: '10px' }}>
-        <button onClick={() => setIsPlacingMarker(!isPlacingMarker)}>
-          {isPlacingMarker ? 'Cancel Placement' : 'Place Marker'}
-        </button>
-        <button onClick={() => setMarkers([])}>Clear All Markers</button>
-        <button onClick={exportMarkers}>Export Markers</button>
-        <input
-          type="file"
-          accept=".json"
-          onChange={importMarkers}
-          style={{ display: 'none' }}
-          id="import-markers"
-        />
-        <button onClick={() => document.getElementById('import-markers').click()}>
-          Import Markers
-        </button>
+      {/* Add marker placement controls and toggles */}
+      <div style={{ position: 'absolute', top: '10px', left: '10px', zIndex: 1000, display: 'flex', gap: '10px', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button onClick={() => setIsPlacingMarker(!isPlacingMarker)}>
+            {isPlacingMarker ? 'Cancel Placement' : 'Place Marker'}
+          </button>
+          <button onClick={() => setMarkers([])}>Clear All Markers</button>
+          <button onClick={exportMarkers}>Export Markers</button>
+          <input
+            type="file"
+            accept=".json"
+            onChange={importMarkers}
+            style={{ display: 'none' }}
+            id="import-markers"
+          />
+          <button onClick={() => document.getElementById('import-markers').click()}>
+            Import Markers
+          </button>
+        </div>
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', background: 'rgba(255,255,255,0.85)', borderRadius: '6px', padding: '4px 8px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <input
+              type="checkbox"
+              checked={showSeaChartChests}
+              onChange={e => setShowSeaChartChests(e.target.checked)}
+            />
+            Sea Chart Chests
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <input
+              type="checkbox"
+              checked={showLightChests}
+              onChange={e => setShowLightChests(e.target.checked)}
+            />
+            Light Chests
+          </label>
+        </div>
       </div>
 
       {/* Add cursor style when placing marker */}
@@ -352,7 +374,7 @@ const Map = () => {
         }
 
         {/* Sea Chart Chests */}
-        {seaChartMarkers.map(marker => (
+        {showSeaChartChests && seaChartMarkers.map(marker => (
           <Marker
             key={`sea-chart-${marker.id}`}
             position={[marker.position.y, marker.position.x]}
@@ -369,7 +391,7 @@ const Map = () => {
           </Marker>
         ))}
         {/* Light Chests */}
-        {lightChests.map(marker => (
+        {showLightChests && lightChests.map(marker => (
           <Marker
             key={`light-chest-${marker.id}`}
             position={[marker.position.y, marker.position.x]}
