@@ -1,0 +1,21 @@
+.viewInInventoryButton {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 16px;
+  background: #ffe066;
+  color: #206693;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #ffe066;
+  box-shadow: 0 2px 8px #20669333;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.viewInInventoryButton:hover,
+.viewInInventoryButton:focus {
+  background: #fffbe6;
+  border-color: #ffd700;
+  color: #174a6c;
+}

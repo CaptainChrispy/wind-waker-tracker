@@ -14,6 +14,7 @@ import treasureMarkerIcon from '../assets/images/map/treasure_marker.png';
 import lightChestMarkerIcon from '../assets/images/map/light_chest_marker.png';
 import { useLocation } from 'react-router-dom';
 import mapSidebarStyles from './MapSidebar.module.css';
+import mapStyles from './Map.module.css';
 
 const ZoomListener = ({ onZoomChange }) => {
   useMapEvents({
@@ -455,22 +456,54 @@ const Map = () => {
         }
 
         {/* Sea Chart Chests */}
-        {showSeaChartChests && seaChartMarkers.map(marker => (
-          <Marker
-            key={`sea-chart-${marker.id}`}
-            position={[marker.position.y, marker.position.x]}
-            icon={seaChartIcon}
-            interactive={true}
-            ref={el => markerRefs.current[marker.id] = el}
-          >
-            <Popup>
-              <div>
-                <p><strong>Sea Chart Chest</strong></p>
-                <p><strong>Grid Square:</strong> {marker.gridSquare}</p>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
+        {showSeaChartChests && seaChartMarkers.map(marker => {
+          let chartKey = null;
+          const itemsData = require('../assets/data/itemsData');
+          for (const key in itemsData.ITEMS) {
+            const item = itemsData.ITEMS[key];
+            if (item.category === 'Charts' && item.type === 'Treasure Chart') {
+              chartKey = key;
+              break;
+            }
+          }
+          // --- BEGIN: Keep original chartKey logic for future use ---
+          /*
+          if (marker.chartNumber != null) {
+            for (const key in itemsData.ITEMS) {
+              const item = itemsData.ITEMS[key];
+              if (item.category === 'Charts' && item.number != null && item.number == marker.chartNumber) {
+                chartKey = key;
+                break;
+              }
+            }
+          }
+          */
+          // --- END: Keep original chartKey logic for future use ---
+          // --- PATCH: Always show the button for now (chartKey fallback)
+          if (!chartKey) chartKey = 'TREASURE_CHART_1';
+          return (
+            <Marker
+              key={`sea-chart-${marker.id}`}
+              position={[marker.position.y, marker.position.x]}
+              icon={seaChartIcon}
+              interactive={true}
+              ref={el => markerRefs.current[marker.id] = el}
+            >
+              <Popup>
+                <div>
+                  <p><strong>Sea Chart Chest</strong></p>
+                  <p><strong>Grid Square:</strong> {marker.gridSquare}</p>
+                  <button
+                    className={mapStyles.viewInInventoryButton}
+                    onClick={() => window.location.href = `/inventory?select=${encodeURIComponent(chartKey)}`}
+                  >
+                    View in Inventory
+                  </button>
+                </div>
+              </Popup>
+            </Marker>
+          );
+        })}
         {/* Light Chests */}
         {showLightChests && lightChests.map(marker => (
           <Marker
@@ -507,20 +540,20 @@ const Map = () => {
                 <p><strong>Grid Square:</strong> {marker.gridSquare}</p>
                 <p><strong>Position:</strong></p>
                 <pre style={{ background: '#f5f5f5', padding: '8px' }}>
-{`{
-  id: '${marker.gridSquare}',
-  baseSquare: '${marker.gridSquare}',
-  position: { 
-    x: ${marker.relativePosition.x}, 
-    y: ${marker.relativePosition.y} 
-  },
-  size: { width: 69, height: 69 },
-  imagePrefix: '${marker.gridSquare}',
-  resolutions: {
-    medium: { width: 69, height: 69 },
-    detailed: { width: 680, height: 680 }
-  }
-}`}
+                  {`{
+                    id: '${marker.gridSquare}',
+                    baseSquare: '${marker.gridSquare}',
+                    position: { 
+                      x: ${marker.relativePosition.x}, 
+                      y: ${marker.relativePosition.y} 
+                    },
+                    size: { width: 69, height: 69 },
+                    imagePrefix: '${marker.gridSquare}',
+                    resolutions: {
+                      medium: { width: 69, height: 69 },
+                      detailed: { width: 680, height: 680 }
+                    }
+                  }`}
                 </pre>
                 <button onClick={() => removeMarker(marker.id)}>Remove Marker</button>
               </div>
