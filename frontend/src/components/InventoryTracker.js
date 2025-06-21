@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './InventoryTracker.module.css';
 import { ITEM_CATEGORIES, ITEMS } from '../assets/data/itemsData';
 import { useSaves } from '../context/SavesContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const InventoryTracker = () => {
   const [inventory, setInventory] = useState({});
@@ -12,6 +12,7 @@ const InventoryTracker = () => {
   const [imageErrors, setImageErrors] = useState({});
   const { currentSave } = useSaves();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const gameVersion = currentSave?.version || 'GameCube';
 
@@ -398,6 +399,19 @@ const InventoryTracker = () => {
     if (!selectedItem) return;
     navigate(`/seachart?chart=${encodeURIComponent(selectedItem)}`);
   };
+
+  // Query param selection
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const selectItem = params.get('select');
+    if (selectItem && ITEMS[selectItem]) {
+      const itemCategory = ITEMS[selectItem].category;
+      setActiveCategory(itemCategory);
+      setTimeout(() => {
+        showItemDetails(selectItem);
+      }, 0);
+    }
+  }, [location.search]);
 
   return (
     <>
