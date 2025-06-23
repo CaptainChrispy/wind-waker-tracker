@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MapContainer, ImageOverlay, useMapEvents, Marker, Popup } from 'react-leaflet';
+import { MapContainer, ImageOverlay, useMapEvents, Marker, Popup, Polyline, CircleMarker } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/images/marker-icon.png';
@@ -267,6 +267,37 @@ const Map = () => {
   const seaChartIcon = currentZoom >= ZOOM_LEVELS.DETAILED ? seaChartIconLarge : seaChartIconSmall;
   const lightChestIcon = currentZoom >= ZOOM_LEVELS.MEDIUM ? lightChestIconLarge : lightChestIconSmall;
 
+  // Example treasure chart location and destination
+  // Top left of the map is (x: 0, y: rows.length * tileSize)
+  const exampleChartLocation = { x: 0, y: rows.length * tileSize };
+  const exampleTreasureLocation = { x: 128, y: 1993 }; // A1 chest from firstQuestSeaCharts
+  const chartCircleRadius = 16; // in map units (matches CircleMarker radius)
+
+  // Helper to draw an arrowhead at the end of a polyline
+  function ArrowHead({ from, to, color = '#d32f2f', size = 18 }) {
+    const dx = to.x - from.x;
+    const dy = to.y - from.y;
+    const angle = Math.atan2(dy, dx);
+    const arrowLength = size;
+    const arrowWidth = size / 2.5;
+    const tipX = to.x;
+    const tipY = to.y;
+    const leftX = tipX - arrowLength * Math.cos(angle) + arrowWidth * Math.sin(angle);
+    const leftY = tipY - arrowLength * Math.sin(angle) - arrowWidth * Math.cos(angle);
+    const rightX = tipX - arrowLength * Math.cos(angle) - arrowWidth * Math.sin(angle);
+    const rightY = tipY - arrowLength * Math.sin(angle) + arrowWidth * Math.cos(angle);
+    return (
+      <Polyline
+        positions={[
+          [leftY, leftX],
+          [tipY, tipX],
+          [rightY, rightX],
+        ]}
+        pathOptions={{ color, weight: 3 }}
+      />
+    );
+  }
+
   return (
     <div className="map-container" style={{ position: 'relative', width: '100%', height: '100%' }}>
       {/* Collapsible sidebar: left for desktop, top for mobile */}
@@ -520,6 +551,30 @@ const Map = () => {
             </Popup>
           </Marker>
         ))}
+
+        {/* Treasure Chart Location and Arrow test example thing */}
+        {/* Circle at chart location */}
+        <CircleMarker
+          center={[exampleChartLocation.y, exampleChartLocation.x]}
+          radius={chartCircleRadius}
+          pathOptions={{ color: '#d32f2f', fillColor: '#fff', fillOpacity: 0, weight: 3, dashArray: '4 2' }}
+        >
+          <Popup>
+            <div>
+              <strong>Treasure Chart 1 Location</strong>
+              <p>This is where you obtain Treasure Chart 1.</p>
+            </div>
+          </Popup>
+        </CircleMarker>
+        {/* Dotted line with arrow from center of chart circle to chest */}
+        <Polyline
+          positions={[
+            [exampleChartLocation.y, exampleChartLocation.x],
+            [exampleTreasureLocation.y, exampleTreasureLocation.x],
+          ]}
+          pathOptions={{ color: '#d32f2f', weight: 3, dashArray: '8 8' }}
+        />
+        <ArrowHead from={exampleChartLocation} to={exampleTreasureLocation} color="#d32f2f" size={Math.max(4, 16 - currentZoom * 5)} />
 
         <MapClickHandler onMapClick={handleMapClick} />
         {markers.map(marker => (
