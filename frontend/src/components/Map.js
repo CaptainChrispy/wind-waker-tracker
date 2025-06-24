@@ -298,6 +298,15 @@ const Map = () => {
     );
   }
 
+  // Helper to get the center of an island overlay
+  function getIslandOverlayCenter(area) {
+    const rowIndex = rows.indexOf(area.baseSquare[0]);
+    const colIndex = parseInt(area.baseSquare[1], 10) - 1;
+    const top = (rows.length - rowIndex) * tileSize - area.position.y;
+    const left = colIndex * tileSize + area.position.x;
+    return [top - area.size.height / 2, left + area.size.width / 2];
+  }
+
   return (
     <div className="map-container" style={{ position: 'relative', width: '100%', height: '100%' }}>
       {/* Collapsible sidebar: left for desktop, top for mobile */}
@@ -614,6 +623,21 @@ const Map = () => {
               </div>
             </Popup>
           </Marker>
+        ))}
+
+        {/* Island name labels */}
+        {detailAreas.map(area => (
+          <Marker
+            key={`island-label-${area.id}`}
+            position={getIslandOverlayCenter(area)}
+            icon={new L.DivIcon({
+              html: `<div class='${mapStyles.islandLabel}'>${area.islandName}</div>`,
+              className: '',
+              iconSize: [120, 24],
+              iconAnchor: [60, 12],
+            })}
+            interactive={false}
+          />
         ))}
       </MapContainer>
     </div>

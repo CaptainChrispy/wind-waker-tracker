@@ -19,3 +19,24 @@
   border-color: #ffd700;
   color: #174a6c;
 }
+
+.islandLabel {
+  font-family: 'RocknRoll One', 'Arial Rounded MT Bold', Arial, sans-serif;
+  font-size: 15px;
+  color: #fff;
+  text-shadow:
+    -2px -2px 0 #222,
+    2px -2px 0 #222,
+    -2px 2px 0 #222,
+    2px 2px 0 #222,
+    0 2px 0 #222,
+    2px 0 0 #222,
+    0 -2px 0 #222,
+    -2px 0 0 #222;
+  font-weight: normal;
+  padding: 2px 8px;
+  border-radius: 8px;
+  pointer-events: none;
+  text-align: center;
+  display: inline-block;
+}
