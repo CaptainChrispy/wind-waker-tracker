@@ -89,6 +89,7 @@ const Map = () => {
   });
   const [showSeaChartChests, setShowSeaChartChests] = useState(true);
   const [showLightChests, setShowLightChests] = useState(true);
+  const [showIslandLabels, setShowIslandLabels] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { currentSave } = useSaves();
   const markerRefs = useRef({});
@@ -418,6 +419,14 @@ const Map = () => {
                 />
                 Light Chests
               </label>
+              <label className={mapSidebarStyles.toggleLabel}>
+                <input
+                  type="checkbox"
+                  checked={showIslandLabels}
+                  onChange={e => setShowIslandLabels(e.target.checked)}
+                />
+                Island Names
+              </label>
             </div>
           </div>
         )}
@@ -626,7 +635,7 @@ const Map = () => {
         ))}
 
         {/* Island name labels */}
-        {detailAreas.map(area => (
+        {showIslandLabels && detailAreas.map(area => (
           <Marker
             key={`island-label-${area.id}`}
             position={getIslandOverlayCenter(area)}
