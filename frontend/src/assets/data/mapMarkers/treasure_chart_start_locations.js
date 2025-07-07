@@ -1,4 +1,4 @@
-[
+export const treasureChartStartLocations = [
   {
     "id": 1750725293202,
     "position": {
@@ -491,4 +491,4 @@
       "y": 94
     }
   }
-]
+];
