@@ -1,4 +1,5 @@
 export const treasureChartStartLocations = [
+  // F6: Forest Haven to E5: Private Oasis
   {
     "id": 1750725293202,
     "position": {
@@ -11,6 +12,7 @@ export const treasureChartStartLocations = [
       "y": 144
     }
   },
+  // B4: Windfall Island to C2: Rock Spire Isle
   {
     "id": 1750725458692,
     "position": {
@@ -23,6 +25,7 @@ export const treasureChartStartLocations = [
       "y": 149
     }
   },
+  // F6: Forest Haven to C5: Eastern Fairy Island
   {
     "id": 1750725517878,
     "position": {
@@ -35,6 +38,7 @@ export const treasureChartStartLocations = [
       "y": 156
     }
   },
+  // C2: Rock Spire Isle to F4: Southern Fairy Island
   {
     "id": 1750725593785,
     "position": {
@@ -47,6 +51,7 @@ export const treasureChartStartLocations = [
       "y": 75
     }
   },
+  // A4: Gale Isle to D7: Thorned Fairy Island
   {
     "id": 1750725689677,
     "position": {
@@ -59,6 +64,7 @@ export const treasureChartStartLocations = [
       "y": 94
     }
   },
+  // D5: Tower of the Gods to D4: Six-Eye Reef
   {
     "id": 1750725702802,
     "position": {
@@ -71,6 +77,7 @@ export const treasureChartStartLocations = [
       "y": 125
     }
   },
+  // B4: Windfall Island to A2: Star Island
   {
     "id": 1750725801818,
     "position": {
@@ -83,6 +90,7 @@ export const treasureChartStartLocations = [
       "y": 150
     }
   },
+  // G1: Horseshoe Island to C1: Western Fairy Island
   {
     "id": 1750725917048,
     "position": {
@@ -95,6 +103,7 @@ export const treasureChartStartLocations = [
       "y": 161
     }
   },
+  // A5: Crescent Moon Island to G1: Horseshoe Island
   {
     "id": 1750725974090,
     "position": {
@@ -107,6 +116,7 @@ export const treasureChartStartLocations = [
       "y": 83
     }
   },
+  // A5: Crescent Moon Island to C3: Tingle Island
   {
     "id": 1750725998712,
     "position": {
@@ -119,6 +129,7 @@ export const treasureChartStartLocations = [
       "y": 153
     }
   },
+  // B6: Dragon Roost Island to A5: Crescent Moon Island
   {
     "id": 1750726122702,
     "position": {
@@ -131,6 +142,7 @@ export const treasureChartStartLocations = [
       "y": 137
     }
   },
+  // G3: Headstone Island to F2: Five-Eye Reef
   {
     "id": 1750726162602,
     "position": {
@@ -143,6 +155,7 @@ export const treasureChartStartLocations = [
       "y": 216
     }
   },
+  // G4: Two-Eye Reef to A7: Overlook Island
   {
     "id": 1750726220808,
     "position": {
@@ -155,6 +168,7 @@ export const treasureChartStartLocations = [
       "y": 87
     }
   },
+  // G3: Headstone Island to D5: Tower of the Gods
   {
     "id": 1750726250357,
     "position": {
@@ -167,6 +181,7 @@ export const treasureChartStartLocations = [
       "y": 132
     }
   },
+  // F6: Forest Haven to G5: Angular Isles
   {
     "id": 1750726276974,
     "position": {
@@ -179,6 +194,7 @@ export const treasureChartStartLocations = [
       "y": 142
     }
   },
+  // A6: Seven-Star Isles to F3: Shark Island
   {
     "id": 1750726388276,
     "position": {
@@ -191,6 +207,7 @@ export const treasureChartStartLocations = [
       "y": 183
     }
   },
+  // B3: Spectacle Island to F5: Ice Ring Isle
   {
     "id": 1750726445335,
     "position": {
@@ -203,6 +220,7 @@ export const treasureChartStartLocations = [
       "y": 207
     }
   },
+  // B4: Windfall Island to B4: Windfall Island
   {
     "id": 1750726559852,
     "position": {
@@ -215,6 +233,7 @@ export const treasureChartStartLocations = [
       "y": 148
     }
   },
+  // B1: Four-Eye Reef to B7: Flight Control Platform
   {
     "id": 1750726661424,
     "position": {
@@ -227,6 +246,7 @@ export const treasureChartStartLocations = [
       "y": 86
     }
   },
+  // G3: Headstone Island to E6: Bomb Island
   {
     "id": 1750726683711,
     "position": {
@@ -239,6 +259,7 @@ export const treasureChartStartLocations = [
       "y": 215
     }
   },
+  // D3: Cyclops Reef to D3: Cyclops Reef
   {
     "id": 1750726704308,
     "position": {
@@ -251,6 +272,7 @@ export const treasureChartStartLocations = [
       "y": 216
     }
   },
+  // A3: Northern Fairy Island to B3: Spectacle Island
   {
     "id": 1750726754674,
     "position": {
@@ -263,6 +285,7 @@ export const treasureChartStartLocations = [
       "y": 163
     }
   },
+  // B4: Windfall Island to F1: Diamond Steppe Island
   {
     "id": 1750726768578,
     "position": {
@@ -275,6 +298,7 @@ export const treasureChartStartLocations = [
       "y": 148
     }
   },
+  // B4: Windfall Island to A3: Northern Fairy Island
   {
     "id": 1750726797427,
     "position": {
@@ -287,6 +311,7 @@ export const treasureChartStartLocations = [
       "y": 156
     }
   },
+  // F7: Cliff Plateau Isles to A1: Forsaken Fortress
   {
     "id": 1750726911484,
     "position": {
@@ -299,6 +324,7 @@ export const treasureChartStartLocations = [
       "y": 93
     }
   },
+  // D4: Six-Eye Reef to C4: Northern Triangle Island
   {
     "id": 1750727052834,
     "position": {
@@ -311,6 +337,7 @@ export const treasureChartStartLocations = [
       "y": 103
     }
   },
+  // E5: Private Oasis to C7: Star Belt Archipelago
   {
     "id": 1750727085673,
     "position": {
@@ -323,6 +350,7 @@ export const treasureChartStartLocations = [
       "y": 213
     }
   },
+  // G1: Horseshoe Island to E1: Needle Rock Isle
   {
     "id": 1750727109981,
     "position": {
@@ -335,6 +363,7 @@ export const treasureChartStartLocations = [
       "y": 159
     }
   },
+  // B4: Windfall Island to B2: Mother & Child Isles
   {
     "id": 1750727140029,
     "position": {
@@ -347,6 +376,7 @@ export const treasureChartStartLocations = [
       "y": 155
     }
   },
+  // D5: Tower of the Gods to B5: Pawprint Isle
   {
     "id": 1750727158500,
     "position": {
@@ -359,6 +389,7 @@ export const treasureChartStartLocations = [
       "y": 125
     }
   },
+  // B4: Windfall Island to F6: Forest Haven
   {
     "id": 1750727202715,
     "position": {
@@ -371,6 +402,7 @@ export const treasureChartStartLocations = [
       "y": 147
     }
   },
+  // D1: Three-Eye Reef to G6: Boating Course
   {
     "id": 1750727351493,
     "position": {
@@ -383,6 +415,7 @@ export const treasureChartStartLocations = [
       "y": 226
     }
   },
+  // B4: Windfall Island to G7: Five Star Isles
   {
     "id": 1750727369483,
     "position": {
@@ -395,6 +428,7 @@ export const treasureChartStartLocations = [
       "y": 146
     }
   },
+  // A5: Eastern Triangle Island to D6: Eastern Triangle Island
   {
     "id": 1750727395628,
     "position": {
@@ -407,6 +441,7 @@ export const treasureChartStartLocations = [
       "y": 89
     }
   },
+  // A4: Gale Isle to E2: Islet of Steel
   {
     "id": 1750727432011,
     "position": {
@@ -419,6 +454,7 @@ export const treasureChartStartLocations = [
       "y": 93
     }
   },
+  // F5: Ice Ring Isle to E7: Bird's Peak Rock
   {
     "id": 1750727479979,
     "position": {
@@ -431,6 +467,7 @@ export const treasureChartStartLocations = [
       "y": 217
     }
   },
+  // C2: Rock Spire Isle to C6: Fire Mountain
   {
     "id": 1750727541169,
     "position": {
@@ -443,6 +480,7 @@ export const treasureChartStartLocations = [
       "y": 99
     }
   },
+  // B4: Windfall Island to D1: Three-Eye Reef
   {
     "id": 1750727551818,
     "position": {
@@ -455,6 +493,7 @@ export const treasureChartStartLocations = [
       "y": 149
     }
   },
+  // B6: Dragon Roost Island to B6: Dragon Roost Island
   {
     "id": 1750727562248,
     "position": {
@@ -467,6 +506,7 @@ export const treasureChartStartLocations = [
       "y": 136
     }
   },
+  // F4: Southern Fairy Island to G3: Headstone Island
   {
     "id": 1750727668387,
     "position": {
@@ -479,6 +519,7 @@ export const treasureChartStartLocations = [
       "y": 164
     }
   },
+  // F2: Five-Eye Reef to B1: Four-Eye Reef
   {
     "id": 1750727734547,
     "position": {
