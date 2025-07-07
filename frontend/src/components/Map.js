@@ -634,6 +634,29 @@ const Map = () => {
           </Marker>
         ))}
 
+        {/* Grid labels */}
+        {showIslandLabels && rows.map((row, rowIndex) => (
+          columns.map((col, colIndex) => {
+            const gridKey = `${row}${col}`;
+            // Top left corner of the grid square
+            const top = (rows.length - rowIndex) * tileSize;
+            const left = colIndex * tileSize;
+            return (
+              <Marker
+                key={`grid-label-${gridKey}`}
+                position={[top - 16, left + 32]}
+                icon={new L.DivIcon({
+                  html: `<div class='${mapStyles.gridLabel}'>${gridKey}</div>`,
+                  className: '',
+                  iconSize: [48, 24],
+                  iconAnchor: [0, 0],
+                })}
+                interactive={false}
+              />
+            );
+          })
+        ))}
+
         {/* Island name labels */}
         {showIslandLabels && detailAreas.map(area => (
           <Marker
