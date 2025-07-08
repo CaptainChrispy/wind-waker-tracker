@@ -1,7 +1,7 @@
 export const secondQuestSeaCharts = [
   {
     "id": 1747702143921,
-    "chartNumber": null,
+    "chartNumber": 25,
     "position": {
       "y": 2047,
       "x": 151
@@ -14,7 +14,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747702155619,
-    "chartNumber": null,
+    "chartNumber": 7,
     "position": {
       "y": 2039,
       "x": 456
@@ -27,7 +27,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747702583235,
-    "chartNumber": null,
+    "chartNumber": 24,
     "position": {
       "y": 1976,
       "x": 807
@@ -40,7 +40,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704034433,
-    "chartNumber": null,
+    "chartNumber": 42,
     "position": {
       "y": 2093,
       "x": 1127
@@ -53,7 +53,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704041468,
-    "chartNumber": null,
+    "chartNumber": 11,
     "position": {
       "y": 1987,
       "x": 1403
@@ -66,7 +66,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704050848,
-    "chartNumber": null,
+    "chartNumber": 45,
     "position": {
       "y": 2045,
       "x": 1786
@@ -79,7 +79,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704073459,
-    "chartNumber": null,
+    "chartNumber": 13,
     "position": {
       "y": 1994,
       "x": 2030
@@ -92,7 +92,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704084580,
-    "chartNumber": null,
+    "chartNumber": 19,
     "position": {
       "y": 1687,
       "x": 2020
@@ -105,7 +105,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704099456,
-    "chartNumber": null,
+    "chartNumber": 39,
     "position": {
       "y": 1751,
       "x": 1708
@@ -118,7 +118,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704111321,
-    "chartNumber": null,
+    "chartNumber": 30,
     "position": {
       "y": 1631,
       "x": 1351
@@ -131,7 +131,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704120500,
-    "chartNumber": null,
+    "chartNumber": 18,
     "position": {
       "y": 1725,
       "x": 1066
@@ -144,7 +144,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704127535,
-    "chartNumber": null,
+    "chartNumber": 22,
     "position": {
       "y": 1630,
       "x": 735
@@ -157,7 +157,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704135786,
-    "chartNumber": null,
+    "chartNumber": 29,
     "position": {
       "y": 1666,
       "x": 505
@@ -170,7 +170,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704142287,
-    "chartNumber": null,
+    "chartNumber": 41,
     "position": {
       "y": 1731,
       "x": 206
@@ -183,7 +183,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704153540,
-    "chartNumber": null,
+    "chartNumber": 8,
     "position": {
       "y": 1368,
       "x": 67
@@ -196,7 +196,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704171932,
-    "chartNumber": null,
+    "chartNumber": 2,
     "position": {
       "y": 1464,
       "x": 433
@@ -209,7 +209,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704182923,
-    "chartNumber": null,
+    "chartNumber": 10,
     "position": {
       "y": 1349,
       "x": 754
@@ -222,7 +222,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704193729,
-    "chartNumber": null,
+    "chartNumber": 26,
     "position": {
       "y": 1405,
       "x": 1060
@@ -235,7 +235,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704202532,
-    "chartNumber": null,
+    "chartNumber": 3,
     "position": {
       "y": 1306,
       "x": 1481
@@ -248,7 +248,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704211404,
-    "chartNumber": null,
+    "chartNumber": 37,
     "position": {
       "y": 1463,
       "x": 1621
@@ -261,7 +261,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704229525,
-    "chartNumber": null,
+    "chartNumber": 27,
     "position": {
       "y": 1415,
       "x": 1945
@@ -274,7 +274,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704241505,
-    "chartNumber": null,
+    "chartNumber": 38,
     "position": {
       "y": 1034,
       "x": 124
@@ -287,7 +287,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704256528,
-    "chartNumber": null,
+    "chartNumber": null, // Triforce Chart 1
     "position": {
       "y": 1093,
       "x": 493
@@ -300,7 +300,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704269619,
-    "chartNumber": null,
+    "chartNumber": 21,
     "position": {
       "y": 1047,
       "x": 807
@@ -313,7 +313,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704276331,
-    "chartNumber": null,
+    "chartNumber": 6,
     "position": {
       "y": 1155,
       "x": 1156
@@ -326,7 +326,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704282665,
-    "chartNumber": null,
+    "chartNumber": 14,
     "position": {
       "y": 1053,
       "x": 1355
@@ -339,7 +339,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704292579,
-    "chartNumber": null,
+    "chartNumber": 34,
     "position": {
       "y": 1063,
       "x": 1673
@@ -352,7 +352,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704304129,
-    "chartNumber": null,
+    "chartNumber": 5,
     "position": {
       "y": 1004,
       "x": 2051
@@ -365,7 +365,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704325786,
-    "chartNumber": null,
+    "chartNumber": 28,
     "position": {
       "y": 682,
       "x": 208
@@ -378,7 +378,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704333486,
-    "chartNumber": null,
+    "chartNumber": 35,
     "position": {
       "y": 848,
       "x": 550
@@ -391,7 +391,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704349534,
-    "chartNumber": null,
+    "chartNumber": null, // Triforce Chart 2
     "position": {
       "y": 743,
       "x": 698
@@ -404,7 +404,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704359081,
-    "chartNumber": null,
+    "chartNumber": 44,
     "position": {
       "y": 751,
       "x": 1096
@@ -417,7 +417,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704369992,
-    "chartNumber": null,
+    "chartNumber": 1,
     "position": {
       "y": 738,
       "x": 1467
@@ -430,7 +430,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704380535,
-    "chartNumber": null,
+    "chartNumber": 20,
     "position": {
       "y": 863,
       "x": 1766
@@ -443,7 +443,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704387352,
-    "chartNumber": null,
+    "chartNumber": 36,
     "position": {
       "y": 783,
       "x": 2029
@@ -456,7 +456,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704395498,
-    "chartNumber": null,
+    "chartNumber": 23,
     "position": {
       "y": 455,
       "x": 173
@@ -469,7 +469,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704405324,
-    "chartNumber": null,
+    "chartNumber": 12,
     "position": {
       "y": 538,
       "x": 393
@@ -482,7 +482,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704412727,
-    "chartNumber": null,
+    "chartNumber": 16,
     "position": {
       "y": 396,
       "x": 755
@@ -495,7 +495,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704418555,
-    "chartNumber": null,
+    "chartNumber": 4,
     "position": {
       "y": 550,
       "x": 1000
@@ -508,7 +508,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704428364,
-    "chartNumber": null,
+    "chartNumber": 17,
     "position": {
       "y": 425,
       "x": 1357
@@ -521,7 +521,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704437787,
-    "chartNumber": null,
+    "chartNumber": 31,
     "position": {
       "y": 444,
       "x": 1720
@@ -534,7 +534,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704449924,
-    "chartNumber": null,
+    "chartNumber": null, // Triforce Chart 3
     "position": {
       "y": 501,
       "x": 1956
@@ -547,7 +547,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704458744,
-    "chartNumber": null,
+    "chartNumber": 33,
     "position": {
       "y": 228,
       "x": 2085
@@ -560,7 +560,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704467844,
-    "chartNumber": null,
+    "chartNumber": 32,
     "position": {
       "y": 195,
       "x": 1629
@@ -573,7 +573,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704483533,
-    "chartNumber": null,
+    "chartNumber": 15,
     "position": {
       "y": 90,
       "x": 1375
@@ -586,7 +586,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704491802,
-    "chartNumber": null,
+    "chartNumber": 46,
     "position": {
       "y": 198,
       "x": 1111
@@ -599,7 +599,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704502092,
-    "chartNumber": null,
+    "chartNumber": 40,
     "position": {
       "y": 123,
       "x": 828
@@ -612,7 +612,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704511857,
-    "chartNumber": null,
+    "chartNumber": 43,
     "position": {
       "y": 63,
       "x": 436
@@ -625,7 +625,7 @@ export const secondQuestSeaCharts = [
   },
   {
     "id": 1747704517037,
-    "chartNumber": null,
+    "chartNumber": 9,
     "position": {
       "y": 171,
       "x": 113
