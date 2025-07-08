@@ -10,6 +10,7 @@ import { useSaves } from '../context/SavesContext';
 import { firstQuestSeaCharts } from '../assets/data/mapMarkers/firstQuestSeaCharts';
 import { secondQuestSeaCharts } from '../assets/data/mapMarkers/secondQuestSeaCharts';
 import { lightChests } from '../assets/data/mapMarkers/lightChests';
+import { treasureChartStartLocations } from '../assets/data/mapMarkers/treasure_chart_start_locations';
 import treasureMarkerIcon from '../assets/images/map/treasure_marker.png';
 import lightChestMarkerIcon from '../assets/images/map/light_chest_marker.png';
 import { useLocation } from 'react-router-dom';
@@ -90,6 +91,8 @@ const Map = () => {
   const [showSeaChartChests, setShowSeaChartChests] = useState(true);
   const [showLightChests, setShowLightChests] = useState(true);
   const [showIslandLabels, setShowIslandLabels] = useState(true);
+  const [showTreasureChartLines, setShowTreasureChartLines] = useState(true);
+  const [showTreasureChartCircles, setShowTreasureChartCircles] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { currentSave } = useSaves();
   const markerRefs = useRef({});
@@ -268,10 +271,6 @@ const Map = () => {
   const seaChartIcon = currentZoom >= ZOOM_LEVELS.DETAILED ? seaChartIconLarge : seaChartIconSmall;
   const lightChestIcon = currentZoom >= ZOOM_LEVELS.MEDIUM ? lightChestIconLarge : lightChestIconSmall;
 
-  // Example treasure chart location and destination
-  // Top left of the map is (x: 0, y: rows.length * tileSize)
-  const exampleChartLocation = { x: 0, y: rows.length * tileSize };
-  const exampleTreasureLocation = { x: 128, y: 1993 }; // A1 chest from firstQuestSeaCharts
   const chartCircleRadius = 16; // in map units (matches CircleMarker radius)
 
   // Helper to draw an arrowhead at the end of a polyline
@@ -427,11 +426,26 @@ const Map = () => {
                 />
                 Island Names
               </label>
+              <label className={mapSidebarStyles.toggleLabel}>
+                <input
+                  type="checkbox"
+                  checked={showTreasureChartLines}
+                  onChange={e => setShowTreasureChartLines(e.target.checked)}
+                />
+                Treasure Chart Lines
+              </label>
+              <label className={mapSidebarStyles.toggleLabel}>
+                <input
+                  type="checkbox"
+                  checked={showTreasureChartCircles}
+                  onChange={e => setShowTreasureChartCircles(e.target.checked)}
+                />
+                Treasure Chart Circles
+              </label>
             </div>
           </div>
         )}
       </div>
-      {/* Map itself */}
       <MapContainer 
         center={[(rows.length * tileSize) / 2, (columns.length * tileSize) / 2]}
         zoom={-1}
@@ -515,20 +529,6 @@ const Map = () => {
               break;
             }
           }
-          // --- BEGIN: Keep original chartKey logic for future use ---
-          /*
-          if (marker.chartNumber != null) {
-            for (const key in itemsData.ITEMS) {
-              const item = itemsData.ITEMS[key];
-              if (item.category === 'Charts' && item.number != null && item.number == marker.chartNumber) {
-                chartKey = key;
-                break;
-              }
-            }
-          }
-          */
-          // --- END: Keep original chartKey logic for future use ---
-          // --- PATCH: Always show the button for now (chartKey fallback)
           if (!chartKey) chartKey = 'TREASURE_CHART_1';
           return (
             <Marker
@@ -570,29 +570,41 @@ const Map = () => {
           </Marker>
         ))}
 
-        {/* Treasure Chart Location and Arrow test example thing */}
-        {/* Circle at chart location */}
-        <CircleMarker
-          center={[exampleChartLocation.y, exampleChartLocation.x]}
-          radius={chartCircleRadius}
-          pathOptions={{ color: '#d32f2f', fillColor: '#fff', fillOpacity: 0, weight: 3, dashArray: '4 2' }}
-        >
-          <Popup>
-            <div>
-              <strong>Treasure Chart 1 Location</strong>
-              <p>This is where you obtain Treasure Chart 1.</p>
-            </div>
-          </Popup>
-        </CircleMarker>
-        {/* Dotted line with arrow from center of chart circle to chest */}
-        <Polyline
-          positions={[
-            [exampleChartLocation.y, exampleChartLocation.x],
-            [exampleTreasureLocation.y, exampleTreasureLocation.x],
-          ]}
-          pathOptions={{ color: '#d32f2f', weight: 3, dashArray: '8 8' }}
-        />
-        <ArrowHead from={exampleChartLocation} to={exampleTreasureLocation} color="#d32f2f" size={Math.max(4, 16 - currentZoom * 5)} />
+        {/* Treasure Chart Lines and Arrows */}
+        {firstQuestSeaCharts.map(chart => {
+          const treasureLoc = treasureChartStartLocations.find(t => t.chartNumber === chart.chartNumber);
+          if (!chart.position || !treasureLoc || !treasureLoc.position) return null;
+          return (
+            <React.Fragment key={`chart-line-${chart.chartNumber}`}>
+              {showTreasureChartCircles && (
+                <CircleMarker
+                  center={[treasureLoc.position.y, treasureLoc.position.x]}
+                  radius={chartCircleRadius}
+                  pathOptions={{ color: '#d32f2f', fillColor: '#fff', fillOpacity: 0, weight: 3, dashArray: '4 2' }}
+                >
+                  <Popup>
+                    <div>
+                      <strong>Treasure Chart {chart.chartNumber} Treasure</strong>
+                      <p>This is where you dig up the treasure for Treasure Chart {chart.chartNumber}.</p>
+                    </div>
+                  </Popup>
+                </CircleMarker>
+              )}
+              {showTreasureChartLines && (
+                <>
+                  <Polyline
+                    positions={[
+                      [treasureLoc.position.y, treasureLoc.position.x],
+                      [chart.position.y, chart.position.x],
+                    ]}
+                    pathOptions={{ color: '#d32f2f', weight: 3, dashArray: '8 8' }}
+                  />
+                  <ArrowHead from={treasureLoc.position} to={chart.position} color="#d32f2f" size={Math.max(4, 16 - currentZoom * 5)} />
+                </>
+              )}
+            </React.Fragment>
+          );
+        })}
 
         <MapClickHandler onMapClick={handleMapClick} />
         {markers.map(marker => (
