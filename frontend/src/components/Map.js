@@ -336,7 +336,7 @@ const Map = () => {
                 top: 0,
                 left: 0,
                 height: '100%',
-                width: sidebarOpen ? 200 : 44,
+                width: sidebarOpen ? 340 : 60,
                 borderRadius: '0 24px 24px 0',
                 borderLeft: 'none',
                 borderRight: '4px solid #ffe066',

@@ -83,6 +83,17 @@
   font-weight: 600;
   margin-bottom: 8px;
   font-family: inherit;
+  min-height: 32px;
+  width: 100%;
+}
+
+.toggleLabel input[type="checkbox"] {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.toggleLabel {
+  flex-wrap: wrap;
 }
 
 input[type="checkbox"] {
