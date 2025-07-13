@@ -1,44 +1,50 @@
 # Map Screen Documentation
 
-The Map Screen is the central navigation feature of the Wind Waker Tracker. It displays the Wind Waker world map with interactive markers for important locations.
+The Map Screen is the central navigation feature of the Wind Waker Tracker, displaying an interactive map of the Great Sea with comprehensive tracking capabilities.
 
 ## Features
 
-- Interactive Leaflet-based map of the Great Sea
-- Markers for all islands, caves, and points of interest
-- Clickable chest locations that can be marked as collected
-- Sector grid overlay matching the in-game sea chart
+- **7x7 grid system** matching the in-game sea chart (A1-G7)
+- **Quest-aware markers**: Different chest locations for Normal vs Second Quest
+- **Interactive markers**: Sea chart chests, light chests, and custom user markers
+- **Treasure chart visualization**: Lines and circles showing chart-to-treasure relationships
+- **Responsive sidebar**: Layer controls and marker management tools
 
-## Custom Map Assets
+## Map Assets
 
-Some base map pieces and assets are extracted using a specialized tool developed specifically for this project ([wind-waker-map-extractor](https://github.com/CaptainChrispy/wind-waker-map-extractor)). It takes screenshots from The Legend of Zelda: Wind Waker HD to provide cropped data that we then upscale and fit onto the interactive map. For more information on how this works, please refer to its repository.
+Custom map tiles extracted using [wind-waker-map-extractor](https://github.com/CaptainChrispy/wind-waker-map-extractor), providing high-quality imagery at multiple zoom levels from Wind Waker HD screenshots.
 
-## Implementation Details
+## Implementation
 
 ### Map Component
+Uses `react-leaflet` with a pixel-based coordinate system and dynamic tile loading based on zoom level:
 
-The map utilizes `react-leaflet` to render an interactive map:
+- **Coordinate System**: Uses pixel coordinates instead of lat/lng for precise positioning
+- **Dynamic Tiles**: Renders different map layers based on current zoom level
+- **Custom Icons**: Marker sizes scale automatically with zoom level
+- **Quest Integration**: Automatically displays chest locations based on save file
 
-```jsx
-<MapContainer center={[0, 0]} zoom={2} style={{ height: "100vh", width: "100%" }}>
-  <TileLayer url="path/to/wind-waker-map-tiles" />
-  <Markers />
-</MapContainer>
-```
+### Marker Types
+- **Sea Chart Chests**: Quest-specific treasure locations with inventory integration
+- **Light Chests**: Additional collectible markers
+- **Custom Markers**: User-placeable with drag-to-edit functionality
+- **Treasure Chart Lines**: Visual connections between where to find a chart and its treasure
 
-## Markers
-Each marker represents an important location:
-- Islands (49 total)
-- Submarine locations
-- Chest locations
+## Controls
 
-## Chest Tracking
-- Chests are displayed as treasure icons
-- Clicking a chest icon and checking it off toggles its collected state
-- Collected chests are visually distinct (e.g., grayed out)
-- Chest data is stored locally via `localStorage` to persist across sessions, but may be synced with a backend in future versions.
+### Sidebar Features
+- **Map Markers**: Place, clear, export/import custom markers
+- **Map Layers**: Toggle visibility for different marker types
+- **Responsive Design**: Desktop sidebar or mobile top drawer
 
-## Filters
-Users can filter the map to show only:
-- Uncollected chests
-- Specific types of locations (e.g., caves, fairy fountains)
+### Layer Toggles
+- Sea Chart Chests
+- Light Chests  
+- Island Names
+- Treasure Chart Lines
+- Treasure Chart Circles
+
+## Data Management
+- **Local Storage**: Custom markers and preferences persist across sessions
+- **Save Integration**: Automatically switches chest locations based on quest type
+- **Export/Import**: JSON-based marker data for backup and sharing

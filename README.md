@@ -124,13 +124,6 @@ wind-waker-tracker/
 └── start-app.bat          # Windows startup script
 ```
 
-### Key Technologies & Libraries
-- **React Context API**: Global state management for save files
-- **CSS Modules**: Scoped component styling
-- **React Router**: Single-page application routing
-- **Leaflet Maps**: Interactive mapping with custom overlays
-- **Express.js**: RESTful API for puzzle solving algorithms
-
 ## API Endpoints
 
 ### Sliding Puzzle Solver
