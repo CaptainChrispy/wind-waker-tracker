@@ -1,18 +1,58 @@
 # Wind Waker Tracker
 
-A comprehensive tracking application for The Legend of Zelda: The Wind Waker, built with the MERN stack. Track your progress through the game including chests, charts, upgrades, collectibles, and more.
+A comprehensive progress tracking application for The Legend of Zelda: The Wind Waker. Track your collectibles, inventory, charts, figurines, and game progress with an interactive interface that includes mini-games and detailed checklists. 
 
-## Technology Stack
-This project uses the MERN stack:
-- MongoDB: NoSQL database (to be implemented in future versions)
-- Express: Backend web application framework for Node.js
-- React: Frontend JavaScript library for building user interfaces
-- Node.js: JavaScript runtime for server-side code
+** THIS IS A WORK IN PROGRESS - MANY FEATURES ARE STILL UNDER DEVELOPMENT **
+
+## Features
+
+### 📍 Interactive Map
+- Interactive sea chart with all islands and locations
+- Track treasure chart locations and discoveries
+- Mark completed areas and collectibles
+- Zoom and pan functionality with detailed island information
+
+### 📦 Inventory Tracker
+- Complete item tracking system
+- Visual inventory grid with item icons
+- Progress tracking for upgrades and equipment
+- Heart pieces and special items monitoring
+
+### 🎭 Figurine Checklist
+- Complete Nintendo Gallery figurine tracking
+- Organized by categories (Bosses, Characters, Enemies, etc.)
+- Visual checklist with figurine images
+- Progress statistics and completion tracking
+
+### 🎮 Mini-Games
+- **Sliding Puzzle Solver**: Automated solver for in-game sliding puzzles
+- **Sploosh Kaboom**: Battleship-style game tracker
+
+### 💾 Save Management
+- Multiple save file support
+- Local storage persistence
+- Import/export save data
+- Progress backup and restoration
+
+## Tech Stack
+
+### Frontend
+- **React 19.0.0**: Modern React with hooks and context
+- **React Router DOM 7.4.1**: Client-side routing and navigation
+- **Leaflet 1.9.4 + React-Leaflet 5.0.0**: Interactive mapping functionality
+- **Bootstrap 5.3.5**: Responsive UI components and styling
+- **CSS Modules**: Component-scoped styling
+
+### Backend
+- **Node.js + Express 4.21.2**: RESTful API server
+- **CORS 2.8.5**: Cross-origin resource sharing
+- **Custom sliding puzzle solver**: Algorithm for sliding puzzle mini-game
 
 ## Getting Started
+
 ### Prerequisites
-- Node.js (v14 or later)
-- npm (Node Package Manager, comes with Node.js)
+- Node.js (v16 or later)
+- npm (comes with Node.js)
 
 ### Installation
 1. Clone the repository:
@@ -21,66 +61,97 @@ git clone https://github.com/CaptainChrispy/wind-waker-tracker.git
 cd wind-waker-tracker
 ```
 
-2. Install backend dependencies:
+2. Install dependencies for both frontend and backend:
 ```bash
-cd backend
-npm install
-```
+# Install backend dependencies
+cd backend && npm install
 
-3. Install frontend dependencies:
-```bash
-cd ../frontend
-npm install
+# Install frontend dependencies
+cd ../frontend && npm install
 ```
 
 ### Running the Application
-You can run both the frontend and backend using a single command from the project root:
+
+#### Option 1: Quick Start (Windows)
 ```bash
-./start-app.bat
+# From project root
+start-app.bat
 ```
 
-This will start:
-- The backend server on `http://localhost:5000`
-- The frontend application on `http://localhost:3000`
+#### Option 2: Manual Start
+```bash
+# Terminal 1: Start backend server
+cd backend
+npm start
 
-### Development 
-- Backend code is located in the [`backend` directory](backend/index.js).
-- Frontend code is located in the [`frontend` directory](frontend/src/App.js).
-- React components are in [`frontend/src/components`](frontend/src/components/).
+# Terminal 2: Start frontend development server
+cd frontend
+npm start
+```
 
-## Key Libraries and Frameworks
-### Frontend
-- React: A framework for building component-based user interfaces
-- Leaflet/React-Leaflet: For interactive maps and location tracking
-- React Router: For routing and navigation between different screens
+The application will be available at:
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:5000
 
-### Backend 
-- Express: A web application framework for Node.js
-- CORS: Middleware for enabling Cross-Origin Resource Sharing
+## Development
 
-## Project Structure
+### Project Structure
 ```
 wind-waker-tracker/
-├── backend/             # Express server code
-│   ├── index.js         # Server entry point
-│   └── node_modules/    # Backend dependencies
-├── frontend/            # React application
-│   ├── public/          # Static files
-│   ├── src/             # React source code
-│   │   ├── components/  # React components
-│   │   ├── App.js       # Main React component
-│   │   └── index.js     # React entry point
-│   └── node_modules/    # Frontend dependencies
-├── docs/                # Documentation
-│   ├── map-screen.md    # Map screen documentation
-│   ├── checklists.md    # Various checklist features
-│   └── inventory.md     # Inventory tracking system
-└── start-app.bat        # Script to run both frontend and backend
+├── backend/                 # Express.js API server
+│   ├── index.js            # Server entry point
+│   ├── slidingPuzzleSolver.js  # Puzzle solving algorithm
+│   └── package.json        # Backend dependencies
+├── frontend/               # React application
+│   ├── public/             # Static assets
+│   │   └── assets/         # Game images and icons
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   │   ├── Map.js              # Interactive map component
+│   │   │   ├── InventoryTracker.js # Inventory management
+│   │   │   ├── FigurineChecklist.js # Figurine tracking
+│   │   │   ├── SlidingPuzzle.js    # Puzzle solver interface
+│   │   │   ├── SplooshKaboom.js    # Mini-game tracker
+│   │   │   ├── TingleTuner.js      # Special features
+│   │   │   └── navigation/         # Navigation components
+│   │   ├── context/        # React context providers
+│   │   │   └── SavesContext.js     # Save file management
+│   │   ├── assets/         # Data files and game assets
+│   │   │   └── data/       # Game data (charts, items, etc.)
+│   │   └── App.js          # Main application component
+│   └── package.json        # Frontend dependencies
+├── docs/                   # Documentation
+└── start-app.bat          # Windows startup script
 ```
 
-## Documentation
-For detailed information on specific features, please refer to the `docs` directory:
-- [map-screen.md](docs/map-screen.md) - Information on the map screen and its features.
-- [checklists.md](docs/checklists.md) - Details on the various checklists available in the application.
-- [inventory.md](docs/inventory.md) - Overview of the inventory tracking system.
+### Key Technologies & Libraries
+- **React Context API**: Global state management for save files
+- **CSS Modules**: Scoped component styling
+- **React Router**: Single-page application routing
+- **Leaflet Maps**: Interactive mapping with custom overlays
+- **Express.js**: RESTful API for puzzle solving algorithms
 
+## API Endpoints
+
+### Sliding Puzzle Solver
+- `POST /api/solve-sliding-puzzle`: Solve sliding puzzle configurations
+  - Accepts puzzle state and returns solution steps
+  - Used by the Sliding Puzzle component for automatic solving
+
+## Available Scripts
+
+### Frontend Scripts
+- `npm start`: Start development server (http://localhost:3000)
+- `npm run build`: Build for production
+- `npm test`: Run test suite
+- `npm run eject`: Eject from Create React App (one-way operation)
+
+### Backend Scripts  
+- `npm start`: Start Express server (http://localhost:5000)
+
+## Documentation
+
+For detailed information on specific features, refer to the `docs` directory:
+- [**Map Screen**](docs/map-screen.md): Interactive map functionality and features
+- [**Checklists**](docs/checklists.md): Figurine and collectible tracking systems  
+- [**Inventory**](docs/inventory.md): Item tracking and inventory management
