@@ -4,20 +4,15 @@
 
 .mapSidebar {
   position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 280px;
   background: #206693; /* solid blue, no gradient */
-  box-shadow: 2px 0 16px rgba(0,0,0,0.13);  border-top-right-radius: 24px;
-  border-bottom-right-radius: 24px;
   z-index: 500;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   font-family: 'Reggae One', 'RocknRoll One', 'Arial Rounded MT Bold', Arial, sans-serif;
   color: #fff;
-  padding-bottom: 0;
   overflow: visible;
   transition: width 0.28s cubic-bezier(.4,2,.6,1), left 0.28s cubic-bezier(.4,2,.6,1);
 }
@@ -26,9 +21,6 @@
   width: 48px;
   min-width: 48px;
   background: #206693;
-  box-shadow: none;
-  border-radius: 0 18px 18px 0;
-  padding-bottom: 0;
 }
 
 .sidebarContent {
@@ -127,42 +119,33 @@ input[type="checkbox"] {
   transform: translateY(-1px);
 }
 
-/* Responsive: top drawer on mobile */  @media (max-width: 768px) {
+/* Responsive: top drawer on mobile */
+@media (max-width: 768px) {
   .mapSidebar {
-    top: 0;
-    left: 0;
-    right: 0;
     bottom: auto;
     width: 100vw;
     height: 280px;
-    border-radius: 0 0 24px 24px;
     border-top: none;
     border-bottom: 4px solid #ffe066;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.13);
     flex-direction: column;
     align-items: center;
-    padding-left: 0;
-    padding-right: 0;
-    transition: height 0.28s cubic-bezier(.4,2,.6,1);    overflow: visible;
+    transition: height 0.28s cubic-bezier(.4,2,.6,1);
+    overflow: visible;
     position: absolute;
     z-index: 500;
-  }.closed {
+  }
+
+  .closed {
     width: 100vw;
     height: 48px;
-    min-width: 0;
-    border-radius: 0 0 24px 24px;
     border-top: none;
     border-bottom: 4px solid #ffe066;
-    left: 0;
-    top: 0;
-    right: 0;
     bottom: auto;
   }  .sidebarToggle {
     position: absolute;
     left: 50%;
     top: 6px;    transform: translateX(-50%);
     z-index: 501;
-    margin: 0;
     box-shadow: 0 6px 20px rgba(0,0,0,0.35), 0 3px 10px rgba(0,0,0,0.25);
   }
   .sidebarToggle:hover {

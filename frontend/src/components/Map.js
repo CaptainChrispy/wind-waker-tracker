@@ -325,10 +325,8 @@ const Map = () => {
                 bottom: 'auto',
                 width: '100vw',
                 height: sidebarOpen ? 280 : 48,
-                borderRadius: '0 0 24px 24px',
                 borderTop: 'none',
                 borderBottom: '4px solid #ffe066',
-                boxShadow: '0 2px 16px rgba(0,0,0,0.13)',
                 position: 'absolute',
                 zIndex: 500,
               }
@@ -337,10 +335,8 @@ const Map = () => {
                 left: 0,
                 height: '100%',
                 width: sidebarOpen ? 340 : 60,
-                borderRadius: '0 24px 24px 0',
                 borderLeft: 'none',
                 borderRight: '4px solid #ffe066',
-                boxShadow: '2px 0 16px rgba(0,0,0,0.13)',
                 position: 'absolute',
                 zIndex: 500,
               }
