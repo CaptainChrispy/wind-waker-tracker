@@ -319,35 +319,17 @@ const Map = () => {
         style={
           isMobile
             ? {
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 'auto',
-                width: '100vw',
                 height: sidebarOpen ? 280 : 48,
-                borderTop: 'none',
-                borderBottom: '4px solid #ffe066',
-                position: 'absolute',
-                zIndex: 500,
               }
             : {
-                top: 0,
-                left: 0,
-                height: '100%',
                 width: sidebarOpen ? 340 : 60,
-                borderLeft: 'none',
-                borderRight: '4px solid #ffe066',
-                position: 'absolute',
-                zIndex: 500,
               }
         }
       >
         <button
           className={mapSidebarStyles.sidebarToggle}
           onClick={() => setSidebarOpen(!sidebarOpen)}
-          aria-label={sidebarOpen ? (isMobile ? 'Close drawer' : 'Close sidebar') : (isMobile ? 'Open drawer' : 'Open sidebar')}          style={isMobile
-            ? { position: 'absolute', left: '50%', top: 6, transform: 'translateX(-50%)', zIndex: 501 }
-            : { position: 'absolute', top: '50%', left: 8, transform: 'translateY(-50%)', zIndex: 501 }}
+          aria-label={sidebarOpen ? (isMobile ? 'Close drawer' : 'Close sidebar') : (isMobile ? 'Open drawer' : 'Open sidebar')}
         >
           <span style={{
             fontSize: 22,
