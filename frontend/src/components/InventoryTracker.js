@@ -10,6 +10,9 @@ const InventoryTracker = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [itemDetails, setItemDetails] = useState(null);
   const [imageErrors, setImageErrors] = useState({});
+  const [keySequence, setKeySequence] = useState('');
+  const [dragMode, setDragMode] = useState(false);
+  const [triforcePositions, setTriforcePositions] = useState({});
   const { currentSave } = useSaves();
   const navigate = useNavigate();
   const location = useLocation();
@@ -69,6 +72,62 @@ const InventoryTracker = () => {
   useEffect(() => {
     localStorage.setItem('windWakerImageErrors', JSON.stringify(imageErrors));
   }, [imageErrors]);
+
+  // Key sequence detector for drag mode
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      const newSequence = keySequence + e.key.toLowerCase();
+      setKeySequence(newSequence);
+      
+      // Check if sequence matches "dragmode"
+      if (newSequence.includes('dragmode')) {
+        setDragMode(true);
+        setKeySequence('');
+        console.log('Click and drag pieces to reposition them.');
+      }
+      
+      // Reset sequence if it gets too long or doesn't match
+      if (newSequence.length > 8 || !('dragmode'.startsWith(newSequence))) {
+        setKeySequence('');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [keySequence]);
+
+  const handleTriforceMouseDown = (e, shardKey) => {
+    if (!dragMode) return;
+    
+    e.preventDefault();
+    const startX = e.clientX;
+    const startY = e.clientY;
+    const rect = e.currentTarget.parentElement.getBoundingClientRect();
+    const initialLeft = parseInt(e.currentTarget.style.left) || 0;
+    const initialTop = parseInt(e.currentTarget.style.top) || 0;
+
+    const handleMouseMove = (e) => {
+      const newLeft = initialLeft + (e.clientX - startX);
+      const newTop = initialTop + (e.clientY - startY);
+      
+      setTriforcePositions(prev => ({
+        ...prev,
+        [shardKey]: { x: newLeft, y: newTop }
+      }));
+    };
+
+    const handleMouseUp = () => {
+      const finalPos = triforcePositions[shardKey];
+      if (finalPos) {
+        console.log(`${shardKey}: { x: ${finalPos.x}, y: ${finalPos.y} },`);
+      }
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+  };
 
   const handleImageError = (itemId) => {
     setImageErrors(prev => {
@@ -355,32 +414,83 @@ const InventoryTracker = () => {
 
     return (
       <div className={styles.triforceContainer}>
-        <h3>Triforce of Courage</h3>
+        <h3>
+          Triforce of Courage
+          {dragMode && (
+            <>
+              <span style={{ color: '#ff6b35', marginLeft: '10px', fontSize: '14px' }}>
+                🔧 DRAG MODE ACTIVE
+              </span>
+              <button 
+                onClick={() => {
+                  setDragMode(false);
+                  setTriforcePositions({});
+                  console.log('🔧 Drag mode deactivated');
+                }}
+                style={{
+                  marginLeft: '10px',
+                  padding: '4px 8px',
+                  fontSize: '12px',
+                  backgroundColor: '#ff6b35',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer'
+                }}
+              >
+                Exit Drag Mode
+              </button>
+            </>
+          )}
+        </h3>
         <div
           className={styles.triforceChart}
           style={{ position: 'relative', width: maxX, height: maxY }}
         >
           {shardData.map(({ key, x, y }, idx) => {
             const collected = inventory[key] !== undefined;
+            const currentPos = triforcePositions[key] || { x, y };
+            
             return (
               <img
                 key={key + idx}
                 src={`/assets/items/${key.toLowerCase()}.png`}
                 alt={`Triforce Shard ${key.split('_').pop()}`}
+                onMouseDown={(e) => handleTriforceMouseDown(e, key)}
                 style={{
                   position: 'absolute',
-                  left: x,
-                  top: y,
+                  left: currentPos.x,
+                  top: currentPos.y,
                   width: 300,
                   height: 300,
-                  pointerEvents: 'none',
+                  pointerEvents: dragMode ? 'auto' : 'none',
                   zIndex: shardData.length - idx,
                   filter: collected ? 'none' : 'grayscale(100%) opacity(0.5)',
-                  transition: 'filter 0.2s',
+                  transition: dragMode ? 'none' : 'filter 0.2s',
+                  cursor: dragMode ? 'move' : 'default',
+                  userSelect: 'none',
+                  border: dragMode ? '2px dashed #ff6b35' : 'none',
                 }}
+                draggable={false}
               />
             );
           })}
+          {dragMode && (
+            <div style={{
+              position: 'absolute',
+              bottom: '-40px',
+              left: '0',
+              right: '0',
+              textAlign: 'center',
+              fontSize: '12px',
+              color: '#666',
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              padding: '8px',
+              borderRadius: '4px'
+            }}>
+              Drag pieces to reposition them. Check console for coordinate updates.
+            </div>
+          )}
         </div>
       </div>
     );
